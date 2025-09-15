@@ -1,0 +1,123 @@
+const landing=document.getElementById('landing');
+const landingBtn=document.getElementById('landing-button');
+const shop=document.getElementById('shop');
+const header=document.getElementById('mainHeader');
+const tazze=document.getElementById('tazze');
+const account=document.getElementById('account');
+const about=document.getElementById('about');
+const cart=document.getElementById('cart');
+const checkout=document.getElementById('checkout');
+const toast=document.getElementById('toast');
+let cartItems=[];let selectedSizes={};
+
+/* Toast */
+function showToast(msg,icon="✅"){toast.innerHTML=`<span>${icon}</span><span>${msg}</span>`;toast.style.display='block';setTimeout(()=>toast.style.display='none',2500);}
+
+/* Landing → Shop */
+landingBtn.addEventListener('click',()=>{landing.classList.add('hidden');header.classList.remove('hidden');shop.classList.remove('hidden');});
+
+/* Nav */
+function hideAll(){shop.classList.add('hidden');tazze.classList.add('hidden');account.classList.add('hidden');about.classList.add('hidden');checkout.classList.add('hidden');}
+document.getElementById('headerLogo').addEventListener('click',()=>{hideAll();header.classList.add('hidden');landing.classList.remove('hidden');});
+document.getElementById('navShop').addEventListener('click',()=>{hideAll();shop.classList.remove('hidden');});
+document.getElementById('navTazze').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');});
+document.getElementById('tazzeIcon').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');});
+document.getElementById('navAccount').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');});
+document.getElementById('accountIcon').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');});
+document.getElementById('navAbout').addEventListener('click',()=>{hideAll();about.classList.remove('hidden');});
+document.getElementById('cartIcon').addEventListener('click',()=>cart.classList.add('open'));
+
+/* Back button carrello */
+document.getElementById('backCartBtn').addEventListener('click',()=>cart.classList.remove('open'));
+
+/* Taglie */
+document.querySelectorAll('.size-box').forEach(box=>{
+  box.addEventListener('click',()=>{
+    const parent=box.parentElement;
+    const product=parent.dataset.product;
+    parent.querySelectorAll('.size-box').forEach(b=>b.classList.remove('selected'));
+    box.classList.add('selected');
+    selectedSizes[product]=box.dataset.size;
+  });
+});
+
+/* Carrello */
+function renderCart(){
+  const cont=document.getElementById('cartItems');cont.innerHTML='';
+  let total=0;
+  cartItems.forEach((i,idx)=>{
+    const row=document.createElement('div');
+    row.className='cart-item';
+    row.innerHTML=`
+      <span>${i.name}</span>
+      <div>
+        <button data-idx="${idx}" class="decrease">-</button>
+        <span>${i.qty}</span>
+        <button data-idx="${idx}" class="increase">+</button>
+      </div>
+      <span>€${(i.price*i.qty).toFixed(2)}</span>
+    `;
+    cont.appendChild(row);
+    total+=i.price*i.qty;
+  });
+  document.getElementById('cartTotal').textContent='Totale: €'+total.toFixed(2);
+
+  cont.querySelectorAll('.increase').forEach(b=>{
+    b.addEventListener('click',()=>{cartItems[b.dataset.idx].qty++;renderCart();});
+  });
+  cont.querySelectorAll('.decrease').forEach(b=>{
+    b.addEventListener('click',()=>{
+      if(cartItems[b.dataset.idx].qty>1){cartItems[b.dataset.idx].qty--;}
+      else{cartItems.splice(b.dataset.idx,1);}
+      renderCart();
+    });
+  });
+}
+
+document.querySelectorAll('.add-to-cart').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const name=b.dataset.name;
+    const price=parseFloat(b.dataset.price);
+    if(name.includes("Maglia") && !selectedSizes[name]){
+      showToast("Seleziona una taglia!","⚠️");return;
+    }
+    const label=selectedSizes[name]?`${name} (${selectedSizes[name]})`:name;
+    const existing=cartItems.find(i=>i.name===label);
+    if(existing){existing.qty++;}
+    else{cartItems.push({name:label,price,qty:1});}
+    renderCart();cart.classList.add('open');showToast("Aggiunto al carrello");
+  });
+});
+
+document.getElementById('closeCartBtn').addEventListener('click',()=>cart.classList.remove('open'));
+
+/* Checkout */
+document.getElementById('toCheckout').addEventListener('click',()=>{
+  cart.classList.remove('open');hideAll();checkout.classList.remove('hidden');header.classList.add('hidden');
+  const sum=document.getElementById('checkoutSummary');sum.innerHTML='';let total=0;
+  cartItems.forEach(i=>{
+    sum.innerHTML+=`<div class="summary-item"><span>${i.name} x${i.qty}</span><span>€${(i.price*i.qty).toFixed(2)}</span></div>`;
+    total+=i.price*i.qty;
+  });
+  sum.innerHTML+=`<div class="summary-total"><span>Totale</span><span>€${total.toFixed(2)}</span></div>`;
+});
+document.getElementById('backToShopFromCheckout').addEventListener('click',()=>{
+  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');
+});
+document.getElementById('checkoutForm').addEventListener('submit',e=>{
+  e.preventDefault();showToast("🎉 Ordine confermato!");cartItems=[];renderCart();
+  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');
+});
+
+/* Newsletter */
+document.getElementById('newsletterSubmit').addEventListener('click',()=>{
+  const email=document.getElementById('newsletterInput').value.trim();
+  if(email){showToast("✉️ Grazie per esserti iscritto!");}
+});
+
+/* Fade-in scroll animazioni */
+const faders=document.querySelectorAll('.product');
+const obs=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});
+},{threshold:0.1});
+faders.forEach(f=>obs.observe(f));
