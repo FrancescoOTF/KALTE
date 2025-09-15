@@ -6,112 +6,131 @@
 <title>KALTÉ — Shop</title>
 <style>
 /* ===== RESET ===== */
-* { box-sizing:border-box; margin:0; padding:0; }
-html,body { width:100%; height:100%; font-family:Arial, sans-serif; background:#0f0f0f; color:#fff; }
-.hidden { display:none !important; }
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{width:100%;height:100%;font-family:Arial, sans-serif;background:#f5f5f5;color:#111;scroll-behavior:smooth;}
+.hidden{display:none!important}
 
 /* ===== PALETTE ===== */
 :root{
-  --bg-dark:#111;
-  --card:#222;
+  --bg-light:#f5f5f5;
+  --bg-white:#fff;
   --brand:#E3D8C3;
   --brand-hover:#cbbba3;
-  --muted:#999;
-  --radius:12px;
-  --shadow:0 4px 15px rgba(0,0,0,.5);
+  --muted:#444;
 }
 
 /* ===== BOTTONI ===== */
-.btn{
-  display:inline-block; padding:10px 20px; border:none; border-radius:8px;
-  background:var(--brand); color:#111; font-size:0.95em; font-weight:bold; cursor:pointer;
-  transition:background .25s, opacity .25s;
-}
-.btn:hover{ background:var(--brand-hover); }
-.btn-link{
-  background:none; border:none; color:var(--brand); font-weight:bold; cursor:pointer;
-  padding:0; margin:12px 0;
-}
-.btn-link:hover{ color:var(--brand-hover); }
+.btn{display:inline-block;padding:10px 20px;border:none;border-radius:8px;
+  background:var(--brand);color:#111;font-size:.9em;font-weight:bold;cursor:pointer;
+  transition:background .25s;}
+.btn:hover{background:var(--brand-hover);}
+.btn-link{background:none;border:none;color:#fff;font-weight:bold;cursor:pointer;padding:0;margin:12px 0;}
+.btn-link:hover{color:var(--brand-hover);}
+
+/* ===== TOAST ===== */
+#toast{position:fixed;top:20px;right:20px;background:#222;color:#fff;font-size:.9em;
+  padding:12px 18px;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,.5);display:none;z-index:200;}
+#toast span{margin-right:6px}
 
 /* ===== BACKGROUND BLUR ===== */
-.bg-blur {
-  position: fixed;
-  inset: 0;
-  background: url("store-bg.gif") center/cover no-repeat;
-  filter: blur(12px) brightness(0.4);
-  z-index: 0;
-}
+.bg-blur{position:fixed;inset:0;background:url("store-bg.gif") center/cover no-repeat;
+  filter:blur(12px) brightness(.8);z-index:0;}
 
 /* ===== LANDING ===== */
-#landing{
-  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; background:#fff url("landing-bg.gif") center/cover no-repeat;
-  z-index: 2;
-}
-#landing-button{ margin-top:20px; width:420px; cursor:pointer; }
-#newsletter{ margin-top:28px; display:flex; gap:8px; }
-#newsletter input{ padding:10px 12px; border-radius:8px; border:none; width:240px; }
-#newsletterMsg{ margin-top:10px; font-size:0.9rem; color:var(--brand); display:none; }
+#landing{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;background:#fff url("landing-bg.gif") center/cover no-repeat;z-index:2;}
+#landing-button{margin-top:20px;width:420px;cursor:pointer;}
+#newsletter{margin-top:28px;display:flex;gap:8px;}
+#newsletter input{padding:10px 12px;border-radius:8px;border:1px solid #ccc;width:240px;}
 
 /* ===== HEADER ===== */
-header{
-  position:sticky; top:0; z-index:50;
-  display:flex; justify-content:space-between; align-items:center;
-  background:rgba(0,0,0,0.3); backdrop-filter:blur(8px);
-  padding:10px 20px;
-}
-header img.logo{ width:120px; height:auto; cursor:pointer; }
-nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-size:0.9rem; cursor:pointer; }
-.icons{ display:flex; gap:15px; align-items:center; }
-.icons img{ width:22px; height:22px; cursor:pointer; }
+header{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,.7);backdrop-filter:blur(6px);padding:6px 14px;height:55px;}
+header img.logo{width:85px;height:auto;cursor:pointer;}
+nav a{margin:0 10px;text-decoration:none;color:#111;font-weight:bold;font-size:.85rem;cursor:pointer;}
+.icons{display:flex;gap:10px;align-items:center;}
+.icons img{width:18px;height:18px;cursor:pointer;}
+
+/* ===== SEZIONI ===== */
+section{position:relative;z-index:1;padding:40px 20px;}
+section h1{text-align:center;margin-bottom:30px;}
 
 /* ===== SHOP ===== */
-#shop{ position:relative; z-index:1; padding:30px 20px; display:flex; flex-direction:column; align-items:center; }
-#shop h1{ margin-bottom:26px; }
-.products-grid{
-  display:grid; grid-template-columns:1fr 1fr; gap:22px; width:100%; max-width:1040px;
-}
-.product{
-  background:var(--card); border-radius:var(--radius); overflow:hidden; text-align:center;
-  transition:transform .25s, box-shadow .25s;
-}
-.product:hover{ transform:scale(1.03); box-shadow:var(--shadow); }
-.media{ position:relative; width:100%; aspect-ratio:1/1; background:#000; }
-.media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
-.media img.alt{ opacity:0; transition:opacity .25s; }
-.product:hover .media img.alt{ opacity:1; }
-.product:hover .media img.main{ opacity:0; }
-.product h2{ margin:10px; font-size:1rem; }
-.price{ color:var(--muted); margin-bottom:6px; }
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%;max-width:1040px;margin:0 auto;}
+@media(max-width:768px){.products-grid{grid-template-columns:1fr;}}
+.product{background:none;text-align:center;transition:transform .25s,opacity .6s;opacity:0;}
+.product.visible{opacity:1;}
+.product:hover{transform:scale(1.05);}
+.media{position:relative;width:100%;aspect-ratio:1/1;}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .5s;}
+.media img.alt{opacity:0;}
+.product:hover .media img.alt{opacity:1;}
+.product:hover .media img.main{opacity:0;}
+.product h2{margin:10px;font-size:1rem;color:#fff;}
+.price{color:#fff;margin-bottom:6px;}
 
-/* ===== TAZZE SECTION ===== */
-#tazze{ position:relative; z-index:1; padding:40px 20px; }
-#tazze h1{ text-align:center; margin-bottom:30px; }
-.tazze-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; max-width:1000px; margin:0 auto; }
-.tazza-card{ background:var(--card); border-radius:var(--radius); padding:20px; text-align:center; }
-.tazza-card img{ width:100%; max-height:220px; object-fit:contain; margin-bottom:12px; }
-.tazza-card h2{ margin-bottom:6px; }
-.tazza-card p{ font-size:0.9rem; color:var(--muted); margin-bottom:12px; }
+/* ===== SIZE OPTIONS ===== */
+.size-options{display:flex;gap:10px;justify-content:center;margin:10px 0;}
+.size-box{border:1px solid #ccc;padding:8px 16px;cursor:pointer;font-weight:bold;
+  color:#111;background:#fff;transition:all .25s;}
+.size-box.selected{background:var(--brand);color:#111;border-color:var(--brand);}
 
-/* ===== CART ===== */
-.cart{ position:fixed; top:0; right:-100%; width:320px; height:100%; background:#1a1a1a; box-shadow:-5px 0 30px #000;
-  padding:20px; overflow-y:auto; transition:right .4s; z-index:100; }
-.cart.open{ right:0; }
-.cart-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-.cart-item{ background:#222; margin:8px 0; padding:10px; border-radius:8px; display:flex; justify-content:space-between; }
+/* ===== TAZZE ===== */
+#tazze h1{color:#fff;}
+.tazze-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.tazza-card{text-align:center;background:none;padding:20px;}
+.tazza-card img{width:100%;max-height:220px;object-fit:contain;margin-bottom:12px;}
+.tazza-card h2{color:#fff;}
+.tazza-card p{color:#fff;font-size:.9rem;margin-bottom:12px;}
+
+/* ===== ACCOUNT ===== */
+#account h1{color:#fff;}
+.account-box{max-width:400px;margin:0 auto;background:none;text-align:center;}
+.account-box input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-bottom:10px;}
+.account-box label{display:inline-flex;flex-direction:row;align-items:center;gap:8px;color:#fff;}
+.account-box .btn{margin:10px 0;}
+
+/* ===== ABOUT US ===== */
+#about{text-align:center;color:#fff;background:transparent;}
+#about h1,#about h2,#about p{color:#fff;}
+#about p{max-width:700px;margin:0 auto 20px;line-height:1.6;}
+#about img{display:block;margin:20px auto;}
+
+/* ===== CARRELLO ===== */
+.cart{position:fixed;top:0;right:-100%;width:340px;height:100%;background:#fff;box-shadow:-5px 0 30px #0003;
+  padding:20px;overflow-y:auto;transition:right .4s;z-index:100;color:#111;display:flex;flex-direction:column;}
+.cart.open{right:0;}
+.cart-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.cart-item{margin:8px 0;display:flex;justify-content:space-between;align-items:center;}
+.cart-item span{flex:1;}
+.cart-item button{background:none;border:none;color:#111;font-weight:bold;cursor:pointer;}
+.cart-footer{margin-top:auto;padding-top:10px;border-top:1px solid #ccc;}
 
 /* ===== CHECKOUT ===== */
-.checkout{ position:absolute; inset:0; background:var(--bg-dark); padding:28px 20px;
-  display:flex; flex-direction:column; align-items:center; overflow-y:auto; z-index:2; }
-.checkout form{ width:100%; max-width:500px; }
-.checkout form input{ width:100%; padding:12px; border:none; border-radius:8px; margin-bottom:10px; background:#1a1a1a; color:#fff; }
-.summary{ width:100%; max-width:500px; background:#1a1a1a; border-radius:12px; padding:16px; margin-bottom:14px; }
-.summary-item{ display:flex; justify-content:space-between; margin:6px 0; }
-.summary-total{ font-weight:bold; display:flex; justify-content:space-between; margin-top:8px; }
+.checkout{position:absolute;inset:0;background:var(--bg-light);padding:28px 20px;
+  display:flex;flex-direction:column;align-items:center;overflow-y:auto;z-index:2;}
+#checkout-logo{width:100px;margin-bottom:20px;animation:spin 6s linear infinite;}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.checkout form{width:100%;max-width:500px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);}
+.checkout form input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-bottom:10px;}
+.summary{width:100%;max-width:500px;background:#fff;border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.1);}
+.summary-item{display:flex;justify-content:space-between;margin:6px 0;}
+.summary-total{font-weight:bold;display:flex;justify-content:space-between;margin-top:8px;}
+
+/* ===== FOOTER ===== */
+footer{background:#fff;color:#111;text-align:center;padding:40px 20px;border-top:1px solid #ddd;margin-top:40px;}
+.footer-columns{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-bottom:20px;}
+.footer-column{min-width:160px;}
+.footer-column h3{margin-bottom:12px;font-size:.95rem;}
+.footer-column a{display:block;margin:6px 0;font-size:.85rem;color:#111;text-decoration:none;}
+.footer-column a:hover{color:var(--brand-hover);}
+footer .social img{width:20px;margin:0 6px;cursor:pointer;}
 </style>
 </head>
 <body>
+
+<!-- TOAST -->
+<div id="toast"><span>✅</span><span id="toast-msg"></span></div>
 
 <!-- BACKGROUND BLUR -->
 <div class="bg-blur"></div>
@@ -123,7 +142,6 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
     <input type="email" placeholder="Iscriviti alla newsletter" id="newsletterInput">
     <button class="btn" id="newsletterSubmit">Invia</button>
   </div>
-  <div id="newsletterMsg">Grazie per esserti iscritto!</div>
 </div>
 
 <!-- ===== HEADER ===== -->
@@ -132,6 +150,8 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
   <nav>
     <a id="navShop">Shop</a>
     <a id="navTazze">Le Tazze</a>
+    <a id="navAccount">Account</a>
+    <a id="navAbout">About Us</a>
   </nav>
   <div class="icons">
     <img src="icon-account.png" alt="Account" id="accountIcon">
@@ -141,11 +161,11 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
 </header>
 
 <!-- ===== SHOP ===== -->
-<div id="shop" class="hidden">
-  <h1>Shop KALTÉ</h1>
+<section id="shop" class="hidden">
+  <h1 style="color:#fff;">Shop KALTÉ</h1>
   <div class="products-grid">
 
-    <div class="product">
+    <div class="product fade">
       <div class="media">
         <img src="tazza_t1.png" alt="Tazza T1" class="main">
         <img src="abbonamento_20.png" alt="Abbonamento" class="alt">
@@ -155,25 +175,32 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
       <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
     </div>
 
-    <div class="product">
+    <div class="product fade">
       <div class="media"><img src="maglia_front.png" class="main"><img src="maglia_back.png" class="alt"></div>
       <h2>Maglia Oversize</h2>
       <div class="price">€60</div>
+      <div class="size-options" data-product="Maglia Oversize">
+        <div class="size-box" data-size="S">S</div>
+        <div class="size-box" data-size="M">M</div>
+        <div class="size-box" data-size="L">L</div>
+      </div>
       <button class="btn-link add-to-cart" data-name="Maglia Oversize" data-price="60">Aggiungi al Carrello</button>
     </div>
 
-    <div class="product">
+    <div class="product fade">
       <div class="media"><img src="occhiali.png" class="main"></div>
       <h2>Occhiali</h2>
       <div class="price">€80</div>
       <button class="btn-link add-to-cart" data-name="Occhiali" data-price="80">Aggiungi al Carrello</button>
     </div>
 
+    <div class="product fade"><h2 style="color:#fff;">COMING SOON</h2></div>
+
   </div>
-</div>
+</section>
 
 <!-- ===== SEZIONE TAZZE ===== -->
-<div id="tazze" class="hidden">
+<section id="tazze" class="hidden">
   <h1>La storia delle tazze</h1>
   <div class="tazze-grid">
     <div class="tazza-card">
@@ -193,7 +220,29 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
       <p>Ornamentale ed esclusiva. Riservata a collaboratori e amici del brand.</p>
     </div>
   </div>
-</div>
+</section>
+
+<!-- ===== ACCOUNT ===== -->
+<section id="account" class="hidden">
+  <h1>Account</h1>
+  <div class="account-box">
+    <input type="text" placeholder="Nome completo" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit" class="btn">Crea Account</button>
+    <label><input type="checkbox"> Iscrivimi anche alla newsletter</label>
+  </div>
+</section>
+
+<!-- ===== ABOUT US ===== -->
+<section id="about" class="hidden">
+  <h1>About KALTÉ</h1>
+  <p>KALTÉ nasce per unire lifestyle, community e streetwear in un unico luogo. 
+     Dal bar alle collezioni, dalle tazze ai drop esclusivi: ogni dettaglio è pensato 
+     per costruire appartenenza e fedeltà.</p>
+  <h2>THE WORLD IS YOURZ</h2>
+  <img src="logo.png" alt="Logo KALTÉ">
+</section>
 
 <!-- ===== CARRELLO ===== -->
 <div class="cart" id="cart">
@@ -202,12 +251,15 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
     <button class="btn-link" id="closeCartBtn">Chiudi</button>
   </div>
   <div id="cartItems"></div>
-  <div class="total" id="cartTotal">Totale: €0.00</div>
-  <button class="btn" id="toCheckout">Procedi al Pagamento</button>
+  <div class="cart-footer">
+    <div class="total" id="cartTotal">Totale: €0.00</div>
+    <button class="btn" id="toCheckout">Procedi al Pagamento</button>
+  </div>
 </div>
 
 <!-- ===== CHECKOUT ===== -->
 <div class="checkout hidden" id="checkout">
+  <img src="header-logo.gif" alt="KALTÉ" id="checkout-logo">
   <h1>Checkout</h1>
   <div class="summary" id="checkoutSummary"></div>
   <form id="checkoutForm">
@@ -216,12 +268,39 @@ nav a{ margin:0 12px; text-decoration:none; color:#fff; font-weight:bold; font-s
     <input type="text" name="city" placeholder="Città" required>
     <input type="text" name="zip" placeholder="CAP" required>
     <input type="email" name="email" placeholder="Email" required>
-    <div style="display:flex; gap:8px;">
+    <div style="display:flex;gap:8px;">
       <button type="submit" class="btn">Conferma Ordine</button>
       <button type="button" class="btn-link" id="backToShopFromCheckout">Indietro</button>
     </div>
   </form>
 </div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h3>Info</h3>
+      <a href="#about">About Us</a>
+      <a href="#tazze">Le Tazze</a>
+      <a href="#shop">Shop</a>
+    </div>
+    <div class="footer-column">
+      <h3>Supporto</h3>
+      <a href="#">FAQ</a>
+      <a href="#">Spedizioni & Resi</a>
+      <a href="#">Termini & Condizioni</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+    <div class="footer-column">
+      <h3>Social</h3>
+      <a href="#"><img src="icon-ig.png" alt="Instagram"> Instagram</a>
+      <a href="#"><img src="icon-tiktok.png" alt="TikTok"> TikTok</a>
+      <a href="mailto:hello@kalte.com">hello@kalte.com</a>
+    </div>
+  </div>
+  <p>© 2025 KALTÉ — THE WORLD IS YOURZ</p>
+</footer>
 
 <script>
 const landing=document.getElementById('landing');
@@ -229,75 +308,122 @@ const landingBtn=document.getElementById('landing-button');
 const shop=document.getElementById('shop');
 const header=document.getElementById('mainHeader');
 const tazze=document.getElementById('tazze');
+const account=document.getElementById('account');
+const about=document.getElementById('about');
 const cart=document.getElementById('cart');
 const checkout=document.getElementById('checkout');
-let cartItems=[];
+const toast=document.getElementById('toast');
+let cartItems=[];let selectedSizes={};
 
-/* Entra nello shop */
-landingBtn.addEventListener('click',()=>{
-  landing.classList.add('hidden');
-  header.classList.remove('hidden');
-  shop.classList.remove('hidden');
-});
+/* Toast */
+function showToast(msg,icon="✅"){toast.innerHTML=`<span>${icon}</span><span>${msg}</span>`;toast.style.display='block';setTimeout(()=>toast.style.display='none',2500);}
 
-/* Header nav + icone */
-document.getElementById('headerLogo').addEventListener('click',()=>{ // back to landing
-  header.classList.add('hidden'); shop.classList.add('hidden'); tazze.classList.add('hidden'); checkout.classList.add('hidden');
-  landing.classList.remove('hidden');
-});
-document.getElementById('navShop').addEventListener('click',()=>{
-  shop.classList.remove('hidden'); tazze.classList.add('hidden'); checkout.classList.add('hidden');
-});
-document.getElementById('navTazze').addEventListener('click',()=>{
-  tazze.classList.remove('hidden'); shop.classList.add('hidden'); checkout.classList.add('hidden');
-});
-document.getElementById('tazzeIcon').addEventListener('click',()=>{
-  tazze.classList.remove('hidden'); shop.classList.add('hidden'); checkout.classList.add('hidden');
-});
+/* Landing → Shop */
+landingBtn.addEventListener('click',()=>{landing.classList.add('hidden');header.classList.remove('hidden');shop.classList.remove('hidden');});
+
+/* Nav */
+function hideAll(){shop.classList.add('hidden');tazze.classList.add('hidden');account.classList.add('hidden');about.classList.add('hidden');checkout.classList.add('hidden');}
+document.getElementById('headerLogo').addEventListener('click',()=>{hideAll();header.classList.add('hidden');landing.classList.remove('hidden');});
+document.getElementById('navShop').addEventListener('click',()=>{hideAll();shop.classList.remove('hidden');});
+document.getElementById('navTazze').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');});
+document.getElementById('tazzeIcon').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');});
+document.getElementById('navAccount').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');});
+document.getElementById('accountIcon').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');});
+document.getElementById('navAbout').addEventListener('click',()=>{hideAll();about.classList.remove('hidden');});
 document.getElementById('cartIcon').addEventListener('click',()=>cart.classList.add('open'));
 
-/* Newsletter */
-document.getElementById('newsletterSubmit').addEventListener('click',()=>{
-  const email=document.getElementById('newsletterInput').value.trim();
-  if(email){ document.getElementById('newsletterMsg').style.display='block'; }
+/* Taglie */
+document.querySelectorAll('.size-box').forEach(box=>{
+  box.addEventListener('click',()=>{
+    const parent=box.parentElement;
+    const product=parent.dataset.product;
+    parent.querySelectorAll('.size-box').forEach(b=>b.classList.remove('selected'));
+    box.classList.add('selected');
+    selectedSizes[product]=box.dataset.size;
+  });
 });
 
 /* Carrello */
 function renderCart(){
-  const cont=document.getElementById('cartItems'); cont.innerHTML='';
+  const cont=document.getElementById('cartItems');cont.innerHTML='';
   let total=0;
-  cartItems.forEach(i=>{
+  cartItems.forEach((i,idx)=>{
     const row=document.createElement('div');
     row.className='cart-item';
-    row.innerHTML=`<span>${i.name}</span><span>€${i.price.toFixed(2)}</span>`;
-    cont.appendChild(row); total+=i.price;
+    row.innerHTML=`
+      <span>${i.name}</span>
+      <div>
+        <button data-idx="${idx}" class="decrease">-</button>
+        <span>${i.qty}</span>
+        <button data-idx="${idx}" class="increase">+</button>
+      </div>
+      <span>€${(i.price*i.qty).toFixed(2)}</span>
+    `;
+    cont.appendChild(row);
+    total+=i.price*i.qty;
   });
   document.getElementById('cartTotal').textContent='Totale: €'+total.toFixed(2);
+
+  cont.querySelectorAll('.increase').forEach(b=>{
+    b.addEventListener('click',()=>{cartItems[b.dataset.idx].qty++;renderCart();});
+  });
+  cont.querySelectorAll('.decrease').forEach(b=>{
+    b.addEventListener('click',()=>{
+      if(cartItems[b.dataset.idx].qty>1){cartItems[b.dataset.idx].qty--;}
+      else{cartItems.splice(b.dataset.idx,1);}
+      renderCart();
+    });
+  });
 }
+
 document.querySelectorAll('.add-to-cart').forEach(b=>{
   b.addEventListener('click',()=>{
-    cartItems.push({name:b.dataset.name, price:parseFloat(b.dataset.price)});
-    renderCart(); cart.classList.add('open');
+    const name=b.dataset.name;
+    const price=parseFloat(b.dataset.price);
+    if(name.includes("Maglia") && !selectedSizes[name]){
+      showToast("Seleziona una taglia!","⚠️");return;
+    }
+    const label=selectedSizes[name]?`${name} (${selectedSizes[name]})`:name;
+    const existing=cartItems.find(i=>i.name===label);
+    if(existing){existing.qty++;}
+    else{cartItems.push({name:label,price,qty:1});}
+    renderCart();cart.classList.add('open');showToast("Aggiunto al carrello");
   });
 });
+
 document.getElementById('closeCartBtn').addEventListener('click',()=>cart.classList.remove('open'));
 
 /* Checkout */
 document.getElementById('toCheckout').addEventListener('click',()=>{
-  cart.classList.remove('open'); shop.classList.add('hidden'); tazze.classList.add('hidden'); header.classList.add('hidden'); checkout.classList.remove('hidden');
-  const sum=document.getElementById('checkoutSummary'); sum.innerHTML=''; let total=0;
+  cart.classList.remove('open');hideAll();checkout.classList.remove('hidden');header.classList.add('hidden');
+  const sum=document.getElementById('checkoutSummary');sum.innerHTML='';let total=0;
   cartItems.forEach(i=>{
-    sum.innerHTML+=`<div class="summary-item"><span>${i.name}</span><span>€${i.price.toFixed(2)}</span></div>`; total+=i.price;
+    sum.innerHTML+=`<div class="summary-item"><span>${i.name} x${i.qty}</span><span>€${(i.price*i.qty).toFixed(2)}</span></div>`;
+    total+=i.price*i.qty;
   });
   sum.innerHTML+=`<div class="summary-total"><span>Totale</span><span>€${total.toFixed(2)}</span></div>`;
 });
 document.getElementById('backToShopFromCheckout').addEventListener('click',()=>{
-  checkout.classList.add('hidden'); shop.classList.remove('hidden'); header.classList.remove('hidden');
+  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');
 });
 document.getElementById('checkoutForm').addEventListener('submit',e=>{
-  e.preventDefault(); alert('Ordine confermato!'); cartItems=[]; renderCart();
-  checkout.classList.add('hidden'); shop.classList.remove('hidden'); header.classList.remove('hidden');
+  e.preventDefault();showToast("🎉 Ordine confermato!");cartItems=[];renderCart();
+  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');
 });
+
+/* Newsletter */
+document.getElementById('newsletterSubmit').addEventListener('click',()=>{
+  const email=document.getElementById('newsletterInput').value.trim();
+  if(email){showToast("✉️ Grazie per esserti iscritto!");}
+});
+
+/* Fade-in scroll animazioni */
+const faders=document.querySelectorAll('.product');
+const obs=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});
+},{threshold:0.1});
+faders.forEach(f=>obs.observe(f));
 </script>
 </body>
 </html>
+
