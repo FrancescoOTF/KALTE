@@ -147,12 +147,3 @@ footer.hidden{display:none;}
 .footer-column a{display:block;margin:6px 0;font-size:.85rem;color:#fff;text-decoration:none;}
 .footer-column a:hover{color:var(--brand-hover);}
 footer .social img{width:20px;margin:0 6px;cursor:pointer;}
-
-
-/* Nascondi landing quando si entra nello shop */
-#landing.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: opacity .5s ease;
-}

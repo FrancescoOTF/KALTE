@@ -151,28 +151,3 @@ const obs=new IntersectionObserver((entries,observer)=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});
 },{threshold:0.1});
 faders.forEach(f=>obs.observe(f));
-
-
-// --- Gestione overlay Landing ---
-document.addEventListener("DOMContentLoaded", function(){
-  var landing = document.getElementById("landing");
-  var btn = document.getElementById("landing-button");
-  var shop = document.getElementById("shop");
-
-  function closeLandingOverlay(){
-    if (landing) landing.classList.add("hidden");
-    if (shop) shop.scrollIntoView({ behavior: "smooth" });
-  }
-
-  if (btn){
-    btn.addEventListener("click", function(e){
-      e.preventDefault();
-      closeLandingOverlay();
-    });
-  }
-
-  // Se si apre direttamente con #shop
-  if (location.hash === "#shop"){
-    closeLandingOverlay();
-  }
-});
