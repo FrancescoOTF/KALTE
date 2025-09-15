@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>KALTÉ — Shop</title>
-  <!-- FONT + CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +15,7 @@
 <!-- BACKGROUND BLUR -->
 <div class="bg-blur"></div>
 
-<!-- ===== LANDING ===== -->
+<!-- ===== LANDING ===== (footer nascosto qui) -->
 <div id="landing">
   <img src="landing-button.gif" alt="Enter Shop" id="landing-button">
   <div id="newsletter">
@@ -28,21 +27,17 @@
 <!-- ===== HEADER ===== -->
 <header id="mainHeader" class="hidden">
   <img src="header-logo.gif" alt="KALTÉ" class="logo" id="headerLogo">
-
   <nav id="mainNav">
     <a id="navShop">Shop</a>
     <a id="navTazze">Le Tazze</a>
     <a id="navAccount">Account</a>
     <a id="navAbout">About Us</a>
-    <a id="navDrop">Upcoming Drop</a>
   </nav>
-
   <div class="hamburger" id="hamburger">☰</div>
-
   <div class="icons">
     <img src="icon-account.png" alt="Account" id="accountIcon">
     <img src="icon-tazze.png" alt="Tazze" id="tazzeIcon">
-    <div class="cart-wrapper">
+    <div class="cart-wrapper" title="Carrello">
       <img src="icon-cart.png" alt="Carrello" id="cartIcon">
       <span id="cartBadge" class="badge hidden">0</span>
     </div>
@@ -62,11 +57,11 @@
       <h2>Tazza T1 + Abbonamento (20 slot)</h2>
       <div class="price">€25</div>
       <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
-      <button class="wishlist-btn" data-name="Tazza T1 + Abbonamento">♡</button>
+      <button class="wishlist-btn" data-name="Tazza T1 + Abbonamento" aria-label="Aggiungi ai preferiti">♡</button>
     </div>
 
     <div class="product fade">
-      <div class="media"><img src="maglia_front.png" class="main"><img src="maglia_back.png" class="alt"></div>
+      <div class="media"><img src="maglia_front.png" class="main" alt="Maglia Oversize fronte"><img src="maglia_back.png" class="alt" alt="Maglia Oversize retro"></div>
       <h2>Maglia Oversize</h2>
       <div class="price">€60</div>
       <div class="size-options" data-product="Maglia Oversize">
@@ -75,19 +70,18 @@
         <div class="size-box" data-size="L">L</div>
       </div>
       <button class="btn-link add-to-cart" data-name="Maglia Oversize" data-price="60">Aggiungi al Carrello</button>
-      <button class="wishlist-btn" data-name="Maglia Oversize">♡</button>
+      <button class="wishlist-btn" data-name="Maglia Oversize" aria-label="Aggiungi ai preferiti">♡</button>
     </div>
 
     <div class="product fade">
-      <div class="media"><img src="occhiali.png" class="main"></div>
+      <div class="media"><img src="occhiali.png" class="main" alt="Occhiali"></div>
       <h2>Occhiali</h2>
       <div class="price">€80</div>
       <button class="btn-link add-to-cart" data-name="Occhiali" data-price="80">Aggiungi al Carrello</button>
-      <button class="wishlist-btn" data-name="Occhiali">♡</button>
+      <button class="wishlist-btn" data-name="Occhiali" aria-label="Aggiungi ai preferiti">♡</button>
     </div>
 
     <div class="product fade"><h2 style="color:#fff;">COMING SOON</h2></div>
-
   </div>
 </section>
 
@@ -100,7 +94,7 @@
       <h2>T1 — Starter</h2>
       <p>Include la tazza T1 e abbonamento 20 slot. Acquistabile online o in store.</p>
       <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
-      <button class="wishlist-btn" data-name="Tazza T1 + Abbonamento">♡</button>
+      <button class="wishlist-btn" data-name="Tazza T1 + Abbonamento" aria-label="Aggiungi ai preferiti">♡</button>
     </div>
     <div class="tazza-card">
       <img src="tazza_t2.png" alt="T2">
@@ -137,18 +131,11 @@
   <img src="logo.png" alt="Logo KALTÉ">
 </section>
 
-<!-- ===== UPCOMING DROP ===== -->
-<section id="drop" class="hidden">
-  <h1>Upcoming Drop</h1>
-  <div id="countdown"></div>
-</section>
-
 <!-- ===== CARRELLO ===== -->
 <div class="cart" id="cart">
   <div class="cart-header">
-    <button class="back-btn" id="backCartBtn">← Indietro</button>
     <h2>Carrello</h2>
-    <button class="btn-link" id="closeCartBtn">Chiudi</button>
+    <button id="closeCartBtn" class="cart-close" aria-label="Chiudi carrello">×</button>
   </div>
   <div id="cartItems"></div>
   <div class="cart-footer">
@@ -168,11 +155,6 @@
     <input type="text" name="city" placeholder="Città" required>
     <input type="text" name="zip" placeholder="CAP" required>
     <input type="email" name="email" placeholder="Email" required>
-    <select name="payment" required>
-      <option value="">Metodo di pagamento</option>
-      <option value="carta">Carta di credito</option>
-      <option value="paypal">PayPal</option>
-    </select>
     <div style="display:flex;gap:8px;">
       <button type="submit" class="btn">Conferma Ordine</button>
       <button type="button" class="btn-link" id="backToShopFromCheckout">Indietro</button>
@@ -181,13 +163,12 @@
 </div>
 
 <!-- ===== FOOTER ===== -->
-<footer>
+<footer id="mainFooter" class="hidden">
   <div class="footer-columns">
     <div class="footer-column">
       <h3>Info</h3>
       <a href="#about">About Us</a>
       <a href="#tazze">Le Tazze</a>
-      <a href="#shop">Shop</a>
     </div>
     <div class="footer-column">
       <h3>Supporto</h3>
@@ -207,7 +188,6 @@
   <p>© 2025 KALTÉ — THE WORLD IS YOURZ</p>
 </footer>
 
-<!-- JS -->
 <script src="script.js"></script>
 </body>
 </html>
