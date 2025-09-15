@@ -5,11 +5,15 @@ const header=document.getElementById('mainHeader');
 const tazze=document.getElementById('tazze');
 const account=document.getElementById('account');
 const about=document.getElementById('about');
+const drop=document.getElementById('drop');
 const cart=document.getElementById('cart');
 const checkout=document.getElementById('checkout');
 const toast=document.getElementById('toast');
 const footer=document.querySelector("footer");
-let cartItems=[];let selectedSizes={};
+
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+let selectedSizes = {};
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 /* Toast */
 function showToast(msg,icon="✅"){
@@ -23,7 +27,7 @@ landingBtn.addEventListener('click',()=>{
   landing.classList.add('hidden');
   header.classList.remove('hidden');
   shop.classList.remove('hidden');
-  footer.classList.add('active'); // mostra footer dopo la landing
+  footer.classList.add('active');
 });
 
 /* Nav */
@@ -32,6 +36,7 @@ function hideAll(){
   tazze.classList.add('hidden');
   account.classList.add('hidden');
   about.classList.add('hidden');
+  drop.classList.add('hidden');
   checkout.classList.add('hidden');
 }
 
@@ -40,42 +45,24 @@ document.getElementById('headerLogo').addEventListener('click',()=>{
   hideAll();
   header.classList.add('hidden');
   landing.classList.remove('hidden');
-  footer.classList.remove('active'); // nasconde footer sulla landing
+  footer.classList.remove('active');
 });
 
 // Nav links
-document.getElementById('navShop').addEventListener('click',()=>{
-  hideAll();
-  shop.classList.remove('hidden');
-  footer.classList.add('active');
-});
-document.getElementById('navTazze').addEventListener('click',()=>{
-  hideAll();
-  tazze.classList.remove('hidden');
-  footer.classList.add('active');
-});
-document.getElementById('tazzeIcon').addEventListener('click',()=>{
-  hideAll();
-  tazze.classList.remove('hidden');
-  footer.classList.add('active');
-});
-document.getElementById('navAccount').addEventListener('click',()=>{
-  hideAll();
-  account.classList.remove('hidden');
-  footer.classList.add('active');
-});
-document.getElementById('accountIcon').addEventListener('click',()=>{
-  hideAll();
-  account.classList.remove('hidden');
-  footer.classList.add('active');
-});
-document.getElementById('navAbout').addEventListener('click',()=>{
-  hideAll();
-  about.classList.remove('hidden');
-  footer.classList.add('active');
-});
+document.getElementById('navShop').addEventListener('click',()=>{hideAll();shop.classList.remove('hidden');footer.classList.add('active');});
+document.getElementById('navTazze').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');footer.classList.add('active');});
+document.getElementById('tazzeIcon').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');footer.classList.add('active');});
+document.getElementById('navAccount').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');footer.classList.add('active');});
+document.getElementById('accountIcon').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');footer.classList.add('active');});
+document.getElementById('navAbout').addEventListener('click',()=>{hideAll();about.classList.remove('hidden');footer.classList.add('active');});
+document.getElementById('navDrop').addEventListener('click',()=>{hideAll();drop.classList.remove('hidden');footer.classList.add('active');});
 document.getElementById('cartIcon').addEventListener('click',()=>cart.classList.add('open'));
 document.getElementById('backCartBtn').addEventListener('click',()=>cart.classList.remove('open'));
+
+/* Hamburger Menu */
+const hamburger=document.getElementById('hamburger');
+const nav=document.getElementById('mainNav');
+hamburger.addEventListener('click',()=>{nav.classList.toggle('active');});
 
 /* Taglie */
 document.querySelectorAll('.size-box').forEach(box=>{
@@ -110,6 +97,20 @@ function renderCart(){
   });
   document.getElementById('cartTotal').textContent='Totale: €'+total.toFixed(2);
 
+  // Badge carrello
+  const badge=document.getElementById('cartBadge');
+  if(cartItems.length>0){
+    let totalQty=cartItems.reduce((sum,i)=>sum+i.qty,0);
+    badge.textContent=totalQty;
+    badge.classList.remove('hidden');
+  }else{
+    badge.classList.add('hidden');
+  }
+
+  // Salva carrello
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+  // Gestione bottoni quantità
   cont.querySelectorAll('.increase').forEach(b=>{
     b.addEventListener('click',()=>{cartItems[b.dataset.idx].qty++;renderCart();});
   });
@@ -121,6 +122,7 @@ function renderCart(){
     });
   });
 }
+renderCart();
 
 document.querySelectorAll('.add-to-cart').forEach(b=>{
   b.addEventListener('click',()=>{
@@ -145,7 +147,7 @@ document.getElementById('toCheckout').addEventListener('click',()=>{
   hideAll();
   checkout.classList.remove('hidden');
   header.classList.add('hidden');
-  footer.classList.add('active'); // footer resta attivo durante checkout
+  footer.classList.add('active');
   const sum=document.getElementById('checkoutSummary');sum.innerHTML='';let total=0;
   cartItems.forEach(i=>{
     sum.innerHTML+=`<div class="summary-item"><span>${i.name} x${i.qty}</span><span> €${(i.price*i.qty).toFixed(2)}</span></div>`;
@@ -154,16 +156,14 @@ document.getElementById('toCheckout').addEventListener('click',()=>{
   sum.innerHTML+=`<div class="summary-total"><span>Totale</span><span>€${total.toFixed(2)}</span></div>`;
 });
 document.getElementById('backToShopFromCheckout').addEventListener('click',()=>{
-  checkout.classList.add('hidden');
-  shop.classList.remove('hidden');
-  header.classList.remove('hidden');
-  footer.classList.add('active');
+  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');footer.classList.add('active');
 });
 document.getElementById('checkoutForm').addEventListener('submit',e=>{
   e.preventDefault();
   showToast("🎉 Ordine confermato!");
   cartItems=[];
   renderCart();
+  localStorage.removeItem("cartItems");
   checkout.classList.add('hidden');
   shop.classList.remove('hidden');
   header.classList.remove('hidden');
@@ -174,6 +174,22 @@ document.getElementById('checkoutForm').addEventListener('submit',e=>{
 document.getElementById('newsletterSubmit').addEventListener('click',()=>{
   const email=document.getElementById('newsletterInput').value.trim();
   if(email){showToast("✉️ Grazie per esserti iscritto!");}
+});
+
+/* Wishlist */
+document.querySelectorAll('.wishlist-btn').forEach(b=>{
+  if(wishlist.includes(b.dataset.name)) b.classList.add("active");
+  b.addEventListener('click',()=>{
+    if(wishlist.includes(b.dataset.name)){
+      wishlist=wishlist.filter(i=>i!==b.dataset.name);
+      b.classList.remove("active");
+    }else{
+      wishlist.push(b.dataset.name);
+      b.classList.add("active");
+    }
+    localStorage.setItem("wishlist",JSON.stringify(wishlist));
+    showToast("❤️ Wishlist aggiornata");
+  });
 });
 
 /* Fade-in scroll animazioni */
@@ -187,3 +203,20 @@ const obs=new IntersectionObserver((entries,observer)=>{
   });
 },{threshold:0.1});
 faders.forEach(f=>obs.observe(f));
+
+/* Countdown Upcoming Drop */
+function startCountdown(date){
+  const end=new Date(date).getTime();
+  const el=document.getElementById("countdown");
+  setInterval(()=>{
+    let now=new Date().getTime();
+    let diff=end-now;
+    if(diff<0){el.textContent="Drop online!";return;}
+    let d=Math.floor(diff/(1000*60*60*24));
+    let h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    let m=Math.floor((diff%(1000*60*60))/(1000*60));
+    let s=Math.floor((diff%(1000*60))/1000);
+    el.textContent=`${d}d ${h}h ${m}m ${s}s`;
+  },1000);
+}
+startCountdown("Dec 31, 2025 18:00:00");
