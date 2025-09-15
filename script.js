@@ -23,7 +23,7 @@ landingBtn.addEventListener('click',()=>{
   landing.classList.add('hidden');
   header.classList.remove('hidden');
   shop.classList.remove('hidden');
-  footer.classList.remove('hidden');
+  footer.classList.add('active'); // mostra footer dopo la landing
 });
 
 /* Nav */
@@ -34,18 +34,46 @@ function hideAll(){
   about.classList.add('hidden');
   checkout.classList.add('hidden');
 }
+
+// Logo → torna alla landing
 document.getElementById('headerLogo').addEventListener('click',()=>{
   hideAll();
   header.classList.add('hidden');
   landing.classList.remove('hidden');
-  footer.classList.add('hidden');
+  footer.classList.remove('active'); // nasconde footer sulla landing
 });
-document.getElementById('navShop').addEventListener('click',()=>{hideAll();shop.classList.remove('hidden');});
-document.getElementById('navTazze').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');});
-document.getElementById('tazzeIcon').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');});
-document.getElementById('navAccount').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');});
-document.getElementById('accountIcon').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');});
-document.getElementById('navAbout').addEventListener('click',()=>{hideAll();about.classList.remove('hidden');});
+
+// Nav links
+document.getElementById('navShop').addEventListener('click',()=>{
+  hideAll();
+  shop.classList.remove('hidden');
+  footer.classList.add('active');
+});
+document.getElementById('navTazze').addEventListener('click',()=>{
+  hideAll();
+  tazze.classList.remove('hidden');
+  footer.classList.add('active');
+});
+document.getElementById('tazzeIcon').addEventListener('click',()=>{
+  hideAll();
+  tazze.classList.remove('hidden');
+  footer.classList.add('active');
+});
+document.getElementById('navAccount').addEventListener('click',()=>{
+  hideAll();
+  account.classList.remove('hidden');
+  footer.classList.add('active');
+});
+document.getElementById('accountIcon').addEventListener('click',()=>{
+  hideAll();
+  account.classList.remove('hidden');
+  footer.classList.add('active');
+});
+document.getElementById('navAbout').addEventListener('click',()=>{
+  hideAll();
+  about.classList.remove('hidden');
+  footer.classList.add('active');
+});
 document.getElementById('cartIcon').addEventListener('click',()=>cart.classList.add('open'));
 document.getElementById('backCartBtn').addEventListener('click',()=>cart.classList.remove('open'));
 
@@ -117,6 +145,7 @@ document.getElementById('toCheckout').addEventListener('click',()=>{
   hideAll();
   checkout.classList.remove('hidden');
   header.classList.add('hidden');
+  footer.classList.add('active'); // footer resta attivo durante checkout
   const sum=document.getElementById('checkoutSummary');sum.innerHTML='';let total=0;
   cartItems.forEach(i=>{
     sum.innerHTML+=`<div class="summary-item"><span>${i.name} x${i.qty}</span><span> €${(i.price*i.qty).toFixed(2)}</span></div>`;
@@ -125,14 +154,20 @@ document.getElementById('toCheckout').addEventListener('click',()=>{
   sum.innerHTML+=`<div class="summary-total"><span>Totale</span><span>€${total.toFixed(2)}</span></div>`;
 });
 document.getElementById('backToShopFromCheckout').addEventListener('click',()=>{
-  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');
+  checkout.classList.add('hidden');
+  shop.classList.remove('hidden');
+  header.classList.remove('hidden');
+  footer.classList.add('active');
 });
 document.getElementById('checkoutForm').addEventListener('submit',e=>{
   e.preventDefault();
   showToast("🎉 Ordine confermato!");
   cartItems=[];
   renderCart();
-  checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');
+  checkout.classList.add('hidden');
+  shop.classList.remove('hidden');
+  header.classList.remove('hidden');
+  footer.classList.add('active');
 });
 
 /* Newsletter */

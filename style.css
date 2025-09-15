@@ -122,3 +122,11 @@ footer.hidden{display:none;}
 .footer-column a{display:block;margin:6px 0;font-size:.85rem;color:#fff;text-decoration:none;}
 .footer-column a:hover{color:var(--brand-hover);}
 footer .social img{width:20px;margin:0 6px;cursor:pointer;}
+/* ===== FOOTER FIX ===== */
+footer {
+  display: none; /* nascosto di default */
+}
+footer.active {
+  display: block; /* lo mostriamo solo quando serve */
+}
+
