@@ -4,185 +4,186 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>KALTÉ — Shop</title>
-  <!-- CSS esterno -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TOAST -->
-  <div id="toast"><span>✅</span><span id="toast-msg"></span></div>
+<!-- TOAST -->
+<div id="toast"><span>✅</span><span id="toast-msg"></span></div>
 
-  <!-- BACKGROUND BLUR -->
-  <div class="bg-blur"></div>
+<!-- BACKGROUND BLUR -->
+<div class="bg-blur"></div>
 
-  <!-- ===== LANDING ===== -->
-  <div id="landing">
-    <img src="landing-button.gif" alt="Enter Shop" id="landing-button">
-    <div id="newsletter">
-      <input type="email" placeholder="Iscriviti alla newsletter" id="newsletterInput">
-      <button class="btn" id="newsletterSubmit">Invia</button>
+<!-- ===== LANDING ===== -->
+<div id="landing">
+  <img src="landing-button.gif" alt="Enter Shop" id="landing-button">
+  <div id="newsletter">
+    <input type="email" placeholder="Iscriviti alla newsletter" id="newsletterInput">
+    <button class="btn" id="newsletterSubmit">Invia</button>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header id="mainHeader" class="hidden">
+  <img src="header-logo.gif" alt="KALTÉ" class="logo" id="headerLogo">
+  <nav>
+    <a id="navShop">Shop</a>
+    <a id="navTazze">Le Tazze</a>
+    <a id="navAccount">Account</a>
+    <a id="navAbout">About Us</a>
+  </nav>
+  <div class="icons">
+    <img src="icon-account.png" alt="Account" id="accountIcon">
+    <img src="icon-tazze.png" alt="Tazze" id="tazzeIcon">
+    <img src="icon-cart.png" alt="Carrello" id="cartIcon">
+  </div>
+</header>
+
+<!-- ===== SHOP ===== -->
+<section id="shop" class="hidden">
+  <h1 style="color:#fff;">Shop KALTÉ</h1>
+  <div class="products-grid">
+
+    <div class="product fade">
+      <div class="media">
+        <img src="tazza_t1.png" alt="Tazza T1" class="main">
+        <img src="abbonamento_20.png" alt="Abbonamento" class="alt">
+      </div>
+      <h2>Tazza T1 + Abbonamento (20 slot)</h2>
+      <div class="price">€25</div>
+      <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
+    </div>
+
+    <div class="product fade">
+      <div class="media"><img src="maglia_front.png" class="main"><img src="maglia_back.png" class="alt"></div>
+      <h2>Maglia Oversize</h2>
+      <div class="price">€60</div>
+      <div class="size-options" data-product="Maglia Oversize">
+        <div class="size-box" data-size="S">S</div>
+        <div class="size-box" data-size="M">M</div>
+        <div class="size-box" data-size="L">L</div>
+      </div>
+      <button class="btn-link add-to-cart" data-name="Maglia Oversize" data-price="60">Aggiungi al Carrello</button>
+    </div>
+
+    <div class="product fade">
+      <div class="media"><img src="occhiali.png" class="main"></div>
+      <h2>Occhiali</h2>
+      <div class="price">€80</div>
+      <button class="btn-link add-to-cart" data-name="Occhiali" data-price="80">Aggiungi al Carrello</button>
+    </div>
+
+    <div class="product fade"><h2 style="color:#fff;">COMING SOON</h2></div>
+
+  </div>
+</section>
+
+<!-- ===== SEZIONE TAZZE ===== -->
+<section id="tazze" class="hidden">
+  <h1>La storia delle tazze</h1>
+  <div class="tazze-grid">
+    <div class="tazza-card">
+      <img src="tazza_t1.png" alt="T1">
+      <h2>T1 — Starter</h2>
+      <p>Include la tazza T1 e abbonamento 20 slot. Acquistabile online o in store.</p>
+      <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
+    </div>
+    <div class="tazza-card">
+      <img src="tazza_t2.png" alt="T2">
+      <h2>T2 — Loyalty</h2>
+      <p>Si ottiene al completamento della T1, con upgrade a 50 slot.</p>
+    </div>
+    <div class="tazza-card">
+      <img src="tazza_t3.png" alt="T3">
+      <h2>T3 — Friend & Family</h2>
+      <p>Ornamentale ed esclusiva. Riservata a collaboratori e amici del brand.</p>
     </div>
   </div>
+</section>
 
-  <!-- ===== HEADER ===== -->
-  <header id="mainHeader" class="hidden">
-    <img src="header-logo.gif" alt="KALTÉ" class="logo" id="headerLogo">
-    <nav>
-      <a id="navShop">Shop</a>
-      <a id="navTazze">Le Tazze</a>
-      <a id="navAccount">Account</a>
-      <a id="navAbout">About Us</a>
-    </nav>
-    <div class="icons">
-      <img src="icon-account.png" alt="Account" id="accountIcon">
-      <img src="icon-tazze.png" alt="Tazze" id="tazzeIcon">
-      <img src="icon-cart.png" alt="Carrello" id="cartIcon">
+<!-- ===== ACCOUNT ===== -->
+<section id="account" class="hidden">
+  <h1>Account</h1>
+  <div class="account-box">
+    <input type="text" placeholder="Nome completo" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit" class="btn">Crea Account</button>
+    <label><input type="checkbox"> Iscrivimi alla newsletter</label>
+  </div>
+</section>
+
+<!-- ===== ABOUT US ===== -->
+<section id="about" class="hidden">
+  <h1>About KALTÉ</h1>
+  <p>KALTÉ nasce per unire lifestyle, community e streetwear in un unico luogo. 
+     Dal bar alle collezioni, dalle tazze ai drop esclusivi: ogni dettaglio è pensato 
+     per costruire appartenenza e fedeltà.</p>
+  <h2>THE WORLD IS YOURZ</h2>
+  <img src="logo.png" alt="Logo KALTÉ">
+</section>
+
+<!-- ===== CARRELLO ===== -->
+<div class="cart" id="cart">
+  <div class="cart-header">
+    <button class="back-btn" id="backCartBtn">← Indietro</button>
+    <h2>Carrello</h2>
+    <button class="btn-link" id="closeCartBtn">Chiudi</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="total" id="cartTotal">Totale: €0.00</div>
+    <button class="btn" id="toCheckout">Procedi al Pagamento</button>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT ===== -->
+<div class="checkout hidden" id="checkout">
+  <img src="header-logo.gif" alt="KALTÉ" id="checkout-logo">
+  <h1>Checkout</h1>
+  <div class="summary" id="checkoutSummary"></div>
+  <form id="checkoutForm">
+    <input type="text" name="name" placeholder="Nome completo" required>
+    <input type="text" name="address" placeholder="Indirizzo" required>
+    <input type="text" name="city" placeholder="Città" required>
+    <input type="text" name="zip" placeholder="CAP" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <div style="display:flex;gap:8px;">
+      <button type="submit" class="btn">Conferma Ordine</button>
+      <button type="button" class="btn-link" id="backToShopFromCheckout">Indietro</button>
     </div>
-  </header>
+  </form>
+</div>
 
-  <!-- ===== SHOP ===== -->
-  <section id="shop" class="hidden">
-    <h1 style="color:#fff;">Shop KALTÉ</h1>
-    <div class="products-grid">
-
-      <div class="product fade">
-        <div class="media">
-          <img src="tazza_t1.png" alt="Tazza T1" class="main">
-          <img src="abbonamento_20.png" alt="Abbonamento" class="alt">
-        </div>
-        <h2>Tazza T1 + Abbonamento (20 slot)</h2>
-        <div class="price">€25</div>
-        <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
-      </div>
-
-      <div class="product fade">
-        <div class="media"><img src="maglia_front.png" class="main"><img src="maglia_back.png" class="alt"></div>
-        <h2>Maglia Oversize</h2>
-        <div class="price">€60</div>
-        <div class="size-options" data-product="Maglia Oversize">
-          <div class="size-box" data-size="S">S</div>
-          <div class="size-box" data-size="M">M</div>
-          <div class="size-box" data-size="L">L</div>
-        </div>
-        <button class="btn-link add-to-cart" data-name="Maglia Oversize" data-price="60">Aggiungi al Carrello</button>
-      </div>
-
-      <div class="product fade">
-        <div class="media"><img src="occhiali.png" class="main"></div>
-        <h2>Occhiali</h2>
-        <div class="price">€80</div>
-        <button class="btn-link add-to-cart" data-name="Occhiali" data-price="80">Aggiungi al Carrello</button>
-      </div>
-
-      <div class="product fade"><h2 style="color:#fff;">COMING SOON</h2></div>
+<!-- ===== FOOTER ===== -->
+<footer class="hidden">
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h3>Info</h3>
+      <a href="#about">About Us</a>
+      <a href="#tazze">Le Tazze</a>
+      <a href="#shop">Shop</a>
     </div>
-  </section>
-
-  <!-- ===== SEZIONE TAZZE ===== -->
-  <section id="tazze" class="hidden">
-    <h1>La storia delle tazze</h1>
-    <div class="tazze-grid">
-      <div class="tazza-card">
-        <img src="tazza_t1.png" alt="T1">
-        <h2>T1 — Starter</h2>
-        <p>Include la tazza T1 e abbonamento 20 slot. Acquistabile online o in store.</p>
-        <button class="btn-link add-to-cart" data-name="Tazza T1 + Abbonamento" data-price="25">Aggiungi al Carrello</button>
-      </div>
-      <div class="tazza-card">
-        <img src="tazza_t2.png" alt="T2">
-        <h2>T2 — Loyalty</h2>
-        <p>Si ottiene al completamento della T1, con upgrade a 50 slot.</p>
-      </div>
-      <div class="tazza-card">
-        <img src="tazza_t3.png" alt="T3">
-        <h2>T3 — Friend & Family</h2>
-        <p>Ornamentale ed esclusiva. Riservata a collaboratori e amici del brand.</p>
-      </div>
+    <div class="footer-column">
+      <h3>Supporto</h3>
+      <a href="#">FAQ</a>
+      <a href="#">Spedizioni & Resi</a>
+      <a href="#">Termini & Condizioni</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
     </div>
-  </section>
-
-  <!-- ===== ACCOUNT ===== -->
-  <section id="account" class="hidden">
-    <h1>Account</h1>
-    <div class="account-box">
-      <input type="text" placeholder="Nome completo" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit" class="btn">Crea Account</button>
-      <label><input type="checkbox"> Iscrivimi anche alla newsletter</label>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT US ===== -->
-  <section id="about" class="hidden">
-    <h1>About KALTÉ</h1>
-    <p>KALTÉ nasce per unire lifestyle, community e streetwear in un unico luogo. 
-       Dal bar alle collezioni, dalle tazze ai drop esclusivi: ogni dettaglio è pensato 
-       per costruire appartenenza e fedeltà.</p>
-    <h2>THE WORLD IS YOURZ</h2>
-    <img src="logo.png" alt="Logo KALTÉ">
-  </section>
-
-  <!-- ===== CARRELLO ===== -->
-  <div class="cart" id="cart">
-    <div class="cart-header">
-      <button class="back-btn" id="backCartBtn">← Indietro</button>
-      <h2>Carrello</h2>
-      <button class="btn-link" id="closeCartBtn">Chiudi</button>
-    </div>
-    <div id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="total" id="cartTotal">Totale: €0.00</div>
-      <button class="btn" id="toCheckout">Procedi al Pagamento</button>
+    <div class="footer-column">
+      <h3>Social</h3>
+      <a href="#"><img src="icon-ig.png" alt="Instagram"> Instagram</a>
+      <a href="#"><img src="icon-tiktok.png" alt="TikTok"> TikTok</a>
+      <a href="mailto:hello@kalte.com">hello@kalte.com</a>
     </div>
   </div>
+  <p>© 2025 KALTÉ — THE WORLD IS YOURZ</p>
+</footer>
 
-  <!-- ===== CHECKOUT ===== -->
-  <div class="checkout hidden" id="checkout">
-    <img src="header-logo.gif" alt="KALTÉ" id="checkout-logo">
-    <h1>Checkout</h1>
-    <div class="summary" id="checkoutSummary"></div>
-    <form id="checkoutForm">
-      <input type="text" name="name" placeholder="Nome completo" required>
-      <input type="text" name="address" placeholder="Indirizzo" required>
-      <input type="text" name="city" placeholder="Città" required>
-      <input type="text" name="zip" placeholder="CAP" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <div style="display:flex;gap:8px;">
-        <button type="submit" class="btn">Conferma Ordine</button>
-        <button type="button" class="btn-link" id="backToShopFromCheckout">Indietro</button>
-      </div>
-    </form>
-  </div>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-columns">
-      <div class="footer-column">
-        <h3>Info</h3>
-        <a href="#about">About Us</a>
-        <a href="#tazze">Le Tazze</a>
-        <a href="#shop">Shop</a>
-      </div>
-      <div class="footer-column">
-        <h3>Supporto</h3>
-        <a href="#">FAQ</a>
-        <a href="#">Spedizioni & Resi</a>
-        <a href="#">Termini & Condizioni</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookie Policy</a>
-      </div>
-      <div class="footer-column">
-        <h3>Social</h3>
-        <a href="#"><img src="icon-ig.png" alt="Instagram"> Instagram</a>
-        <a href="#"><img src="icon-tiktok.png" alt="TikTok"> TikTok</a>
-        <a href="mailto:hello@kalte.com">hello@kalte.com</a>
-      </div>
-    </div>
-    <p>© 2025 KALTÉ — THE WORLD IS YOURZ</p>
-  </footer>
-
-  <!-- JS esterno -->
-  <script src="script.js"></script>
+<!-- JS -->
+<script src="script.js"></script>
 </body>
 </html>
