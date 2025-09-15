@@ -153,113 +153,26 @@ const obs=new IntersectionObserver((entries,observer)=>{
 faders.forEach(f=>obs.observe(f));
 
 
-// --- Carrello con LocalStorage ---
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-updateCartBadge();
+// --- Gestione overlay Landing ---
+document.addEventListener("DOMContentLoaded", function(){
+  var landing = document.getElementById("landing");
+  var btn = document.getElementById("landing-button");
+  var shop = document.getElementById("shop");
 
-function addToCart(productId) {
-    cart.push(productId);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartBadge();
-}
-
-function updateCartBadge() {
-    const badge = document.getElementById("cart-badge");
-    if (badge) badge.textContent = cart.length;
-}
-
-// --- Wishlist base ---
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-function toggleWishlist(productId) {
-    if (wishlist.includes(productId)) {
-        wishlist = wishlist.filter(id => id !== productId);
-    } else {
-        wishlist.push(productId);
-    }
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-    alert("Wishlist aggiornata: " + wishlist.join(", "));
-}
-
-
-// --- Checkout rendering ---
-function renderCheckout() {
-    const container = document.getElementById("checkout-items");
-    const totalElement = document.getElementById("checkout-total");
-    if (!container) return;
-
-    container.innerHTML = "";
-    let total = 0;
-
-    cart.forEach((id, index) => {
-        const item = document.createElement("div");
-        item.classList.add("checkout-item");
-        item.innerHTML = `Prodotto ${id} 
-            <button onclick="removeFromCart(${index})">Rimuovi</button>`;
-        container.appendChild(item);
-        total += 20; // prezzo fittizio (20€)
-    });
-
-    totalElement.textContent = total + "€";
-}
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartBadge();
-    renderCheckout();
-}
-
-function fakeOrder() {
-    alert("Ordine completato! (simulazione)");
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartBadge();
-    renderCheckout();
-}
-
-// Avvia se siamo su checkout.html
-if (window.location.pathname.includes("checkout.html")) {
-    renderCheckout();
-}
-
-
-// --- Scroll dalla landing allo shop ---
-    const shop = document.getElementById("shop");
-    if (shop) {
-        shop.scrollIntoView({ behavior: "smooth" });
-    }
-}
-
-
-// --- Gestione landing -> shop ---
-document.addEventListener('DOMContentLoaded', function(){
-  var landing = document.getElementById('landing');
-  var btn = document.getElementById('landing-button');
-
-  function closeLandingAndScroll(){
-    if (!landing) return;
-    landing.classList.add('hidden');
-    var shop = document.getElementById('shop');
-    if (shop) {
-      shop.scrollIntoView({behavior: 'smooth'});
-    }
+  function closeLandingOverlay(){
+    if (landing) landing.classList.add("hidden");
+    if (shop) shop.scrollIntoView({ behavior: "smooth" });
   }
 
   if (btn){
-    btn.addEventListener('click', function(e){
-      // Non impediamo il link, ma in più nascondiamo l'overlay
-      closeLandingAndScroll();
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      closeLandingOverlay();
     });
   }
 
-  // Se si atterra con #shop o si cambia hash, nascondi landing
-  if (location.hash === '#shop'){
-    closeLandingAndScroll();
+  // Se si apre direttamente con #shop
+  if (location.hash === "#shop"){
+    closeLandingOverlay();
   }
-  window.addEventListener('hashchange', function(){
-    if (location.hash === '#shop'){
-      closeLandingAndScroll();
-    }
-  });
 });
