@@ -292,3 +292,5 @@ button:hover, .btn:hover, .add-to-cart:hover, .checkout-btn:hover{
 .size-btn{border:1px solid #555;background:#111;color:#eee;padding:6px 14px;cursor:pointer;transition:.2s;}
 .size-btn.active{background:#eee;color:#111;}
 #size-msg.error{color:#e53935;margin-top:6px;}
+
+.placeholder-section {padding:60px 20px;text-align:center;background:#111;color:#eee;}
