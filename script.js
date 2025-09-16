@@ -23,7 +23,8 @@ landingBtn.addEventListener('click',()=>{
   landing.classList.add('hidden');
   header.classList.remove('hidden');
   shop.classList.remove('hidden');
-  footer.classList.remove('hidden'); // footer NON in landing
+  footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden'); // footer NON in landing
 });
 
 /* Nav */
@@ -34,12 +35,18 @@ document.getElementById('headerLogo').addEventListener('click',()=>{
   hideAll();header.classList.add('hidden');landing.classList.remove('hidden');footer.classList.add('hidden');
 });
 
-document.getElementById('navShop').addEventListener('click',()=>{hideAll();shop.classList.remove('hidden');footer.classList.remove('hidden');});
-document.getElementById('navTazze').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');footer.classList.remove('hidden');});
-document.getElementById('tazzeIcon').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');footer.classList.remove('hidden');});
-document.getElementById('navAccount').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');footer.classList.remove('hidden');});
-document.getElementById('accountIcon').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');footer.classList.remove('hidden');});
-document.getElementById('navAbout').addEventListener('click',()=>{hideAll();about.classList.remove('hidden');footer.classList.remove('hidden');});
+document.getElementById('navShop').addEventListener('click',()=>{hideAll();shop.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');});
+document.getElementById('navTazze').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');});
+document.getElementById('tazzeIcon').addEventListener('click',()=>{hideAll();tazze.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');});
+document.getElementById('navAccount').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');});
+document.getElementById('accountIcon').addEventListener('click',()=>{hideAll();account.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');});
+document.getElementById('navAbout').addEventListener('click',()=>{hideAll();about.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');});
 
 /* Hamburger menu (mobile) */
 const hamburger=document.getElementById('hamburger');
@@ -65,14 +72,14 @@ function renderCart(){
   let total=0, totalQty=0;
   cartItems.forEach((i,idx)=>{
     const row=document.createElement('div');row.className='cart-item';
-    row.innerHTML=`
-      <span>${i.name}</span>
-      <div>
+    row.innerHTML = `
+      <span class="item-name">${i.name}</span>
+      <div class="qty-controls">
         <button data-idx="${idx}" class="decrease">-</button>
-        <span>${i.qty}</span>
+        <span class="qty">${i.qty}</span>
         <button data-idx="${idx}" class="increase">+</button>
       </div>
-      <span>+ ${(i.price*i.qty).toFixed(2)}€</span>
+      <span class="price"> + ${(i.price*i.qty).toFixed(2)}€</span>
     `;
     cont.appendChild(row);
     total+=i.price*i.qty; totalQty+=i.qty;
@@ -133,10 +140,12 @@ document.getElementById('toCheckout').addEventListener('click',()=>{
 });
 document.getElementById('backToShopFromCheckout').addEventListener('click',()=>{
   checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');
 });
 document.getElementById('checkoutForm').addEventListener('submit',e=>{
   e.preventDefault();showToast('🎉 Ordine confermato!');cartItems=[];renderCart();localStorage.removeItem('cartItems');
   checkout.classList.add('hidden');shop.classList.remove('hidden');header.classList.remove('hidden');footer.classList.remove('hidden');
+  const upcoming=document.getElementById('upcoming'); if(upcoming) upcoming.classList.remove('hidden');
 });
 
 /* Newsletter (solo toast mock) */
@@ -151,3 +160,79 @@ const obs=new IntersectionObserver((entries,observer)=>{
   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}});
 },{threshold:0.1});
 faders.forEach(f=>obs.observe(f));
+
+
+/* ===== Upcoming Drop Countdown ===== */
+(function(){
+  const target = new Date('2025-12-01T10:00:00').getTime();
+  function tick(){
+    const now = Date.now();
+    let d = Math.max(0, target - now);
+    const days = Math.floor(d / (1000*60*60*24)); d -= days*(1000*60*60*24);
+    const hours = Math.floor(d / (1000*60*60)); d -= hours*(1000*60*60);
+    const mins = Math.floor(d / (1000*60)); d -= mins*(1000*60);
+    const secs = Math.floor(d / 1000);
+    const S = s => (s<10?'0'+s:s);
+    const q = id => document.getElementById(id);
+    if(q('cd-days')){q('cd-days').textContent = days;}
+    if(q('cd-hours')){q('cd-hours').textContent = S(hours);}
+    if(q('cd-mins')){q('cd-mins').textContent = S(mins);}
+    if(q('cd-secs')){q('cd-secs').textContent = S(secs);}
+  }
+  setInterval(tick, 1000); tick();
+})();
+
+// ===== Newsletter LocalStorage =====
+document.addEventListener("DOMContentLoaded",()=>{
+  const form=document.getElementById("newsletter-form");
+  const input=document.getElementById("newsletter-email");
+  const msg=document.getElementById("newsletter-msg");
+  if(form){
+    form.addEventListener("submit",e=>{
+      e.preventDefault();
+      const email=input.value.trim();
+      if(email){
+        localStorage.setItem("newsletterEmail",email);
+        msg.textContent="Sei iscritto alla newsletter con " + email;
+        input.value="";
+      }
+    });
+    const saved=localStorage.getItem("newsletterEmail");
+    if(saved){
+      msg.textContent="Sei già iscritto alla newsletter con " + saved;
+    }
+  }
+});
+
+// ===== Product Page Logic =====
+document.addEventListener("DOMContentLoaded", ()=>{
+  if(document.getElementById("add-to-cart-single")){
+    const urlParams=new URLSearchParams(window.location.search);
+    const prodId=urlParams.get("id")||"1";
+    const prodName=document.getElementById("prod-name");
+    const prodPrice=document.getElementById("prod-price");
+    const prodImg=document.getElementById("prod-img");
+    const addBtn=document.getElementById("add-to-cart-single");
+    const sizeBtns=document.querySelectorAll(".size-btn");
+    const sizeMsg=document.getElementById("size-msg");
+    let selectedSize=null;
+
+    sizeBtns.forEach(b=>b.addEventListener("click",()=>{
+      sizeBtns.forEach(x=>x.classList.remove("active"));
+      b.classList.add("active");
+      selectedSize=b.dataset.size;
+      sizeMsg.textContent="";
+    }));
+
+    addBtn.addEventListener("click",()=>{
+      if(!selectedSize){
+        sizeMsg.textContent="Seleziona una taglia per continuare";
+        return;
+      }
+      let cart=JSON.parse(localStorage.getItem("cart")||"[]");
+      cart.push({name:prodName.textContent, price:parseFloat(prodPrice.textContent.replace("€","")), qty:1, size:selectedSize});
+      localStorage.setItem("cart",JSON.stringify(cart));
+      alert(prodName.textContent+" ("+selectedSize+") aggiunto al carrello!");
+    });
+  }
+});

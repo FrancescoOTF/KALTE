@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>KALTÉ - Prodotto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="mainHeader"></header>
+  <main class="product-page">
+    <div class="product-detail">
+      <img id="prod-img" src="img/product1.jpg" alt="Prodotto">
+      <div class="product-info">
+        <h1 id="prod-name">Nome Prodotto</h1>
+        <p id="prod-price">€0.00</p>
+        <p id="prod-desc">Descrizione breve del prodotto.</p>
+        <div class="size-selector">
+          <span>Taglia:</span>
+          <button class="size-btn" data-size="S">S</button>
+          <button class="size-btn" data-size="M">M</button>
+          <button class="size-btn" data-size="L">L</button>
+        </div>
+        <p id="size-msg" class="error"></p>
+        <button id="add-to-cart-single" class="btn">Aggiungi al carrello</button>
+      </div>
+    </div>
+  </main>
+  <footer id="mainFooter"></footer>
+  <script src="script.js"></script>
+</body>
+</html>
