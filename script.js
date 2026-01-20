@@ -1,7 +1,7 @@
 /* KALTÉ — script.js
    - Vanilla i18n IT/EN
    - data-i18n for single strings
-   - data-i18n-list for arrays (UL/OL or any container -> generates <li>)
+   - data-i18n-list for arrays (generates <li>)
    - localStorage key: "kalte_lang"
 */
 
@@ -9,296 +9,394 @@
   const LS_KEY = "kalte_lang";
   const DEFAULT_LANG = "it";
 
-  // =========================
-  // I18N DICTIONARY (IT / EN)
-  // =========================
   const I18N = {
     it: {
-      // ---- GLOBAL / NAV ----
+      // ===== GLOBAL =====
       "brand.name": "KALTÉ",
-      "nav.home": "Home",
-      "nav.digital": "Digital",
-      "nav.visual": "Visual",
-      "nav.work": "Work",
+      "tagline.micro": "Static sites. Clean identity. No unnecessary complexity.",
+
+      // NAV
+      "nav.about": "About",
+      "nav.services": "Servizi",
+      "nav.work": "Selected work",
       "nav.contact": "Contatti",
+      "nav.social": "Social",
+      "nav.backHome": "← Home",
       "nav.lang.it": "IT",
       "nav.lang.en": "EN",
 
-      // ---- HOME ----
+      // ===== HOME HERO =====
       "home.hero.kicker": "Digital & Visual Solutions",
-      "home.hero.title": "Siti statici e identità visive essenziali.",
+      "home.hero.title": "Siti statici + identità visiva essenziale.",
       "home.hero.subtitle":
-        "Progetti puliti, veloci, senza fronzoli. Se cerchi marketing, SEO avanzata o ecommerce: non è qui.",
-      "home.hero.cta.primary": "Vedi servizi",
-      "home.hero.cta.secondary": "Contatti",
+        "Se cerchi marketing, SEO avanzata o ecommerce: non è il servizio giusto.",
+      "home.hero.cta.digital": "Vai a DIGITAL",
+      "home.hero.cta.visual": "Vai a VISUAL",
 
-      "home.filter.note.title": "Filtro",
-      "home.filter.note.text":
-        "Accettiamo solo richieste consapevoli. Niente ecommerce, niente gestione continua, niente “facciamo un po’ di tutto”.",
-
-      // ---- HOME: SELECTED WORK (NEW) ----
-      "home.selectedWork.title": "SELECTED WORK",
-      "home.selectedWork.subtitle":
-        "Prove reali di applicazione su vestiario / merch. Non è produzione standard: solo progetti selezionati.",
-      "home.selectedWork.note":
-        "Nota: supporto produzione solo su progetti selezionati (vedi PREMIUM).",
-
-      // Optional captions (use only if your HTML has them)
-      "home.selectedWork.item1.title": "Capsule / Tee",
-      "home.selectedWork.item1.desc": "Grafica + specifiche stampa",
-      "home.selectedWork.item2.title": "Hoodie / Embroidery",
-      "home.selectedWork.item2.desc": "Ricamo + posizionamento",
-      "home.selectedWork.item3.title": "Labeling",
-      "home.selectedWork.item3.desc": "Etichette + regole base",
-
-      // ---- DIGITAL PAGE ----
-      "digital.page.title": "DIGITAL",
-      "digital.page.subtitle":
-        "Siti statici HTML/CSS/JS. Veloci. Chiari. Zero manutenzione continua.",
-      "digital.section.what.title": "Cosa facciamo",
-      "digital.section.what.lead":
-        "Siti 1–3 pagine progettati per presentare bene, subito, senza dipendenze.",
-      "digital.section.what.list": [
-        "Sito statico 1–3 pagine (HTML/CSS/JS vanilla)",
-        "Copy essenziale e struttura pulita",
-        "Responsive (mobile-first)",
-        "Deploy su GitHub Pages / Netlify / Cloudflare Pages",
-        "Toggle lingua IT/EN via JS (se richiesto)"
+      // HOME FILTER STRIP
+      "home.filter.title": "Filtro rapido",
+      "home.filter.list": [
+        "No ecommerce",
+        "No SMM",
+        "No SEO avanzata",
+        "No gestione continua"
       ],
-      "digital.section.not.title": "Cosa NON facciamo",
-      "digital.section.not.list": [
+
+      // ===== HOME ABOUT (SHORT) =====
+      "home.about.title": "ABOUT",
+      "home.about.lead":
+        "Costruiamo asset che devono funzionare: chiari, veloci, e replicabili.",
+      "home.about.list": [
+        "Siti statici 1–3 pagine (HTML/CSS/JS vanilla)",
+        "Identità visiva essenziale (regole base, applicazioni)",
+        "Handoff pulito: file ordinati + istruzioni minime"
+      ],
+
+      // ===== HOME SERVICES =====
+      "home.services.title": "SERVICES",
+      "home.services.digital.title": "Focus DIGITAL",
+      "home.services.digital.desc": "Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.",
+      "home.services.digital.meta": "No ecommerce. No WordPress gestito.",
+      "home.services.digital.cta": "Open page →",
+
+      "home.services.visual.title": "Focus VISUAL",
+      "home.services.visual.desc": "Logo, mini identity, materiali. Applicazioni su merch quando serve.",
+      "home.services.visual.meta": "No pacchetti marketing.",
+      "home.services.visual.cta": "Open page →",
+
+      // ===== HOME SELECTED WORK =====
+      "home.work.title": "SELECTED WORK",
+      "home.work.subtitle":
+        "Proof of work su apparel/merch. Produzione non standard: solo progetti selezionati.",
+      "home.work.note":
+        "Produzione non è un servizio standard. Premium solo su progetti selezionati.",
+
+      // ===== CONTACT / SOCIAL =====
+      "contact.title": "CONTACT",
+      "contact.email.label": "Email",
+      "contact.whatsapp.label": "WhatsApp",
+
+      "social.title": "SOCIAL",
+      "social.instagram": "Instagram",
+
+      "footer.note": "Digital & Visual Solutions.",
+
+      // ===== DIGITAL PAGE =====
+      "digital.title": "DIGITAL",
+      "digital.subtitle": "Siti web statici 1–3 pagine. Veloci, chiari, senza gestione continua.",
+
+      "digital.what.title": "Cosa facciamo",
+      "digital.what.list": [
+        "Sito statico 1–3 pagine (HTML/CSS/JS)",
+        "Struttura e copy essenziale (se hai i contenuti, meglio)",
+        "Responsive mobile-first",
+        "Deploy su GitHub Pages / Netlify / Cloudflare Pages",
+        "Toggle lingua IT/EN (se richiesto)"
+      ],
+
+      "digital.not.title": "Cosa NON facciamo",
+      "digital.not.list": [
         "Ecommerce",
         "WordPress gestito / CMS con gestione continua",
         "SEO avanzata / crescita organica",
-        "Manutenzione continuativa e “supporto infinito”"
+        "Manutenzione continuativa e supporto infinito"
       ],
-      "digital.section.deliverables.title": "Deliverables",
-      "digital.section.deliverables.list": [
-        "Repository con codice pulito",
-        "Build deployata (link live)",
-        "Assets organizzati",
-        "Istruzioni minime per handoff"
-      ],
-      "digital.section.cta.title": "Hai una richiesta concreta?",
-      "digital.section.cta.text":
-        "Scrivi solo se sai cosa vuoi ottenere e hai contenuti minimi pronti (testi, immagini, riferimenti).",
-      "digital.section.cta.button": "Contatti",
 
-      // ---- VISUAL PAGE ----
-      "visual.page.title": "VISUAL",
-      "visual.page.subtitle":
-        "Identità essenziale: logo, regole base, applicazioni coerenti. Niente pacchetti “marketing”.",
-      "visual.section.core.title": "Cosa facciamo",
-      "visual.section.core.list": [
+      "digital.fit.title": "Quando ha senso",
+      "digital.fit.list": [
+        "Attività locali che vogliono essere trovate e capite",
+        "Creativi / professionisti che devono presentarsi bene",
+        "Piccoli brand che vogliono una vetrina pulita (non uno shop)"
+      ],
+
+      "start.title": "PER INIZIARE",
+      "start.lead": "Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti:",
+      "digital.start.list": [
+        "Obiettivo del sito (1 frase, senza poesia)",
+        "Numero pagine + esempi/refs (2–3 link)",
+        "Contenuti disponibili: testi, immagini, logo (anche grezzi)",
+        "Tempistiche e budget realistici"
+      ],
+      "start.note": "Se cerchi ecommerce, SEO avanzata o gestione social, non è il servizio che offriamo.",
+      "start.cta": "Contatti",
+
+      // ===== VISUAL PAGE =====
+      "visual.title": "VISUAL",
+      "visual.subtitle": "Identità visiva essenziale, applicabile e coerente. Niente decorazioni vuote.",
+
+      "visual.include.title": "Include",
+      "visual.include.list": [
         "Logo / restyling",
-        "Identità visiva (colori, font, regole base)",
+        "Mini identity: palette, font, regole base",
         "Materiali digitali e stampati",
-        "Applicazioni su merch / vestiario"
-      ],
-      "visual.section.constraints.title": "Limiti chiari",
-      "visual.section.constraints.list": [
-        "Non facciamo SMM",
-        "Non facciamo SEO avanzata",
-        "Non facciamo ecommerce"
+        "Applicazioni su merch/vestiario (quando serve)"
       ],
 
-      // ---- VISUAL: MERCH / APPAREL (NEW) ----
+      "visual.logoOnly.title": "Logo-only",
+      "visual.logoOnly.text":
+        "Possiamo fare solo il logo. Se vuoi qualcosa che regga davvero, la mini identity ti evita incoerenze e rifacimenti.",
+
+      "visual.miniIdentity.title": "Mini identity (capsule) — include",
+      "visual.miniIdentity.list": [
+        "Palette e tipografia",
+        "Regole base di uso (do/don’t essenziali)",
+        "2–3 applicazioni (web/stampa/merch)"
+      ],
+
       "visual.merch.title": "MERCH / APPAREL",
       "visual.merch.subtitle":
-        "Due livelli. Se vuoi produzione “chiavi in mano” senza selezione: non siamo il partner giusto.",
+        "Applichiamo l’identità su vestiario: dal concept alle specifiche tecniche. Produzione gestita in due modalità.",
 
       "visual.merch.standard.title": "STANDARD",
-      "visual.merch.standard.tagline": "Design + handoff. Il cliente gestisce il fornitore.",
+      "visual.merch.standard.tagline": "Design + Tech pack + Handoff",
       "visual.merch.standard.includes.title": "Include",
       "visual.merch.standard.includes.list": [
-        "Design (grafica / posizionamenti)",
+        "Design (grafica + posizionamenti)",
         "Tech pack",
-        "Specifiche stampa / ricamo",
+        "Specifiche stampa/ricamo",
         "Handoff completo al fornitore"
       ],
-      "visual.merch.standard.notes.title": "Note",
-      "visual.merch.standard.notes.list": [
-        "Il cliente paga il fornitore direttamente",
-        "Nessuna gestione produzione da parte di KALTÉ",
-        "Tempi e qualità dipendono dal fornitore scelto"
+      "visual.merch.standard.limits.title": "Limiti",
+      "visual.merch.standard.limits.list": [
+        "Il cliente gestisce ordine e pagamento col fornitore",
+        "KALTÉ non gestisce produzione / spedizioni",
+        "Qualità e tempi dipendono dal fornitore scelto"
       ],
 
       "visual.merch.premium.title": "PREMIUM",
-      "visual.merch.premium.tagline": "Full Production Coordination. KALTÉ è unico referente.",
+      "visual.merch.premium.tagline": "Full Production Coordination",
       "visual.merch.premium.includes.title": "Include",
       "visual.merch.premium.includes.list": [
-        "KALTÉ come unico referente cliente ↔ fornitore",
+        "KALTÉ unico referente cliente ↔ fornitore",
         "Gestione campioni (max 2 revisioni)",
-        "Supervisione produzione",
-        "Allineamento su specifiche e qualità"
+        "Supervisione produzione (specifiche + qualità)",
+        "Allineamento operativo fino a fine produzione"
       ],
       "visual.merch.premium.fee.title": "Fee",
-      "visual.merch.premium.fee.text":
-        "Fee +30–40% sul costo di produzione (in base a complessità e rischio).",
+      "visual.merch.premium.fee.text": "Fee +30–40% sul costo di produzione (in base a complessità e rischio).",
       "visual.merch.premium.limits.title": "Limiti",
       "visual.merch.premium.limits.list": [
         "Solo progetti selezionati",
         "Scope chiuso: niente richieste infinite",
-        "Se il budget non regge qualità e campionatura: stop"
+        "Se budget/tempi non reggono campionatura e qualità: stop"
       ],
 
-      // ---- CONTACT / FOOTER (generic keys) ----
-      "contact.title": "Contatti",
-      "contact.subtitle": "Solo richieste chiare. Se non hai brief minimo, aspetta.",
-      "contact.button.email": "Scrivi via email",
-      "footer.note":
-        "KALTÉ — Digital & Visual Solutions. Static sites + essential identity."
+      "visual.exclude.title": "Esclude",
+      "visual.exclude.list": [
+        "SMM / marketing / gestione social",
+        "SEO avanzata",
+        "Ecommerce"
+      ],
+
+      "visual.start.list": [
+        "Cosa vuoi ottenere (logo / mini identity / applicazioni)",
+        "Asset esistenti (se ci sono) + riferimenti",
+        "Dove verrà usata l’identità (web, stampa, merch)",
+        "Tempistiche e budget realistici"
+      ]
     },
 
     en: {
-      // ---- GLOBAL / NAV ----
+      // ===== GLOBAL =====
       "brand.name": "KALTÉ",
-      "nav.home": "Home",
-      "nav.digital": "Digital",
-      "nav.visual": "Visual",
-      "nav.work": "Work",
+      "tagline.micro": "Static sites. Clean identity. No unnecessary complexity.",
+
+      // NAV
+      "nav.about": "About",
+      "nav.services": "Services",
+      "nav.work": "Selected work",
       "nav.contact": "Contact",
+      "nav.social": "Social",
+      "nav.backHome": "← Home",
       "nav.lang.it": "IT",
       "nav.lang.en": "EN",
 
-      // ---- HOME ----
+      // ===== HOME HERO =====
       "home.hero.kicker": "Digital & Visual Solutions",
-      "home.hero.title": "Static websites and essential visual identity.",
+      "home.hero.title": "Static sites + essential visual identity.",
       "home.hero.subtitle":
-        "Clean, fast, no fluff. If you want marketing, advanced SEO, or ecommerce: this isn’t it.",
-      "home.hero.cta.primary": "View services",
-      "home.hero.cta.secondary": "Contact",
+        "If you want marketing, advanced SEO, or ecommerce: this isn’t the right service.",
+      "home.hero.cta.digital": "Go to DIGITAL",
+      "home.hero.cta.visual": "Go to VISUAL",
 
-      "home.filter.note.title": "Filter",
-      "home.filter.note.text":
-        "We only take aware requests. No ecommerce, no ongoing management, no “we do everything”.",
-
-      // ---- HOME: SELECTED WORK (NEW) ----
-      "home.selectedWork.title": "SELECTED WORK",
-      "home.selectedWork.subtitle":
-        "Real apparel / merch applications. Not standard production: selected projects only.",
-      "home.selectedWork.note":
-        "Note: production support only on selected projects (see PREMIUM).",
-
-      // Optional captions
-      "home.selectedWork.item1.title": "Capsule / Tee",
-      "home.selectedWork.item1.desc": "Design + print specs",
-      "home.selectedWork.item2.title": "Hoodie / Embroidery",
-      "home.selectedWork.item2.desc": "Embroidery + placement",
-      "home.selectedWork.item3.title": "Labeling",
-      "home.selectedWork.item3.desc": "Labels + basic rules",
-
-      // ---- DIGITAL PAGE ----
-      "digital.page.title": "DIGITAL",
-      "digital.page.subtitle":
-        "Static HTML/CSS/JS websites. Fast. Clear. No ongoing maintenance.",
-      "digital.section.what.title": "What we do",
-      "digital.section.what.lead":
-        "1–3 page static sites built to present clearly, immediately, without dependencies.",
-      "digital.section.what.list": [
-        "1–3 page static site (vanilla HTML/CSS/JS)",
-        "Essential copy and clean structure",
-        "Responsive (mobile-first)",
-        "Deploy on GitHub Pages / Netlify / Cloudflare Pages",
-        "IT/EN language toggle via JS (if needed)"
+      // HOME FILTER STRIP
+      "home.filter.title": "Quick filter",
+      "home.filter.list": [
+        "No ecommerce",
+        "No SMM",
+        "No advanced SEO",
+        "No ongoing management"
       ],
-      "digital.section.not.title": "What we do NOT do",
-      "digital.section.not.list": [
+
+      // ===== HOME ABOUT (SHORT) =====
+      "home.about.title": "ABOUT",
+      "home.about.lead":
+        "We build assets that must work: clear, fast, and repeatable.",
+      "home.about.list": [
+        "1–3 page static sites (vanilla HTML/CSS/JS)",
+        "Essential identity (basic rules, applications)",
+        "Clean handoff: organized files + minimal instructions"
+      ],
+
+      // ===== HOME SERVICES =====
+      "home.services.title": "SERVICES",
+      "home.services.digital.title": "Focus DIGITAL",
+      "home.services.digital.desc": "1–3 page static sites. Fast, clear, no ongoing management.",
+      "home.services.digital.meta": "No ecommerce. No managed WordPress.",
+      "home.services.digital.cta": "Open page →",
+
+      "home.services.visual.title": "Focus VISUAL",
+      "home.services.visual.desc": "Logo, mini identity, materials. Merch applications when needed.",
+      "home.services.visual.meta": "No marketing packages.",
+      "home.services.visual.cta": "Open page →",
+
+      // ===== HOME SELECTED WORK =====
+      "home.work.title": "SELECTED WORK",
+      "home.work.subtitle":
+        "Proof of work on apparel/merch. Not standard production: selected projects only.",
+      "home.work.note":
+        "Production is not a standard service. Premium on selected projects only.",
+
+      // ===== CONTACT / SOCIAL =====
+      "contact.title": "CONTACT",
+      "contact.email.label": "Email",
+      "contact.whatsapp.label": "WhatsApp",
+
+      "social.title": "SOCIAL",
+      "social.instagram": "Instagram",
+
+      "footer.note": "Digital & Visual Solutions.",
+
+      // ===== DIGITAL PAGE =====
+      "digital.title": "DIGITAL",
+      "digital.subtitle": "1–3 page static websites. Fast, clear, no ongoing management.",
+
+      "digital.what.title": "What we do",
+      "digital.what.list": [
+        "1–3 page static site (HTML/CSS/JS)",
+        "Structure + essential copy (better if you already have content)",
+        "Responsive mobile-first",
+        "Deploy on GitHub Pages / Netlify / Cloudflare Pages",
+        "IT/EN language toggle (if needed)"
+      ],
+
+      "digital.not.title": "What we do NOT do",
+      "digital.not.list": [
         "Ecommerce",
         "Managed WordPress / CMS with ongoing management",
         "Advanced SEO / organic growth",
-        "Continuous maintenance and “infinite support”"
+        "Continuous maintenance and infinite support"
       ],
-      "digital.section.deliverables.title": "Deliverables",
-      "digital.section.deliverables.list": [
-        "Repository with clean code",
-        "Deployed build (live link)",
-        "Organized assets",
-        "Minimal handoff instructions"
-      ],
-      "digital.section.cta.title": "Do you have a concrete request?",
-      "digital.section.cta.text":
-        "Write only if you know what you want and you have minimum content ready (text, images, references).",
-      "digital.section.cta.button": "Contact",
 
-      // ---- VISUAL PAGE ----
-      "visual.page.title": "VISUAL",
-      "visual.page.subtitle":
-        "Essential identity: logo, basic rules, coherent applications. No “marketing packages”.",
-      "visual.section.core.title": "What we do",
-      "visual.section.core.list": [
+      "digital.fit.title": "When it makes sense",
+      "digital.fit.list": [
+        "Local businesses that need clarity",
+        "Creatives / professionals who must present well",
+        "Small brands that need a clean showcase (not a shop)"
+      ],
+
+      "start.title": "TO START",
+      "start.lead": "To work fast with zero back-and-forth, send these 4 points:",
+      "digital.start.list": [
+        "Website goal (1 sentence, no poetry)",
+        "Number of pages + examples/refs (2–3 links)",
+        "Available content: text, images, logo (even rough)",
+        "Timeline and realistic budget"
+      ],
+      "start.note": "If you want ecommerce, advanced SEO, or social management, this isn’t our service.",
+      "start.cta": "Contact",
+
+      // ===== VISUAL PAGE =====
+      "visual.title": "VISUAL",
+      "visual.subtitle": "Essential, usable, coherent identity. No empty decoration.",
+
+      "visual.include.title": "Includes",
+      "visual.include.list": [
         "Logo / redesign",
-        "Visual identity (colors, fonts, basic rules)",
+        "Mini identity: palette, fonts, basic rules",
         "Digital + print materials",
-        "Merch / apparel applications"
-      ],
-      "visual.section.constraints.title": "Clear boundaries",
-      "visual.section.constraints.list": [
-        "No SMM",
-        "No advanced SEO",
-        "No ecommerce"
+        "Merch/apparel applications (when needed)"
       ],
 
-      // ---- VISUAL: MERCH / APPAREL (NEW) ----
+      "visual.logoOnly.title": "Logo-only",
+      "visual.logoOnly.text":
+        "We can do the logo only. If you want something that lasts, mini identity prevents inconsistencies and rework.",
+
+      "visual.miniIdentity.title": "Mini identity (capsule) — includes",
+      "visual.miniIdentity.list": [
+        "Palette + typography",
+        "Basic usage rules (essential do/don’t)",
+        "2–3 applications (web/print/merch)"
+      ],
+
       "visual.merch.title": "MERCH / APPAREL",
       "visual.merch.subtitle":
-        "Two levels. If you want turnkey production without selection: we’re not the right partner.",
+        "We apply the identity to apparel: from concept to technical specs. Production handled in two modes.",
 
       "visual.merch.standard.title": "STANDARD",
-      "visual.merch.standard.tagline": "Design + handoff. Client manages the supplier.",
+      "visual.merch.standard.tagline": "Design + Tech pack + Handoff",
       "visual.merch.standard.includes.title": "Includes",
       "visual.merch.standard.includes.list": [
-        "Design (artwork / placements)",
+        "Design (artwork + placements)",
         "Tech pack",
-        "Print / embroidery specifications",
+        "Print/embroidery specifications",
         "Full handoff to supplier"
       ],
-      "visual.merch.standard.notes.title": "Notes",
-      "visual.merch.standard.notes.list": [
-        "Client pays the supplier directly",
-        "No production management by KALTÉ",
-        "Timing and quality depend on the chosen supplier"
+      "visual.merch.standard.limits.title": "Limits",
+      "visual.merch.standard.limits.list": [
+        "Client manages order and payment with supplier",
+        "KALTÉ does not manage production/shipping",
+        "Quality and timing depend on the chosen supplier"
       ],
 
       "visual.merch.premium.title": "PREMIUM",
-      "visual.merch.premium.tagline": "Full Production Coordination. KALTÉ is the single point of contact.",
+      "visual.merch.premium.tagline": "Full Production Coordination",
       "visual.merch.premium.includes.title": "Includes",
       "visual.merch.premium.includes.list": [
         "KALTÉ as the single contact client ↔ supplier",
-        "Sample handling (max 2 revisions)",
-        "Production supervision",
-        "Alignment on specs and quality"
+        "Sampling (max 2 revisions)",
+        "Production supervision (specs + quality)",
+        "Operational alignment until production ends"
       ],
       "visual.merch.premium.fee.title": "Fee",
-      "visual.merch.premium.fee.text":
-        "Fee +30–40% on production cost (based on complexity and risk).",
+      "visual.merch.premium.fee.text": "Fee +30–40% on production cost (based on complexity and risk).",
       "visual.merch.premium.limits.title": "Limits",
       "visual.merch.premium.limits.list": [
         "Selected projects only",
         "Closed scope: no endless requests",
-        "If budget can’t support quality and sampling: stop"
+        "If budget/timeline can’t support sampling and quality: stop"
       ],
 
-      // ---- CONTACT / FOOTER (generic keys) ----
-      "contact.title": "Contact",
-      "contact.subtitle": "Only clear requests. If you don’t have a minimum brief, wait.",
-      "contact.button.email": "Email us",
-      "footer.note":
-        "KALTÉ — Digital & Visual Solutions. Static sites + essential identity."
+      "visual.exclude.title": "Excludes",
+      "visual.exclude.list": [
+        "SMM / marketing / social management",
+        "Advanced SEO",
+        "Ecommerce"
+      ],
+
+      "visual.start.list": [
+        "What you need (logo / mini identity / applications)",
+        "Existing assets (if any) + references",
+        "Where the identity will be used (web, print, merch)",
+        "Timeline and realistic budget"
+      ]
     }
   };
 
-  // =========================
-  // HELPERS
-  // =========================
   const getStoredLang = () => {
     const raw = (localStorage.getItem(LS_KEY) || "").toLowerCase();
     return raw === "en" || raw === "it" ? raw : DEFAULT_LANG;
   };
 
-  const setStoredLang = (lang) => {
-    localStorage.setItem(LS_KEY, lang);
-  };
+  const setStoredLang = (lang) => localStorage.setItem(LS_KEY, lang);
+
+  const escapeHtml = (str) =>
+    String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
 
   const t = (lang, key) => {
     const dict = I18N[lang] || I18N[DEFAULT_LANG];
@@ -313,19 +411,15 @@
   };
 
   const setActiveLangUI = (lang) => {
-    // Optional: mark buttons/links with [data-lang="it|en"] as active
     document.querySelectorAll("[data-lang]").forEach((el) => {
       const isActive = (el.getAttribute("data-lang") || "").toLowerCase() === lang;
       el.classList.toggle("is-active", isActive);
       el.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
-
-    // Optional: set <html lang="...">
     document.documentElement.setAttribute("lang", lang);
   };
 
   const applyI18n = (lang) => {
-    // Single strings
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (!key) return;
@@ -333,21 +427,14 @@
       const value = t(lang, key);
       if (!value) return;
 
-      // If element has data-i18n-target="placeholder|title|aria-label|text"
       const target = (el.getAttribute("data-i18n-target") || "text").toLowerCase();
 
-      if (target === "placeholder") {
-        el.setAttribute("placeholder", value);
-      } else if (target === "title") {
-        el.setAttribute("title", value);
-      } else if (target === "aria-label") {
-        el.setAttribute("aria-label", value);
-      } else {
-        el.textContent = value;
-      }
+      if (target === "placeholder") el.setAttribute("placeholder", value);
+      else if (target === "title") el.setAttribute("title", value);
+      else if (target === "aria-label") el.setAttribute("aria-label", value);
+      else el.textContent = value;
     });
 
-    // Lists (arrays)
     document.querySelectorAll("[data-i18n-list]").forEach((el) => {
       const key = el.getAttribute("data-i18n-list");
       if (!key) return;
@@ -355,35 +442,10 @@
       const items = tList(lang, key);
       if (!items.length) return;
 
-      // If you want to keep existing <li> structure, set data-i18n-list-mode="replace"
-      const mode = (el.getAttribute("data-i18n-list-mode") || "replace").toLowerCase();
-
-      if (mode === "replace") {
-        el.innerHTML = items.map((txt) => `<li>${escapeHtml(txt)}</li>`).join("");
-        return;
-      }
-
-      // mode === "update": updates existing children if present, otherwise generates.
-      const li = Array.from(el.querySelectorAll("li"));
-      if (li.length) {
-        li.forEach((node, i) => {
-          if (typeof items[i] === "string") node.textContent = items[i];
-        });
-      } else {
-        el.innerHTML = items.map((txt) => `<li>${escapeHtml(txt)}</li>`).join("");
-      }
+      el.innerHTML = items.map((txt) => `<li>${escapeHtml(txt)}</li>`).join("");
     });
 
     setActiveLangUI(lang);
-  };
-
-  const escapeHtml = (str) => {
-    return String(str)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
   };
 
   const setLang = (lang) => {
@@ -392,37 +454,25 @@
     applyI18n(normalized);
   };
 
-  // =========================
-  // INIT
-  // =========================
   document.addEventListener("DOMContentLoaded", () => {
-    // Initial language
-    const lang = getStoredLang();
-    applyI18n(lang);
+    applyI18n(getStoredLang());
 
-    // Language toggle binding:
-    // Any element with [data-set-lang="it|en"] will switch language.
     document.querySelectorAll("[data-set-lang]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
-        const next = (btn.getAttribute("data-set-lang") || "").toLowerCase();
-        setLang(next);
+        setLang((btn.getAttribute("data-set-lang") || "").toLowerCase());
       });
     });
 
-    // Backward compatibility:
-    // If you already use [data-lang="it|en"] for buttons, it will work too.
+    // Back-compat: if you already bind using data-lang
     document.querySelectorAll("[data-lang]").forEach((btn) => {
+      if (btn.hasAttribute("data-set-lang")) return;
       btn.addEventListener("click", (e) => {
-        // avoid double-binding if both attributes exist
-        if (btn.hasAttribute("data-set-lang")) return;
         e.preventDefault();
-        const next = (btn.getAttribute("data-lang") || "").toLowerCase();
-        setLang(next);
+        setLang((btn.getAttribute("data-lang") || "").toLowerCase());
       });
     });
   });
 
-  // Optional: expose for debugging
   window.KALTE_I18N = { I18N, setLang, getStoredLang };
 })();
