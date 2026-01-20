@@ -5,27 +5,26 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KALTÉ — Digital & Visual Solutions</title>
   <meta name="description" content="Static websites + essential visual identity. No ecommerce. No advanced SEO. No SMM." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260120" />
 </head>
 
 <body class="home">
-  <!-- Background -->
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- Global background on every page -->
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="index.html" aria-label="KALTÉ Home">
         <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
       </a>
 
-      <nav class="nav-center">
-        <a href="#about" data-i18n="nav.home">About</a>
-        <a href="#services" data-i18n="nav.work">Servizi</a>
-        <a href="#work" data-i18n="home.selectedWork.title">Selected Work</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#services" data-i18n="nav.services">Servizi</a>
+        <a href="#work" data-i18n="nav.work">Selected work</a>
         <a href="#contact" data-i18n="nav.contact">Contatti</a>
-        <a href="#social" data-i18n="nav.contact">Social</a>
+        <a href="#social" data-i18n="nav.social">Social</a>
       </nav>
 
       <div class="lang-switch" role="group" aria-label="Language switch">
@@ -49,66 +48,56 @@
       </p>
 
       <div class="hero-cta">
-        <a class="btn" href="digital.html" data-i18n="home.hero.cta.primary">VAI AI DIGITAL</a>
-        <a class="btn btn-ghost" href="visual.html" data-i18n="home.hero.cta.secondary">VAI AI VISUAL</a>
+        <a class="btn" href="digital.html" data-i18n="home.hero.cta.digital">VAI AI DIGITAL</a>
+        <a class="btn btn-ghost" href="visual.html" data-i18n="home.hero.cta.visual">VAI AI VISUAL</a>
       </div>
 
-      <p class="micro" data-i18n="footer.note">
+      <p class="micro" data-i18n="home.hero.micro">
         Static sites. Clean identity. No unnecessary complexity.
       </p>
 
       <!-- QUICK FILTER -->
       <div class="card filter-card">
-        <div class="card-head">
-          <h3 class="card-title" data-i18n="home.filter.note.title">FILTRO RAPIDO</h3>
+        <div class="card-pad">
+          <h3 class="card-title" data-i18n="home.filter.title">FILTRO RAPIDO</h3>
+          <ul class="list" data-i18n-list="home.filter.list"></ul>
         </div>
-        <ul class="list" data-i18n-list="digital.section.not.list"></ul>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="home.about.title">ABOUT</h2>
-      </div>
-
+      <h2 class="section-title" data-i18n="home.about.title">ABOUT</h2>
       <p class="lead" data-i18n="home.about.lead">
         Costruiamo asset che devono funzionare: chiari, veloci, replicabili.
       </p>
-
       <ul class="list" data-i18n-list="home.about.list"></ul>
     </section>
 
     <!-- SERVICES -->
     <section id="services" class="section">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="home.services.title">SERVICES</h2>
-      </div>
+      <h2 class="section-title" data-i18n="home.services.title">SERVICES</h2>
 
       <div class="grid-2">
         <a class="card service-card" href="digital.html">
-          <div class="card-head">
-            <h3 class="card-title" data-i18n="home.services.digital.title">Focus DIGITAL</h3>
+          <div class="card-pad">
+            <h3 class="service-title" data-i18n="home.services.digital.title">Focus DIGITAL</h3>
             <p class="muted" data-i18n="home.services.digital.desc">
               Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.
             </p>
-          </div>
-          <div class="card-body">
             <p class="mini" data-i18n="home.services.digital.note">No ecommerce. No WordPress gestito.</p>
-            <span class="arrow">Open page →</span>
+            <span class="arrow" data-i18n="ui.openPage">Open page →</span>
           </div>
         </a>
 
         <a class="card service-card" href="visual.html">
-          <div class="card-head">
-            <h3 class="card-title" data-i18n="home.services.visual.title">Focus VISUAL</h3>
+          <div class="card-pad">
+            <h3 class="service-title" data-i18n="home.services.visual.title">Focus VISUAL</h3>
             <p class="muted" data-i18n="home.services.visual.desc">
               Logo, mini identity, materiali. Applicazioni su merch quando serve.
             </p>
-          </div>
-          <div class="card-body">
             <p class="mini" data-i18n="home.services.visual.note">No pacchetti marketing.</p>
-            <span class="arrow">Open page →</span>
+            <span class="arrow" data-i18n="ui.openPage">Open page →</span>
           </div>
         </a>
       </div>
@@ -116,41 +105,37 @@
 
     <!-- SELECTED WORK -->
     <section id="work" class="section">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="home.selectedWork.title">SELECTED WORK</h2>
-        <p class="muted" data-i18n="home.selectedWork.subtitle">
-          Proof of work su apparel/merch. Produzione non standard: solo progetti selezionati.
-        </p>
+      <h2 class="section-title" data-i18n="home.work.title">SELECTED WORK</h2>
+      <p class="muted" data-i18n="home.work.subtitle">
+        Proof of work su apparel/merch. Produzione non standard: solo progetti selezionati.
+      </p>
+
+      <div class="work-grid" aria-label="Selected work gallery">
+        <figure class="work-item"><img src="assets/work/tracksuit-01.png" alt="Tracksuit 01" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-02.png" alt="Tracksuit 02" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-03.png" alt="Tracksuit 03" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-04.png" alt="Tracksuit 04" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-05.png" alt="Tracksuit 05" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-06.png" alt="Tracksuit 06" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-07.png" alt="Tracksuit 07" loading="lazy"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-08.png" alt="Tracksuit 08" loading="lazy"></figure>
       </div>
 
-      <div class="work-grid">
-        <figure class="work-item"><img src="assets/work/tracksuit-01.png" alt="Tracksuit 01" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-02.png" alt="Tracksuit 02" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-03.png" alt="Tracksuit 03" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-04.png" alt="Tracksuit 04" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-05.png" alt="Tracksuit 05" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-06.png" alt="Tracksuit 06" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-07.png" alt="Tracksuit 07" loading="lazy" width="1200" height="1200"></figure>
-        <figure class="work-item"><img src="assets/work/tracksuit-08.png" alt="Tracksuit 08" loading="lazy" width="1200" height="1200"></figure>
-      </div>
-
-      <p class="note" data-i18n="home.selectedWork.note">
+      <p class="note" data-i18n="home.work.note">
         Produzione non è un servizio standard. Premium solo su progetti selezionati.
       </p>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="contact.title">CONTACT</h2>
-      </div>
+      <h2 class="section-title" data-i18n="contact.title">CONTACT</h2>
 
-      <div class="card contact-card">
-        <div class="contact-row">
-          <span class="label">Email —</span>
+      <div class="card">
+        <div class="card-pad contact-row">
+          <span class="label" data-i18n="contact.emailLabel">Email —</span>
           <a href="mailto:lenzonifrancesco4@gmail.com">lenzonifrancesco4@gmail.com</a>
-          <span class="sep"></span>
-          <span class="label">WhatsApp —</span>
+          <span class="sep" aria-hidden="true"></span>
+          <span class="label" data-i18n="contact.whatsappLabel">WhatsApp —</span>
           <a href="https://wa.me/393318310378" target="_blank" rel="noopener">wa.me/393318310378</a>
         </div>
       </div>
@@ -158,20 +143,20 @@
 
     <!-- SOCIAL -->
     <section id="social" class="section">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="home.social.title">SOCIAL</h2>
-      </div>
+      <h2 class="section-title" data-i18n="home.social.title">SOCIAL</h2>
 
-      <div class="card social-card">
-        <a href="#" class="social-link" data-i18n="home.social.instagram">Instagram</a>
+      <div class="card">
+        <div class="card-pad">
+          <a class="social-link" href="#" data-i18n="home.social.instagram">Instagram</a>
+        </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p class="muted">© <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.</p>
+      <p>© <span data-i18n="brand.name">KALTÉ</span> — <span data-i18n="brand.tagline">Digital & Visual Solutions.</span></p>
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260120"></script>
 </body>
 </html>
