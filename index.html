@@ -2,177 +2,157 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KALTÉ — Digital & Visual Solutions</title>
-  <meta name="description" content="KALTÉ — siti web essenziali e identità visive chiare. Soluzioni concrete, senza complicazioni inutili." />
   <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="nav-left">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Servizi</a>
+          <a href="#work" data-i18n="nav.work">Selected work</a>
+          <a href="#contact" data-i18n="nav.contact">Contatti</a>
+          <a href="#social" data-i18n="nav.social">Social</a>
+        </div>
 
-<body class="home">
-  <!-- HERO BG -->
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav-left">
-      <a class="brand" href="index.html" aria-label="KALTÉ home">
-        <img src="assets/logo.png" alt="KALTÉ logo" class="brand-logo" />
-      </a>
-    </div>
-
-    <nav class="nav-center" aria-label="Primary">
-      <a href="#about" data-i18n="nav_about">ABOUT</a>
-      <a href="#services" data-i18n="nav_services">SERVICES</a>
-      <a href="#contact" data-i18n="nav_contact">CONTACT</a>
-      <a href="#social" data-i18n="nav_social">SOCIAL</a>
-    </nav>
-
-    <div class="nav-right">
-      <button class="lang-toggle" type="button" id="langToggle" aria-label="Toggle language">
-        <span class="lang-pill" id="langPill">IT</span>
-      </button>
+        <div class="nav-right">
+          <div class="lang" aria-label="Language toggle">
+            <button type="button" data-set-lang="it" data-lang="it" data-i18n="nav.lang.it">IT</button>
+            <button type="button" data-set-lang="en" data-lang="en" data-i18n="nav.lang.en">EN</button>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="hero-center">
-        <h1 class="hero-title">KALTÉ</h1>
-        <div class="hero-sub" data-i18n="hero_sub">Digital &amp; Visual Solutions</div>
-
-        <p class="hero-tagline" data-i18n="hero_tagline">
-          Siti web essenziali e soluzioni visive chiare.
+  <main>
+    <div class="container">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="kicker" data-i18n="home.hero.kicker">Digital & Visual Solutions</div>
+        <h1 data-i18n="home.hero.title">Siti statici + identità visiva essenziale.</h1>
+        <p class="sub" data-i18n="home.hero.subtitle">
+          Se cerchi marketing, SEO avanzata o ecommerce: non è il servizio giusto.
         </p>
 
-        <a class="cta" href="#contact" data-i18n="cta_contact">CONTACT</a>
+        <div class="btn-row">
+          <a class="btn" href="digital.html" data-i18n="home.hero.cta.digital">Vai a DIGITAL</a>
+          <a class="btn" href="visual.html" data-i18n="home.hero.cta.visual">Vai a VISUAL</a>
+        </div>
 
-        <div class="hero-notes" data-i18n="hero_notes">
+        <div class="micro" data-i18n="tagline.micro">
           Static sites. Clean identity. No unnecessary complexity.
         </div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2 class="section-title" data-i18n="about_title">ABOUT</h2>
-      <p class="section-text" data-i18n="about_text">
-        KALTÉ è un progetto indipendente di Digital & Visual Solutions.
-        Realizziamo siti web semplici e identità visive essenziali, pensate per essere chiare,
-        funzionali e durare nel tempo.
-        Lavoriamo su soluzioni concrete, senza complicazioni inutili,
-        con un approccio diretto e collaborativo.
-      </p>
-    </section>
+        <!-- QUICK FILTER -->
+        <div class="filter-strip">
+          <div class="title" data-i18n="home.filter.title">Filtro rapido</div>
+          <ul data-i18n-list="home.filter.list"></ul>
+        </div>
+      </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services">
-      <h2 class="section-title" data-i18n="services_title">SERVICES</h2>
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <h2 data-i18n="home.about.title">ABOUT</h2>
+        <p data-i18n="home.about.lead">
+          Costruiamo asset che devono funzionare: chiari, veloci, e replicabili.
+        </p>
+        <ul data-i18n-list="home.about.list"></ul>
+      </section>
 
-      <div class="cards">
-        <a class="card" href="digital.html">
-          <div class="card-kicker" data-i18n="services_kicker">Focus</div>
-          <div class="card-title">DIGITAL</div>
-          <div class="card-desc" data-i18n="digital_card_desc">
-            Siti statici 1–3 pagine, veloci, chiari, senza gestione continua.
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <h2 data-i18n="home.services.title">SERVICES</h2>
+
+        <div class="grid-2">
+          <a class="card" href="digital.html">
+            <h3 data-i18n="home.services.digital.title">Focus DIGITAL</h3>
+            <p data-i18n="home.services.digital.desc">
+              Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.
+            </p>
+            <div class="meta" data-i18n="home.services.digital.meta">No ecommerce. No WordPress gestito.</div>
+            <div class="meta" data-i18n="home.services.digital.cta">Open page →</div>
+          </a>
+
+          <a class="card" href="visual.html">
+            <h3 data-i18n="home.services.visual.title">Focus VISUAL</h3>
+            <p data-i18n="home.services.visual.desc">
+              Logo, mini identity, materiali. Applicazioni su merch quando serve.
+            </p>
+            <div class="meta" data-i18n="home.services.visual.meta">No pacchetti marketing.</div>
+            <div class="meta" data-i18n="home.services.visual.cta">Open page →</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- SELECTED WORK -->
+      <section class="section" id="work">
+        <h2 data-i18n="home.work.title">SELECTED WORK</h2>
+        <p data-i18n="home.work.subtitle">
+          Proof of work su apparel/merch. Produzione non standard: solo progetti selezionati.
+        </p>
+
+        <div class="work-grid">
+          <div class="work-item">
+            <img src="assets/work/tracksuit-01.png" alt="Tracksuit sample 01" loading="lazy" width="1200" height="1200">
           </div>
-          <div class="card-cta" data-i18n="open_page">Open page →</div>
-        </a>
-
-        <a class="card" href="visual.html">
-          <div class="card-kicker" data-i18n="services_kicker">Focus</div>
-          <div class="card-title">VISUAL</div>
-          <div class="card-desc" data-i18n="visual_card_desc">
-            Logo, identità visiva, materiali digitali e stampati. Lavoro serio.
+          <div class="work-item">
+            <img src="assets/work/tracksuit-02.png" alt="Tracksuit sample 02" loading="lazy" width="1200" height="1200">
           </div>
-          <div class="card-cta" data-i18n="open_page">Open page →</div>
-        </a>
+          <div class="work-item">
+            <img src="assets/work/tracksuit-03.png" alt="Tracksuit sample 03" loading="lazy" width="1200" height="1200">
+          </div>
+          <div class="work-item">
+            <img src="assets/work/tracksuit-04.png" alt="Tracksuit sample 04" loading="lazy" width="1200" height="1200">
+          </div>
+          <div class="work-item">
+            <img src="assets/work/tracksuit-05.png" alt="Tracksuit sample 05" loading="lazy" width="1200" height="1200">
+          </div>
+          <div class="work-item">
+            <img src="assets/work/tracksuit-06.png" alt="Tracksuit sample 06" loading="lazy" width="1200" height="1200">
+          </div>
+          <div class="work-item">
+            <img src="assets/work/tracksuit-07.png" alt="Tracksuit sample 07" loading="lazy" width="1200" height="1200">
+          </div>
+          <div class="work-item">
+            <img src="assets/work/tracksuit-08.png" alt="Tracksuit sample 08" loading="lazy" width="1200" height="1200">
+          </div>
+        </div>
+
+        <p class="note" data-i18n="home.work.note">
+          Produzione non è un servizio standard. Premium solo su progetti selezionati.
+        </p>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <h2 data-i18n="contact.title">CONTACT</h2>
+        <div class="card">
+          <div class="small-links">
+            <span><strong data-i18n="contact.email.label">Email</strong> — <a href="mailto:lenzonifrancesco4@gmail.com">lenzonifrancesco4@gmail.com</a></span>
+            <span><strong data-i18n="contact.whatsapp.label">WhatsApp</strong> — <a href="https://wa.me/393318310378" target="_blank" rel="noopener">wa.me/393318310378</a></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOCIAL -->
+      <section class="section" id="social">
+        <h2 data-i18n="social.title">SOCIAL</h2>
+        <div class="card">
+          <div class="small-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" data-i18n="social.instagram">Instagram</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div>© KALTÉ</div>
+        <div data-i18n="footer.note">Digital & Visual Solutions.</div>
       </div>
-    </section>
-    <!-- SELECTED WORK -->
-  <section class="section" id="work">
-    <h2 class="section-title" data-i18n="work_title">SELECTED WORK</h2>
-  
-    <p class="section-text" data-i18n="work_intro">
-      Alcuni risultati su apparel sviluppati da concept a sample. Produzione disponibile solo su progetti selezionati.
-    </p>
-  
-    <div class="work-grid">
-      <!-- CARD 1 -->
-      <article class="work-card">
-        <div class="work-media">
-          <img src="assets/work-tee.jpg" alt="T-shirt — concept to sample" loading="lazy">
-        </div>
-        <div class="work-body">
-          <div class="work-name" data-i18n="work_item1_title">T-Shirt / Graphic</div>
-          <div class="work-meta" data-i18n="work_item1_meta">Concept → Tech pack → Sample</div>
-        </div>
-      </article>
-  
-      <!-- CARD 2 -->
-      <article class="work-card">
-        <div class="work-media">
-          <img src="assets/work-hoodie.jpg" alt="Hoodie — concept to sample" loading="lazy">
-        </div>
-        <div class="work-body">
-          <div class="work-name" data-i18n="work_item2_title">Hoodie / Print</div>
-          <div class="work-meta" data-i18n="work_item2_meta">Placement + specs → Sample</div>
-        </div>
-      </article>
-  
-      <!-- CARD 3 -->
-      <article class="work-card">
-        <div class="work-media">
-          <img src="assets/work-cap.jpg" alt="Cap — embroidery sample" loading="lazy">
-        </div>
-        <div class="work-body">
-          <div class="work-name" data-i18n="work_item3_title">Cap / Embroidery</div>
-          <div class="work-meta" data-i18n="work_item3_meta">Logo setup → Stitch test</div>
-        </div>
-      </article>
     </div>
-  
-    <div class="note-box" data-i18n="work_note">
-      La produzione non è un servizio standard. Valutiamo solo progetti con budget e tempi realistici.
-    </div>
-  </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2 class="section-title" data-i18n="contact_title">CONTACT</h2>
-
-      <div class="contact-grid">
-        <div class="contact-block">
-          <div class="contact-label">Email</div>
-          <a class="contact-link" href="mailto:lenzonifrancesco4@gmail.com">lenzonifrancesco4@gmail.com</a>
-        </div>
-
-        <div class="contact-block">
-          <div class="contact-label">WhatsApp</div>
-          <a class="contact-link" href="https://wa.me/393318310378" target="_blank" rel="noopener">wa.me/393318310378</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOCIAL -->
-    <section class="section" id="social">
-      <h2 class="section-title" data-i18n="social_title">SOCIAL</h2>
-      <div class="social-row">
-        <a class="social-link" href="https://instagram.com/francescooolenzonii" target="_blank" rel="noopener">
-          Instagram
-        </a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-line"></div>
-      <div class="footer-inner">
-        <div class="footer-left">© <span id="year"></span> KALTÉ</div>
-        <div class="footer-right" data-i18n="footer_note">Digital &amp; Visual Solutions.</div>
-      </div>
-    </footer>
   </main>
 
   <script src="script.js"></script>
