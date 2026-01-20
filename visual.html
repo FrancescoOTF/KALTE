@@ -3,151 +3,147 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KALTÉ — Visual</title>
-  <meta name="description" content="KALTÉ Visual — logo, identità visiva, materiali digitali e stampati." />
+  <title>KALTÉ — VISUAL</title>
+
+  <!-- Usa il tuo CSS attuale -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="page">
-  <!-- NAV -->
-  <header class="nav nav-solid">
-    <div class="nav-left">
-      <a class="brand" href="index.html" aria-label="KALTÉ home">
-        <img src="assets/logo.png" alt="KALTÉ logo" class="brand-logo" />
+<body>
+  <!-- HEADER / NAV (minimal) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="KALTÉ Home">
+        <span data-i18n="brand.name">KALTÉ</span>
       </a>
-    </div>
 
-    <nav class="nav-center" aria-label="Primary">
-      <a href="index.html#about" data-i18n="nav_about">ABOUT</a>
-      <a href="index.html#services" data-i18n="nav_services">SERVICES</a>
-      <a href="index.html#contact" data-i18n="nav_contact">CONTACT</a>
-      <a href="index.html#social" data-i18n="nav_social">SOCIAL</a>
-    </nav>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="digital.html" data-i18n="nav.digital">Digital</a>
+        <a href="visual.html" aria-current="page" data-i18n="nav.visual">Visual</a>
+        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
+      </nav>
 
-    <div class="nav-right">
-      <button class="lang-toggle" type="button" id="langToggle" aria-label="Toggle language">
-        <span class="lang-pill" id="langPill">IT</span>
-      </button>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">
+          <span data-i18n="nav.lang.it">IT</span>
+        </button>
+        <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">
+          <span data-i18n="nav.lang.en">EN</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="wrap page-wrap">
-    <!-- PAGE HERO -->
+  <main class="site-main">
     <section class="page-hero">
-      <div class="page-breadcrumb">
-        <a href="index.html" data-i18n="back_home">← Home</a>
+      <div class="container">
+        <h1 data-i18n="visual.page.title">VISUAL</h1>
+        <p class="lead" data-i18n="visual.page.subtitle">
+          Identità essenziale: logo, regole base, applicazioni coerenti. Niente pacchetti “marketing”.
+        </p>
       </div>
-
-      <h1 class="page-title">VISUAL</h1>
-      <p class="page-sub" data-i18n="visual_intro">
-        Identità visiva essenziale, applicabile e coerente. Niente decorazioni vuote.
-      </p>
     </section>
 
-    <!-- INCLUDE -->
+    <!-- CORE VISUAL -->
     <section class="section">
-      <h2 class="section-title" data-i18n="what_includes">Include</h2>
-      <ul class="list" data-i18n-list="visual_in"></ul>
-    </section>
-
-    <!-- LOGO-ONLY + CAPSULE UPGRADE -->
-    <section class="section">
-      <h2 class="section-title" data-i18n="visual_logo_title">Logo-only</h2>
-
-      <p class="section-text" data-i18n="visual_logo_text">
-        Possiamo lavorare anche su un singolo logo. Se con poco in più vuoi qualcosa che regga davvero, progettiamo una mini identity: regole base + applicazioni per web/stampa/merch.
-      </p>
-
-      <div class="note-box" style="margin-top:14px;">
-        <div class="section-title" style="margin:0 0 10px;" data-i18n="visual_capsule_title">
-          Mini identity (capsule) — include
-        </div>
-        <ul class="list" data-i18n-list="visual_capsule_list" style="margin:0;"></ul>
-      </div>
-    </section>
-  <!-- MERCH / APPAREL -->
-  <section class="section" id="apparel">
-    <h2 class="section-title" data-i18n="apparel_title">MERCH / APPAREL</h2>
-  
-    <p class="section-text" data-i18n="apparel_intro">
-      Applichiamo l’identità su vestiario: dal concept alle specifiche tecniche. La produzione può essere seguita in due modalità.
-    </p>
-  
-    <div class="tier-grid">
-      <!-- STANDARD -->
-      <div class="tier">
-        <div class="tier-head">
-          <div class="tier-tag" data-i18n="tier_standard_tag">STANDARD</div>
-          <div class="tier-title" data-i18n="tier_standard_title">Design + Tech Pack + Handoff</div>
-        </div>
-  
-        <ul class="list" data-i18n-list="tier_standard_list"></ul>
-  
-        <div class="tier-foot" data-i18n="tier_standard_note">
-          Il cliente gestisce ordine e pagamento direttamente con il fornitore.
-        </div>
-      </div>
-  
-      <!-- PREMIUM -->
-      <div class="tier tier-premium">
-        <div class="tier-head">
-          <div class="tier-tag" data-i18n="tier_premium_tag">PREMIUM</div>
-          <div class="tier-title" data-i18n="tier_premium_title">Full Production Coordination</div>
-        </div>
-  
-        <ul class="list" data-i18n-list="tier_premium_list"></ul>
-  
-        <div class="note-box" data-i18n="tier_premium_terms">
-          Premium disponibile solo su progetti selezionati. Fee +30–40% sul costo di produzione. Max 2 revisioni campione.
-        </div>
-  
-        <div class="tier-foot" data-i18n="tier_premium_note">
-          In modalità Premium, KALTÉ è l’unico referente operativo tra cliente e fornitore.
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- EXCLUDE -->
-    <section class="section">
-      <h2 class="section-title" data-i18n="what_excludes">Esclude</h2>
-      <ul class="list list-danger" data-i18n-list="visual_out"></ul>
-
-      <div class="note-box" data-i18n="visual_filter_note" style="margin-top:14px;">
-        Se cerchi SMM/marketing/gestione social, non è il servizio che offriamo.
+      <div class="container">
+        <h2 data-i18n="visual.section.core.title">Cosa facciamo</h2>
+        <ul class="list" data-i18n-list="visual.section.core.list"></ul>
       </div>
     </section>
 
-    <!-- START -->
-    <section class="section">
-      <h2 class="section-title" data-i18n="start_title">PER INIZIARE</h2>
-      <p class="section-text" data-i18n="start_intro">
-        Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti.
-      </p>
-
-      <ul class="list" data-i18n-list="start_list"></ul>
-
-      <p class="section-text" data-i18n="start_filter" style="margin-top:12px;">
-        Se cerchi ecommerce, SEO avanzata o gestione social, non è il servizio che offriamo.
-      </p>
-
-      <div class="actions">
-        <a class="cta" href="mailto:lenzonifrancesco4@gmail.com" data-i18n="cta_email">EMAIL</a>
-        <a class="cta ghost" href="https://wa.me/393318310378" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WHATSAPP</a>
+    <!-- CONSTRAINTS -->
+    <section class="section section-muted">
+      <div class="container">
+        <h2 data-i18n="visual.section.constraints.title">Limiti chiari</h2>
+        <ul class="list" data-i18n-list="visual.section.constraints.list"></ul>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-line"></div>
-      <div class="footer-inner">
-        <div class="footer-left">© <span id="year"></span> KALTÉ</div>
-        <div class="footer-right" data-i18n="footer_note">Digital &amp; Visual Solutions.</div>
+    <!-- MERCH / APPAREL (NEW) -->
+    <section class="section merch">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="visual.merch.title">MERCH / APPAREL</h2>
+          <p class="lead" data-i18n="visual.merch.subtitle">
+            Due livelli. Se vuoi produzione “chiavi in mano” senza selezione: non siamo il partner giusto.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- STANDARD -->
+          <article class="card merch-card">
+            <header class="card-head">
+              <h3 data-i18n="visual.merch.standard.title">STANDARD</h3>
+              <p class="muted" data-i18n="visual.merch.standard.tagline">
+                Design + handoff. Il cliente gestisce il fornitore.
+              </p>
+            </header>
+
+            <div class="card-body">
+              <h4 data-i18n="visual.merch.standard.includes.title">Include</h4>
+              <ul class="list" data-i18n-list="visual.merch.standard.includes.list"></ul>
+
+              <h4 class="mt" data-i18n="visual.merch.standard.notes.title">Note</h4>
+              <ul class="list" data-i18n-list="visual.merch.standard.notes.list"></ul>
+            </div>
+          </article>
+
+          <!-- PREMIUM -->
+          <article class="card merch-card merch-premium">
+            <header class="card-head">
+              <h3 data-i18n="visual.merch.premium.title">PREMIUM</h3>
+              <p class="muted" data-i18n="visual.merch.premium.tagline">
+                Full Production Coordination. KALTÉ è unico referente.
+              </p>
+            </header>
+
+            <div class="card-body">
+              <h4 data-i18n="visual.merch.premium.includes.title">Include</h4>
+              <ul class="list" data-i18n-list="visual.merch.premium.includes.list"></ul>
+
+              <div class="fee-box mt">
+                <h4 data-i18n="visual.merch.premium.fee.title">Fee</h4>
+                <p data-i18n="visual.merch.premium.fee.text">
+                  Fee +30–40% sul costo di produzione (in base a complessità e rischio).
+                </p>
+              </div>
+
+              <h4 class="mt" data-i18n="visual.merch.premium.limits.title">Limiti</h4>
+              <ul class="list" data-i18n-list="visual.merch.premium.limits.list"></ul>
+            </div>
+          </article>
+        </div>
+
       </div>
-    </footer>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <h2 data-i18n="contact.title">Contatti</h2>
+        <p class="lead" data-i18n="contact.subtitle">
+          Solo richieste chiare. Se non hai brief minimo, aspetta.
+        </p>
+
+        <!-- Mantieni il tuo pattern attuale: mailto o link a sezione contatti in index -->
+        <div class="cta-actions">
+          <a class="btn" href="index.html#contact" data-i18n="digital.section.cta.button">Contatti</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted" data-i18n="footer.note">
+        KALTÉ — Digital & Visual Solutions. Static sites + essential identity.
+      </p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
