@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KALTÉ — VISUAL</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>KALTÉ — Visual</title>
+  <link rel="stylesheet" href="style.css?v=20260120" />
 </head>
 
 <body class="page">
@@ -17,15 +17,15 @@
         <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="digital.html" data-i18n="nav.digital">Digital</a>
         <a href="visual.html" aria-current="page" data-i18n="nav.visual">Visual</a>
-        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <a href="index.html#work" data-i18n="nav.work">Selected work</a>
         <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
       </nav>
 
-      <div class="lang-switch">
+      <div class="lang-switch" role="group" aria-label="Language switch">
         <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">IT</button>
         <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">EN</button>
       </div>
@@ -43,59 +43,67 @@
 
     <section class="section">
       <h2 class="section-title" data-i18n="visual.section.core.title">Cosa facciamo</h2>
-      <div class="card card-pad">
+      <div class="card"><div class="card-pad">
         <ul class="list" data-i18n-list="visual.section.core.list"></ul>
-      </div>
+      </div></div>
     </section>
 
     <section class="section">
       <h2 class="section-title" data-i18n="visual.section.constraints.title">Limiti chiari</h2>
-      <div class="card card-pad">
+      <div class="card"><div class="card-pad">
         <ul class="list" data-i18n-list="visual.section.constraints.list"></ul>
-      </div>
+      </div></div>
     </section>
 
     <section class="section">
-      <h2 class="section-title" data-i18n="visual.merch.title">Merch / Apparel</h2>
+      <h2 class="section-title" data-i18n="visual.merch.title">MERCH / APPAREL</h2>
       <p class="lead" data-i18n="visual.merch.subtitle">
-        Due livelli. Produzione non standard: solo progetti selezionati.
+        Applichiamo l’identità su vestiario: dal concept alle specifiche tecniche. Produzione gestita in due modalità.
       </p>
 
       <div class="grid-2">
-        <article class="card card-pad merch-card">
-          <h3 data-i18n="visual.merch.standard.title">STANDARD</h3>
-          <p class="tagline" data-i18n="visual.merch.standard.tagline">Design + Tech pack + Handoff</p>
+        <article class="card merch-card">
+          <div class="card-pad">
+            <h3 class="tier-title" data-i18n="visual.merch.standard.title">STANDARD</h3>
+            <p class="tier-sub" data-i18n="visual.merch.standard.tagline">Design + Tech pack + Handoff</p>
 
-          <h4 data-i18n="visual.merch.standard.includes.title">Include</h4>
-          <ul class="list" data-i18n-list="visual.merch.standard.includes.list"></ul>
+            <h4 class="tier-head" data-i18n="visual.merch.standard.includes.title">Include</h4>
+            <ul class="list" data-i18n-list="visual.merch.standard.includes.list"></ul>
 
-          <h4 data-i18n="visual.merch.standard.notes.title">Note</h4>
-          <ul class="list" data-i18n-list="visual.merch.standard.notes.list"></ul>
+            <h4 class="tier-head" data-i18n="visual.merch.standard.notes.title">Note</h4>
+            <ul class="list" data-i18n-list="visual.merch.standard.notes.list"></ul>
+          </div>
         </article>
 
-        <article class="card card-pad merch-card">
-          <h3 data-i18n="visual.merch.premium.title">PREMIUM</h3>
-          <p class="tagline" data-i18n="visual.merch.premium.tagline">Full Production Coordination</p>
+        <article class="card merch-card">
+          <div class="card-pad">
+            <h3 class="tier-title" data-i18n="visual.merch.premium.title">PREMIUM</h3>
+            <p class="tier-sub" data-i18n="visual.merch.premium.tagline">Full Production Coordination</p>
 
-          <h4 data-i18n="visual.merch.premium.includes.title">Include</h4>
-          <ul class="list" data-i18n-list="visual.merch.premium.includes.list"></ul>
+            <h4 class="tier-head" data-i18n="visual.merch.premium.includes.title">Include</h4>
+            <ul class="list" data-i18n-list="visual.merch.premium.includes.list"></ul>
 
-          <h4 data-i18n="visual.merch.premium.fee.title">Fee</h4>
-          <p class="muted" data-i18n="visual.merch.premium.fee.text">
-            Fee +30–40% sul costo di produzione (in base a complessità e rischio).
-          </p>
+            <h4 class="tier-head" data-i18n="visual.merch.premium.fee.title">Fee</h4>
+            <p class="muted" data-i18n="visual.merch.premium.fee.text">
+              Fee +30–40% sul costo di produzione (in base a complessità e rischio).
+            </p>
 
-          <h4 data-i18n="visual.merch.premium.limits.title">Limiti</h4>
-          <ul class="list" data-i18n-list="visual.merch.premium.limits.list"></ul>
+            <h4 class="tier-head" data-i18n="visual.merch.premium.limits.title">Limiti</h4>
+            <ul class="list" data-i18n-list="visual.merch.premium.limits.list"></ul>
+          </div>
         </article>
       </div>
+
+      <p class="note" data-i18n="visual.merch.note">
+        Produzione non è un servizio standard. Premium solo su progetti selezionati.
+      </p>
     </section>
 
     <footer class="footer">
-      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
+      <p>© <span data-i18n="brand.name">KALTÉ</span> — <span data-i18n="brand.tagline">Digital & Visual Solutions.</span></p>
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260120"></script>
 </body>
 </html>
