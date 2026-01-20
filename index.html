@@ -2,157 +2,174 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KALTÉ — Digital & Visual Solutions</title>
+  <meta name="description" content="Static websites + essential visual identity. No ecommerce. No advanced SEO. No SMM." />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="nav-left">
-          <a href="#about" data-i18n="nav.about">About</a>
-          <a href="#services" data-i18n="nav.services">Servizi</a>
-          <a href="#work" data-i18n="nav.work">Selected work</a>
-          <a href="#contact" data-i18n="nav.contact">Contatti</a>
-          <a href="#social" data-i18n="nav.social">Social</a>
-        </div>
 
-        <div class="nav-right">
-          <div class="lang" aria-label="Language toggle">
-            <button type="button" data-set-lang="it" data-lang="it" data-i18n="nav.lang.it">IT</button>
-            <button type="button" data-set-lang="en" data-lang="en" data-i18n="nav.lang.en">EN</button>
-          </div>
-        </div>
+<body class="home">
+  <!-- Background -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="KALTÉ Home">
+        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
+      </a>
+
+      <nav class="nav-center">
+        <a href="#about" data-i18n="nav.home">About</a>
+        <a href="#services" data-i18n="nav.work">Servizi</a>
+        <a href="#work" data-i18n="home.selectedWork.title">Selected Work</a>
+        <a href="#contact" data-i18n="nav.contact">Contatti</a>
+        <a href="#social" data-i18n="nav.contact">Social</a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <!-- HERO -->
-      <section class="hero">
-        <div class="kicker" data-i18n="home.hero.kicker">Digital & Visual Solutions</div>
-        <h1 data-i18n="home.hero.title">Siti statici + identità visiva essenziale.</h1>
-        <p class="sub" data-i18n="home.hero.subtitle">
-          Se cerchi marketing, SEO avanzata o ecommerce: non è il servizio giusto.
-        </p>
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="kicker" data-i18n="home.hero.kicker">DIGITAL & VISUAL SOLUTIONS</p>
 
-        <div class="btn-row">
-          <a class="btn" href="digital.html" data-i18n="home.hero.cta.digital">Vai a DIGITAL</a>
-          <a class="btn" href="visual.html" data-i18n="home.hero.cta.visual">Vai a VISUAL</a>
+      <h1 class="hero-title" data-i18n="home.hero.title">
+        Siti statici + identità visiva essenziale.
+      </h1>
+
+      <p class="hero-sub" data-i18n="home.hero.subtitle">
+        Se cerchi marketing, SEO avanzata o ecommerce: non è il servizio giusto.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn" href="digital.html" data-i18n="home.hero.cta.primary">VAI AI DIGITAL</a>
+        <a class="btn btn-ghost" href="visual.html" data-i18n="home.hero.cta.secondary">VAI AI VISUAL</a>
+      </div>
+
+      <p class="micro" data-i18n="footer.note">
+        Static sites. Clean identity. No unnecessary complexity.
+      </p>
+
+      <!-- QUICK FILTER -->
+      <div class="card filter-card">
+        <div class="card-head">
+          <h3 class="card-title" data-i18n="home.filter.note.title">FILTRO RAPIDO</h3>
         </div>
+        <ul class="list" data-i18n-list="digital.section.not.list"></ul>
+      </div>
+    </section>
 
-        <div class="micro" data-i18n="tagline.micro">
-          Static sites. Clean identity. No unnecessary complexity.
-        </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="home.about.title">ABOUT</h2>
+      </div>
 
-        <!-- QUICK FILTER -->
-        <div class="filter-strip">
-          <div class="title" data-i18n="home.filter.title">Filtro rapido</div>
-          <ul data-i18n-list="home.filter.list"></ul>
-        </div>
-      </section>
+      <p class="lead" data-i18n="home.about.lead">
+        Costruiamo asset che devono funzionare: chiari, veloci, replicabili.
+      </p>
 
-      <!-- ABOUT -->
-      <section class="section" id="about">
-        <h2 data-i18n="home.about.title">ABOUT</h2>
-        <p data-i18n="home.about.lead">
-          Costruiamo asset che devono funzionare: chiari, veloci, e replicabili.
-        </p>
-        <ul data-i18n-list="home.about.list"></ul>
-      </section>
+      <ul class="list" data-i18n-list="home.about.list"></ul>
+    </section>
 
-      <!-- SERVICES -->
-      <section class="section" id="services">
-        <h2 data-i18n="home.services.title">SERVICES</h2>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="home.services.title">SERVICES</h2>
+      </div>
 
-        <div class="grid-2">
-          <a class="card" href="digital.html">
-            <h3 data-i18n="home.services.digital.title">Focus DIGITAL</h3>
-            <p data-i18n="home.services.digital.desc">
+      <div class="grid-2">
+        <a class="card service-card" href="digital.html">
+          <div class="card-head">
+            <h3 class="card-title" data-i18n="home.services.digital.title">Focus DIGITAL</h3>
+            <p class="muted" data-i18n="home.services.digital.desc">
               Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.
             </p>
-            <div class="meta" data-i18n="home.services.digital.meta">No ecommerce. No WordPress gestito.</div>
-            <div class="meta" data-i18n="home.services.digital.cta">Open page →</div>
-          </a>
+          </div>
+          <div class="card-body">
+            <p class="mini" data-i18n="home.services.digital.note">No ecommerce. No WordPress gestito.</p>
+            <span class="arrow">Open page →</span>
+          </div>
+        </a>
 
-          <a class="card" href="visual.html">
-            <h3 data-i18n="home.services.visual.title">Focus VISUAL</h3>
-            <p data-i18n="home.services.visual.desc">
+        <a class="card service-card" href="visual.html">
+          <div class="card-head">
+            <h3 class="card-title" data-i18n="home.services.visual.title">Focus VISUAL</h3>
+            <p class="muted" data-i18n="home.services.visual.desc">
               Logo, mini identity, materiali. Applicazioni su merch quando serve.
             </p>
-            <div class="meta" data-i18n="home.services.visual.meta">No pacchetti marketing.</div>
-            <div class="meta" data-i18n="home.services.visual.cta">Open page →</div>
-          </a>
-        </div>
-      </section>
+          </div>
+          <div class="card-body">
+            <p class="mini" data-i18n="home.services.visual.note">No pacchetti marketing.</p>
+            <span class="arrow">Open page →</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
-      <!-- SELECTED WORK -->
-      <section class="section" id="work">
-        <h2 data-i18n="home.work.title">SELECTED WORK</h2>
-        <p data-i18n="home.work.subtitle">
+    <!-- SELECTED WORK -->
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="home.selectedWork.title">SELECTED WORK</h2>
+        <p class="muted" data-i18n="home.selectedWork.subtitle">
           Proof of work su apparel/merch. Produzione non standard: solo progetti selezionati.
         </p>
-
-        <div class="work-grid">
-          <div class="work-item">
-            <img src="assets/work/tracksuit-01.png" alt="Tracksuit sample 01" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-02.png" alt="Tracksuit sample 02" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-03.png" alt="Tracksuit sample 03" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-04.png" alt="Tracksuit sample 04" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-05.png" alt="Tracksuit sample 05" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-06.png" alt="Tracksuit sample 06" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-07.png" alt="Tracksuit sample 07" loading="lazy" width="1200" height="1200">
-          </div>
-          <div class="work-item">
-            <img src="assets/work/tracksuit-08.png" alt="Tracksuit sample 08" loading="lazy" width="1200" height="1200">
-          </div>
-        </div>
-
-        <p class="note" data-i18n="home.work.note">
-          Produzione non è un servizio standard. Premium solo su progetti selezionati.
-        </p>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section" id="contact">
-        <h2 data-i18n="contact.title">CONTACT</h2>
-        <div class="card">
-          <div class="small-links">
-            <span><strong data-i18n="contact.email.label">Email</strong> — <a href="mailto:lenzonifrancesco4@gmail.com">lenzonifrancesco4@gmail.com</a></span>
-            <span><strong data-i18n="contact.whatsapp.label">WhatsApp</strong> — <a href="https://wa.me/393318310378" target="_blank" rel="noopener">wa.me/393318310378</a></span>
-          </div>
-        </div>
-      </section>
-
-      <!-- SOCIAL -->
-      <section class="section" id="social">
-        <h2 data-i18n="social.title">SOCIAL</h2>
-        <div class="card">
-          <div class="small-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener" data-i18n="social.instagram">Instagram</a>
-          </div>
-        </div>
-      </section>
-
-      <div class="footer">
-        <div>© KALTÉ</div>
-        <div data-i18n="footer.note">Digital & Visual Solutions.</div>
       </div>
-    </div>
+
+      <div class="work-grid">
+        <figure class="work-item"><img src="assets/work/tracksuit-01.png" alt="Tracksuit 01" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-02.png" alt="Tracksuit 02" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-03.png" alt="Tracksuit 03" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-04.png" alt="Tracksuit 04" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-05.png" alt="Tracksuit 05" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-06.png" alt="Tracksuit 06" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-07.png" alt="Tracksuit 07" loading="lazy" width="1200" height="1200"></figure>
+        <figure class="work-item"><img src="assets/work/tracksuit-08.png" alt="Tracksuit 08" loading="lazy" width="1200" height="1200"></figure>
+      </div>
+
+      <p class="note" data-i18n="home.selectedWork.note">
+        Produzione non è un servizio standard. Premium solo su progetti selezionati.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="contact.title">CONTACT</h2>
+      </div>
+
+      <div class="card contact-card">
+        <div class="contact-row">
+          <span class="label">Email —</span>
+          <a href="mailto:lenzonifrancesco4@gmail.com">lenzonifrancesco4@gmail.com</a>
+          <span class="sep"></span>
+          <span class="label">WhatsApp —</span>
+          <a href="https://wa.me/393318310378" target="_blank" rel="noopener">wa.me/393318310378</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section id="social" class="section">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="home.social.title">SOCIAL</h2>
+      </div>
+
+      <div class="card social-card">
+        <a href="#" class="social-link" data-i18n="home.social.instagram">Instagram</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="muted">© <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.</p>
+    </footer>
   </main>
 
   <script src="script.js"></script>
