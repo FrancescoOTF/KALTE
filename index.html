@@ -2,167 +2,128 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KALTÉ — Digital & Visual Solutions</title>
-  <meta name="description" content="KALTÉ — Digital & Visual Solutions. Simple websites and clear visual identities." />
+  <meta name="description" content="KALTÉ — siti web essenziali e identità visive chiare. Soluzioni concrete, senza complicazioni inutili." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <!-- Header -->
-  <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="KALTÉ — Home">
-      <!-- Replace with your logo (svg/png). Keep it small. -->
-      <img src="assets/logo.png" alt="KALTÉ logo" class="brand__logo" />
-    </a>
+<body class="home">
+  <!-- HERO BG -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="nav__link" href="#about" data-i18n="nav_about">About</a>
-      <a class="nav__link" href="#services" data-i18n="nav_services">Services</a>
-      <a class="nav__link" href="#contact" data-i18n="nav_contact">Contact</a>
-      <a class="nav__link" href="#social" data-i18n="nav_social">Social</a>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-left">
+      <a class="brand" href="index.html" aria-label="KALTÉ home">
+        <img src="assets/logo.png" alt="KALTÉ logo" class="brand-logo" />
+      </a>
+    </div>
+
+    <nav class="nav-center" aria-label="Primary">
+      <a href="#about" data-i18n="nav_about">ABOUT</a>
+      <a href="#services" data-i18n="nav_services">SERVICES</a>
+      <a href="#contact" data-i18n="nav_contact">CONTACT</a>
+      <a href="#social" data-i18n="nav_social">SOCIAL</a>
     </nav>
 
-    <button class="lang-toggle" type="button" id="langToggle" aria-label="Switch language">
-      <span class="lang-toggle__label">IT</span>
-      <span class="lang-toggle__sep">/</span>
-      <span class="lang-toggle__label lang-toggle__label--muted">EN</span>
-    </button>
+    <div class="nav-right">
+      <button class="lang-toggle" type="button" id="langToggle" aria-label="Toggle language">
+        <span class="lang-pill" id="langPill">IT</span>
+      </button>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <main>
-    <section class="hero" aria-label="Hero">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="hero__overlay" aria-hidden="true"></div>
+  <!-- HERO -->
+  <main class="wrap">
+    <section class="hero" id="top">
+      <div class="hero-center">
+        <h1 class="hero-title">KALTÉ</h1>
+        <div class="hero-sub" data-i18n="hero_sub">Digital &amp; Visual Solutions</div>
 
-      <div class="hero__content">
-        <h1 class="hero__title">KALTÉ</h1>
-        <p class="hero__subtitle" data-it="Digital & Visual Solutions" data-en="Digital & Visual Solutions">
-          Digital & Visual Solutions
-        </p>
-
-        <p class="hero__tagline"
-           data-it="Siti web essenziali e soluzioni visive chiare."
-           data-en="Simple websites and clear visual identities.">
+        <p class="hero-tagline" data-i18n="hero_tagline">
           Siti web essenziali e soluzioni visive chiare.
         </p>
 
-        <a class="btn btn--primary" href="#contact" data-i18n="cta_contact">Contact</a>
-      </div>
+        <a class="cta" href="#contact" data-i18n="cta_contact">CONTACT</a>
 
-      <div class="hero__scrollhint" aria-hidden="true">
-        <span class="hero__scrolltext" data-i18n="scroll_hint">Scroll</span>
+        <div class="hero-notes" data-i18n="hero_notes">
+          Static sites. Clean identity. No unnecessary complexity.
+        </div>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section class="section" id="about">
-      <div class="container">
-        <h2 class="section__title" data-i18n="about_title">About</h2>
+      <h2 class="section-title" data-i18n="about_title">ABOUT</h2>
+      <p class="section-text" data-i18n="about_text">
+        KALTÉ è un progetto indipendente di Digital & Visual Solutions.
+        Realizziamo siti web semplici e identità visive essenziali, pensate per essere chiare,
+        funzionali e durare nel tempo.
+        Lavoriamo su soluzioni concrete, senza complicazioni inutili,
+        con un approccio diretto e collaborativo.
+      </p>
+    </section>
 
-        <p class="section__text"
-           data-it="KALTÉ è un progetto indipendente di Digital & Visual Solutions. Realizziamo siti web semplici e identità visive essenziali, pensate per essere chiare, funzionali e durare nel tempo."
-           data-en="KALTÉ is an independent Digital & Visual Solutions project. We create simple websites and essential visual identities, designed to be clear, functional, and built to last.">
-          KALTÉ è un progetto indipendente di Digital & Visual Solutions. Realizziamo siti web semplici e identità visive essenziali, pensate per essere chiare, funzionali e durare nel tempo.
-        </p>
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <h2 class="section-title" data-i18n="services_title">SERVICES</h2>
 
-        <p class="section__text"
-           data-it="Lavoriamo su soluzioni concrete, senza complicazioni inutili, con un approccio diretto e collaborativo."
-           data-en="We focus on practical solutions, without unnecessary complexity, using a direct and collaborative approach.">
-          Lavoriamo su soluzioni concrete, senza complicazioni inutili, con un approccio diretto e collaborativo.
-        </p>
+      <div class="cards">
+        <a class="card" href="digital.html">
+          <div class="card-kicker" data-i18n="services_kicker">Focus</div>
+          <div class="card-title">DIGITAL</div>
+          <div class="card-desc" data-i18n="digital_card_desc">
+            Siti statici 1–3 pagine, veloci, chiari, senza gestione continua.
+          </div>
+          <div class="card-cta" data-i18n="open_page">Open page →</div>
+        </a>
+
+        <a class="card" href="visual.html">
+          <div class="card-kicker" data-i18n="services_kicker">Focus</div>
+          <div class="card-title">VISUAL</div>
+          <div class="card-desc" data-i18n="visual_card_desc">
+            Logo, identità visiva, materiali digitali e stampati. Lavoro serio.
+          </div>
+          <div class="card-cta" data-i18n="open_page">Open page →</div>
+        </a>
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="section section--alt" id="services">
-      <div class="container">
-        <h2 class="section__title" data-i18n="services_title">Services</h2>
-
-        <div class="grid">
-          <article class="card">
-            <h3 class="card__title" data-i18n="digital_title">Digital</h3>
-            <p class="card__text"
-               data-it="Siti web semplici da 1 a 3 pagine, chiari, veloci e funzionali."
-               data-en="Simple websites (1 to 3 pages), designed to be clear, fast, and functional.">
-              Siti web semplici da 1 a 3 pagine, chiari, veloci e funzionali.
-            </p>
-            <ul class="list">
-              <li data-it="Soluzioni essenziali" data-en="Essential solutions">Soluzioni essenziali</li>
-              <li data-it="Nessuna gestione continua" data-en="No ongoing management">Nessuna gestione continua</li>
-              <li data-it="Consegna rapida" data-en="Fast delivery">Consegna rapida</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card__title" data-i18n="visual_title">Visual</h3>
-            <p class="card__text"
-               data-it="Identità visive e materiali grafici. Dal logo alle applicazioni su merch."
-               data-en="Visual identities and graphic materials. From logos to merch applications.">
-              Identità visive e materiali grafici. Dal logo alle applicazioni su merch.
-            </p>
-            <ul class="list">
-              <li data-it="Grafica e identità visiva" data-en="Graphic & visual identity">Grafica e identità visiva</li>
-              <li data-it="Logo e restyling" data-en="Logo & restyling">Logo e restyling</li>
-              <li data-it="Materiali digitali e stampati" data-en="Digital & print materials">Materiali digitali e stampati</li>
-              <li data-it="Merch & applications" data-en="Merch & applications">Merch & applications</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="section" id="contact">
-      <div class="container">
-        <h2 class="section__title" data-i18n="contact_title">Contact</h2>
+      <h2 class="section-title" data-i18n="contact_title">CONTACT</h2>
 
-        <p class="section__text"
-           data-it="Hai un progetto? Parliamone."
-           data-en="Got a project? Let’s talk.">
-          Hai un progetto? Parliamone.
-        </p>
+      <div class="contact-grid">
+        <div class="contact-block">
+          <div class="contact-label">Email</div>
+          <a class="contact-link" href="mailto:lenzonifrancesco4@gmail.com">lenzonifrancesco4@gmail.com</a>
+        </div>
 
-        <div class="contact">
-          <a class="btn btn--ghost" href="mailto:lenzonifrancesco4@gmail.com" data-i18n="contact_email">
-            Email
-          </a>
-
-          <a class="btn btn--ghost" href="https://instagram.com/francescooolenzonii" target="_blank" rel="noopener" data-i18n="contact_instagram">
-            Instagram
-          </a>
-
-          <a class="btn btn--ghost" href="https://wa.me/393318310378" target="_blank" rel="noopener" data-i18n="contact_whatsapp">
-            WhatsApp
-          </a>
+        <div class="contact-block">
+          <div class="contact-label">WhatsApp</div>
+          <a class="contact-link" href="https://wa.me/393318310378" target="_blank" rel="noopener">wa.me/393318310378</a>
         </div>
       </div>
     </section>
 
-    <!-- Social -->
-    <section class="section section--alt" id="social">
-      <div class="container">
-        <h2 class="section__title" data-i18n="social_title">Social</h2>
-
-        <p class="section__text"
-           data-it="Segui il progetto."
-           data-en="Follow the project.">
-          Segui il progetto.
-        </p>
-
-        <div class="social">
-          <a class="link" href="https://instagram.com/francescooolenzonii" target="_blank" rel="noopener">
-            @francescooolenzonii
-          </a>
-        </div>
+    <!-- SOCIAL -->
+    <section class="section" id="social">
+      <h2 class="section-title" data-i18n="social_title">SOCIAL</h2>
+      <div class="social-row">
+        <a class="social-link" href="https://instagram.com/francescooolenzonii" target="_blank" rel="noopener">
+          Instagram
+        </a>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
-      <div class="container footer__inner">
-        <span class="footer__copy">© <span id="year"></span> KALTÉ</span>
-      <!--  <a class="footer__top" href="#top" data-i18n="back_to_top">Back to top</a> -->
+      <div class="footer-line"></div>
+      <div class="footer-inner">
+        <div class="footer-left">© <span id="year"></span> KALTÉ</div>
+        <div class="footer-right" data-i18n="footer_note">Digital &amp; Visual Solutions.</div>
       </div>
     </footer>
   </main>
@@ -170,5 +131,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
