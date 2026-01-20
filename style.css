@@ -50,12 +50,13 @@ img{ display:block; max-width:100%; }
   align-items:center;
   gap:12px;
   min-width: 120px;
-}
-.brand__logo{
-  height: 34px;
+
+  .brand__logo{
+  height: 46px;              /* più grande */
   width: auto;
-  filter: drop-shadow(0 8px 22px rgba(0,0,0,.55));
+  filter: invert(1) drop-shadow(0 8px 22px rgba(0,0,0,.55)); /* bianco */
 }
+
 
 .nav{
   display:flex;
@@ -293,3 +294,4 @@ img{ display:block; max-width:100%; }
   .grid{ grid-template-columns: 1fr; }
   .site-header{ padding: 0 16px; }
 }
+
