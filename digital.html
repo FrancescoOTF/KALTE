@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KALTÉ — DIGITAL</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>KALTÉ — Digital</title>
+  <link rel="stylesheet" href="style.css?v=20260120" />
 </head>
 
 <body class="page">
@@ -17,15 +17,15 @@
         <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="digital.html" aria-current="page" data-i18n="nav.digital">Digital</a>
         <a href="visual.html" data-i18n="nav.visual">Visual</a>
-        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <a href="index.html#work" data-i18n="nav.work">Selected work</a>
         <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
       </nav>
 
-      <div class="lang-switch">
+      <div class="lang-switch" role="group" aria-label="Language switch">
         <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">IT</button>
         <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">EN</button>
       </div>
@@ -43,40 +43,45 @@
 
     <section class="section">
       <h2 class="section-title" data-i18n="digital.section.do.title">Cosa facciamo</h2>
-      <div class="card card-pad">
+      <div class="card"><div class="card-pad">
         <ul class="list" data-i18n-list="digital.section.do.list"></ul>
-      </div>
+      </div></div>
     </section>
 
     <section class="section">
       <h2 class="section-title" data-i18n="digital.section.not.title">Cosa NON facciamo</h2>
-      <div class="card card-pad">
+      <div class="card"><div class="card-pad">
         <ul class="list" data-i18n-list="digital.section.not.list"></ul>
-      </div>
+      </div></div>
     </section>
 
     <section class="section">
       <h2 class="section-title" data-i18n="digital.section.fit.title">Quando ha senso</h2>
-      <div class="card card-pad">
+      <div class="card"><div class="card-pad">
         <ul class="list" data-i18n-list="digital.section.fit.list"></ul>
-      </div>
+      </div></div>
     </section>
 
     <section class="section">
       <h2 class="section-title" data-i18n="digital.section.start.title">Per iniziare</h2>
-      <div class="card card-pad">
+      <div class="card"><div class="card-pad">
         <p class="muted" data-i18n="digital.section.start.lead">
           Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti:
         </p>
         <ul class="list" data-i18n-list="digital.section.start.list"></ul>
+      </div></div>
+
+      <div class="cta-row">
+        <a class="btn" href="index.html#contact" data-i18n="digital.section.start.ctaContact">Contatti</a>
+        <a class="btn btn-ghost" href="https://wa.me/393318310378" target="_blank" rel="noopener" data-i18n="digital.section.start.ctaWhatsapp">WhatsApp</a>
       </div>
     </section>
 
     <footer class="footer">
-      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
+      <p>© <span data-i18n="brand.name">KALTÉ</span> — <span data-i18n="brand.tagline">Digital & Visual Solutions.</span></p>
     </footer>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260120"></script>
 </body>
 </html>
