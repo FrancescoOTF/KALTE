@@ -2,79 +2,79 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KALTÉ — Digital</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KALTÉ — DIGITAL</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="nav-left">
-          <a href="index.html" data-i18n="nav.backHome">← Home</a>
-          <a href="#start" data-i18n="start.title">PER INIZIARE</a>
-        </div>
-        <div class="nav-right">
-          <div class="lang" aria-label="Language toggle">
-            <button type="button" data-set-lang="it" data-lang="it" data-i18n="nav.lang.it">IT</button>
-            <button type="button" data-set-lang="en" data-lang="en" data-i18n="nav.lang.en">EN</button>
-          </div>
-        </div>
+
+<body class="page">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="KALTÉ Home">
+        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="digital.html" aria-current="page" data-i18n="nav.digital">Digital</a>
+        <a href="visual.html" data-i18n="nav.visual">Visual</a>
+        <a href="index.html#work" data-i18n="nav.work">Work</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
+      </nav>
+
+      <div class="lang-switch">
+        <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="kicker">KALTÉ</div>
-      <h1 class="page-title" data-i18n="digital.title">DIGITAL</h1>
-      <p class="lead" data-i18n="digital.subtitle">
+  <main class="wrap">
+    <section class="page-hero">
+      <p class="kicker">KALTÉ</p>
+      <h1 class="page-title" data-i18n="digital.page.title">DIGITAL</h1>
+      <p class="lead" data-i18n="digital.page.subtitle">
         Siti web statici 1–3 pagine. Veloci, chiari, senza gestione continua.
       </p>
+    </section>
 
-      <section class="section">
-        <h2 data-i18n="digital.what.title">Cosa facciamo</h2>
-        <div class="card">
-          <ul data-i18n-list="digital.what.list"></ul>
-        </div>
-      </section>
+    <section class="section">
+      <h2 class="section-title" data-i18n="digital.section.do.title">Cosa facciamo</h2>
+      <div class="card card-pad">
+        <ul class="list" data-i18n-list="digital.section.do.list"></ul>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2 data-i18n="digital.not.title">Cosa NON facciamo</h2>
-        <div class="card">
-          <ul data-i18n-list="digital.not.list"></ul>
-        </div>
-      </section>
+    <section class="section">
+      <h2 class="section-title" data-i18n="digital.section.not.title">Cosa NON facciamo</h2>
+      <div class="card card-pad">
+        <ul class="list" data-i18n-list="digital.section.not.list"></ul>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2 data-i18n="digital.fit.title">Quando ha senso</h2>
-        <div class="card">
-          <ul data-i18n-list="digital.fit.list"></ul>
-        </div>
-      </section>
+    <section class="section">
+      <h2 class="section-title" data-i18n="digital.section.fit.title">Quando ha senso</h2>
+      <div class="card card-pad">
+        <ul class="list" data-i18n-list="digital.section.fit.list"></ul>
+      </div>
+    </section>
 
-      <section class="section" id="start">
-        <h2 data-i18n="start.title">PER INIZIARE</h2>
-        <p data-i18n="start.lead">
+    <section class="section">
+      <h2 class="section-title" data-i18n="digital.section.start.title">Per iniziare</h2>
+      <div class="card card-pad">
+        <p class="muted" data-i18n="digital.section.start.lead">
           Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti:
         </p>
-        <div class="card">
-          <ul data-i18n-list="digital.start.list"></ul>
-          <p class="note" data-i18n="start.note">
-            Se cerchi ecommerce, SEO avanzata o gestione social, non è il servizio che offriamo.
-          </p>
-          <div class="btn-row">
-            <a class="btn" href="mailto:lenzonifrancesco4@gmail.com" data-i18n="start.cta">Contatti</a>
-            <a class="btn" href="https://wa.me/393318310378" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
-        </div>
-      </section>
-
-      <div class="footer">
-        <div>© KALTÉ</div>
-        <div data-i18n="footer.note">Digital & Visual Solutions.</div>
+        <ul class="list" data-i18n-list="digital.section.start.list"></ul>
       </div>
-    </div>
+    </section>
+
+    <footer class="footer">
+      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
+    </footer>
   </main>
 
   <script src="script.js"></script>
