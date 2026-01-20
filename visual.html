@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KALTÉ — VISUAL</title>
-
-  <!-- Usa il tuo CSS attuale -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <!-- HEADER / NAV (minimal) -->
-  <header class="site-header">
-    <div class="container header-inner">
+<body class="page">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
       <a class="brand" href="index.html" aria-label="KALTÉ Home">
-        <span data-i18n="brand.name">KALTÉ</span>
+        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
       </a>
 
-      <nav class="nav">
+      <nav class="nav-links">
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="digital.html" data-i18n="nav.digital">Digital</a>
         <a href="visual.html" aria-current="page" data-i18n="nav.visual">Visual</a>
@@ -26,123 +26,75 @@
       </nav>
 
       <div class="lang-switch">
-        <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">
-          <span data-i18n="nav.lang.it">IT</span>
-        </button>
-        <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">
-          <span data-i18n="nav.lang.en">EN</span>
-        </button>
+        <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
 
-  <main class="site-main">
+  <main class="wrap">
     <section class="page-hero">
-      <div class="container">
-        <h1 data-i18n="visual.page.title">VISUAL</h1>
-        <p class="lead" data-i18n="visual.page.subtitle">
-          Identità essenziale: logo, regole base, applicazioni coerenti. Niente pacchetti “marketing”.
-        </p>
-      </div>
+      <p class="kicker">KALTÉ</p>
+      <h1 class="page-title" data-i18n="visual.page.title">VISUAL</h1>
+      <p class="lead" data-i18n="visual.page.subtitle">
+        Identità essenziale: logo, regole base, applicazioni coerenti. Niente pacchetti “marketing”.
+      </p>
     </section>
 
-    <!-- CORE VISUAL -->
     <section class="section">
-      <div class="container">
-        <h2 data-i18n="visual.section.core.title">Cosa facciamo</h2>
+      <h2 class="section-title" data-i18n="visual.section.core.title">Cosa facciamo</h2>
+      <div class="card card-pad">
         <ul class="list" data-i18n-list="visual.section.core.list"></ul>
       </div>
     </section>
 
-    <!-- CONSTRAINTS -->
-    <section class="section section-muted">
-      <div class="container">
-        <h2 data-i18n="visual.section.constraints.title">Limiti chiari</h2>
+    <section class="section">
+      <h2 class="section-title" data-i18n="visual.section.constraints.title">Limiti chiari</h2>
+      <div class="card card-pad">
         <ul class="list" data-i18n-list="visual.section.constraints.list"></ul>
       </div>
     </section>
 
-    <!-- MERCH / APPAREL (NEW) -->
-    <section class="section merch">
-      <div class="container">
-        <div class="section-head">
-          <h2 data-i18n="visual.merch.title">MERCH / APPAREL</h2>
-          <p class="lead" data-i18n="visual.merch.subtitle">
-            Due livelli. Se vuoi produzione “chiavi in mano” senza selezione: non siamo il partner giusto.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <!-- STANDARD -->
-          <article class="card merch-card">
-            <header class="card-head">
-              <h3 data-i18n="visual.merch.standard.title">STANDARD</h3>
-              <p class="muted" data-i18n="visual.merch.standard.tagline">
-                Design + handoff. Il cliente gestisce il fornitore.
-              </p>
-            </header>
-
-            <div class="card-body">
-              <h4 data-i18n="visual.merch.standard.includes.title">Include</h4>
-              <ul class="list" data-i18n-list="visual.merch.standard.includes.list"></ul>
-
-              <h4 class="mt" data-i18n="visual.merch.standard.notes.title">Note</h4>
-              <ul class="list" data-i18n-list="visual.merch.standard.notes.list"></ul>
-            </div>
-          </article>
-
-          <!-- PREMIUM -->
-          <article class="card merch-card merch-premium">
-            <header class="card-head">
-              <h3 data-i18n="visual.merch.premium.title">PREMIUM</h3>
-              <p class="muted" data-i18n="visual.merch.premium.tagline">
-                Full Production Coordination. KALTÉ è unico referente.
-              </p>
-            </header>
-
-            <div class="card-body">
-              <h4 data-i18n="visual.merch.premium.includes.title">Include</h4>
-              <ul class="list" data-i18n-list="visual.merch.premium.includes.list"></ul>
-
-              <div class="fee-box mt">
-                <h4 data-i18n="visual.merch.premium.fee.title">Fee</h4>
-                <p data-i18n="visual.merch.premium.fee.text">
-                  Fee +30–40% sul costo di produzione (in base a complessità e rischio).
-                </p>
-              </div>
-
-              <h4 class="mt" data-i18n="visual.merch.premium.limits.title">Limiti</h4>
-              <ul class="list" data-i18n-list="visual.merch.premium.limits.list"></ul>
-            </div>
-          </article>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section cta">
-      <div class="container">
-        <h2 data-i18n="contact.title">Contatti</h2>
-        <p class="lead" data-i18n="contact.subtitle">
-          Solo richieste chiare. Se non hai brief minimo, aspetta.
-        </p>
-
-        <!-- Mantieni il tuo pattern attuale: mailto o link a sezione contatti in index -->
-        <div class="cta-actions">
-          <a class="btn" href="index.html#contact" data-i18n="digital.section.cta.button">Contatti</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p class="muted" data-i18n="footer.note">
-        KALTÉ — Digital & Visual Solutions. Static sites + essential identity.
+    <section class="section">
+      <h2 class="section-title" data-i18n="visual.merch.title">Merch / Apparel</h2>
+      <p class="lead" data-i18n="visual.merch.subtitle">
+        Due livelli. Produzione non standard: solo progetti selezionati.
       </p>
-    </div>
-  </footer>
+
+      <div class="grid-2">
+        <article class="card card-pad merch-card">
+          <h3 data-i18n="visual.merch.standard.title">STANDARD</h3>
+          <p class="tagline" data-i18n="visual.merch.standard.tagline">Design + Tech pack + Handoff</p>
+
+          <h4 data-i18n="visual.merch.standard.includes.title">Include</h4>
+          <ul class="list" data-i18n-list="visual.merch.standard.includes.list"></ul>
+
+          <h4 data-i18n="visual.merch.standard.notes.title">Note</h4>
+          <ul class="list" data-i18n-list="visual.merch.standard.notes.list"></ul>
+        </article>
+
+        <article class="card card-pad merch-card">
+          <h3 data-i18n="visual.merch.premium.title">PREMIUM</h3>
+          <p class="tagline" data-i18n="visual.merch.premium.tagline">Full Production Coordination</p>
+
+          <h4 data-i18n="visual.merch.premium.includes.title">Include</h4>
+          <ul class="list" data-i18n-list="visual.merch.premium.includes.list"></ul>
+
+          <h4 data-i18n="visual.merch.premium.fee.title">Fee</h4>
+          <p class="muted" data-i18n="visual.merch.premium.fee.text">
+            Fee +30–40% sul costo di produzione (in base a complessità e rischio).
+          </p>
+
+          <h4 data-i18n="visual.merch.premium.limits.title">Limiti</h4>
+          <ul class="list" data-i18n-list="visual.merch.premium.limits.list"></ul>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
+    </footer>
+  </main>
 
   <script src="script.js"></script>
 </body>
