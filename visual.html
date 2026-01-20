@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KALTÉ — Visual</title>
+  <meta name="description" content="KALTÉ Visual — logo, identità visiva, materiali digitali e stampati." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page">
+  <header class="nav nav-solid">
+    <div class="nav-left">
+      <a class="brand" href="index.html" aria-label="KALTÉ home">
+        <img src="assets/logo.png" alt="KALTÉ logo" class="brand-logo" />
+      </a>
+    </div>
+
+    <nav class="nav-center" aria-label="Primary">
+      <a href="index.html#about" data-i18n="nav_about">ABOUT</a>
+      <a href="index.html#services" data-i18n="nav_services">SERVICES</a>
+      <a href="index.html#contact" data-i18n="nav_contact">CONTACT</a>
+      <a href="index.html#social" data-i18n="nav_social">SOCIAL</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="lang-toggle" type="button" id="langToggle" aria-label="Toggle language">
+        <span class="lang-pill" id="langPill">IT</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wrap page-wrap">
+    <section class="page-hero">
+      <div class="page-breadcrumb">
+        <a href="index.html" data-i18n="back_home">← Home</a>
+      </div>
+
+      <h1 class="page-title">VISUAL</h1>
+      <p class="page-sub" data-i18n="visual_intro">
+        Identità visiva essenziale, applicabile e coerente. Niente decorazioni vuote.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-i18n="what_includes">Include</h2>
+      <ul class="list" data-i18n-list="visual_in">
+        <!-- filled by JS -->
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-i18n="what_excludes">Esclude</h2>
+      <ul class="list list-danger" data-i18n-list="visual_out">
+        <!-- filled by JS -->
+      </ul>
+
+      <div class="note-box" data-i18n="visual_serious">
+        Questo è lavoro serio: se vuoi “solo un logo veloce”, non è il servizio giusto.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-i18n="next_step">Next step</h2>
+      <p class="section-text" data-i18n="visual_next">
+        Per partire servono: 1) riferimento stile, 2) cosa fai e per chi, 3) dove verrà usato (web, stampa, merch),
+        4) vincoli (colori, simboli, formati).
+      </p>
+
+      <div class="actions">
+        <a class="cta" href="mailto:lenzonifrancesco4@gmail.com" data-i18n="cta_email">EMAIL</a>
+        <a class="cta ghost" href="https://wa.me/393318310378" target="_blank" rel="noopener" data-i18n="cta_whatsapp">WHATSAPP</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <div class="footer-inner">
+        <div class="footer-left">© <span id="year"></span> KALTÉ</div>
+        <div class="footer-right" data-i18n="footer_note">Digital &amp; Visual Solutions.</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
