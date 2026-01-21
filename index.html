@@ -1,126 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KALTÉ — Digital & Visual Solutions</title>
-  <link rel="stylesheet" href="style.css?v=1">
+
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="style.css?v=12" />
+  <script defer src="script.js?v=12"></script>
 </head>
 
-<body class="home">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+<body>
+  <!-- Background -->
+  <div class="bg">
+    <img src="assets/bg.gif" alt="" />
+  </div>
 
-  <header class="nav">
-    <div class="wrap nav-inner">
+  <!-- Top nav -->
+  <header class="topbar">
+    <div class="container topbar__inner">
       <a class="brand" href="index.html" aria-label="KALTÉ Home">
-        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
+        <img class="brand__logo" src="assets/logo.png" alt="KALTÉ logo">
       </a>
 
-      <nav class="nav-links">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#services" data-i18n="nav.services">Servizi</a>
-        <a href="#work" data-i18n="nav.work">Selected work</a>
-        <a href="case-study.html" data-i18n="nav.howWeWork">Come lavoriamo</a>
-        <a href="#contact" data-i18n="nav.contact">Contatti</a>
-        <a href="#social" data-i18n="nav.social">Social</a>
+      <nav class="nav">
+        <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
+        <a href="#services" class="nav__link" data-i18n="nav.services">Servizi</a>
+        <a href="case-study.html" class="nav__link" data-i18n="nav.howWeWork">Come lavoriamo</a>
+        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contatti</a>
+        <a href="#social" class="nav__link" data-i18n="nav.social">Social</a>
       </nav>
 
-      <div class="lang-switch" role="group" aria-label="Language switch">
-        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="true">IT</button>
-        <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang">
+        <button class="lang__btn" type="button" data-set-lang="it">IT</button>
+        <button class="lang__btn" type="button" data-set-lang="en">EN</button>
       </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="page-hero" id="top">
-      <p class="kicker" data-i18n="home.hero.kicker">DIGITAL & VISUAL SOLUTIONS</p>
-      <h1 class="page-title" data-i18n="home.hero.title">Siti statici + identità visiva essenziale.</h1>
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__kicker" data-i18n="home.hero.kicker">DIGITAL &amp; VISUAL SOLUTIONS</div>
+        <h1 class="hero__title" data-i18n="home.hero.title">Siti statici + identità visiva essenziale.</h1>
 
-      <div class="hero-cta">
-        <a class="btn" href="digital.html" data-i18n="home.hero.ctaDigital">VAI A DIGITAL</a>
-        <a class="btn" href="visual.html" data-i18n="home.hero.ctaVisual">VAI A VISUAL</a>
-      </div>
-
-      <div class="card card-pad">
-        <h3 class="card-title" data-i18n="home.scope.title">Perimetro</h3>
-        <ul class="list" data-i18n-list="home.scope.list"></ul>
+        <!-- Perimetro (no “Filtro rapido”) -->
+        <div class="pill pill--wide">
+          <div class="pill__title" data-i18n="scope.title">Perimetro</div>
+          <ul class="pill__list" data-i18n-list="scope.list"></ul>
+        </div>
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section class="section" id="about">
-      <h2 class="section-title" data-i18n="home.about.title">About</h2>
-      <p class="lead" data-i18n="home.about.lead">
-        Costruiamo asset che devono funzionare: chiari, veloci, replicabili.
-      </p>
-      <ul class="list" data-i18n-list="home.about.list"></ul>
+      <div class="container">
+        <div class="section__label" data-i18n="about.title">About</div>
+        <div class="section__grid section__grid--two">
+          <div class="card">
+            <p class="lead" data-i18n="about.lead">
+              Costruiamo asset che devono funzionare: chiari, veloci, replicabili.
+            </p>
+            <ul class="bullets" data-i18n-list="about.list"></ul>
+          </div>
+
+          <div class="card">
+            <div class="card__title" data-i18n="about.focusTitle">Focus</div>
+            <ul class="bullets" data-i18n-list="about.focusList"></ul>
+            <div class="note" data-i18n="about.note">
+              Produzione / coordinamento: solo progetti selezionati e con perimetro definito.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- SERVICES -->
     <section class="section" id="services">
-      <h2 class="section-title" data-i18n="home.services.title">Services</h2>
+      <div class="container">
+        <div class="section__label" data-i18n="services.title">Services</div>
 
-      <div class="grid-2">
-        <article class="card card-pad">
-          <h3 data-i18n="home.services.digital.title">Focus DIGITAL</h3>
-          <p class="muted" data-i18n="home.services.digital.desc"></p>
-          <p class="note" data-i18n="home.services.digital.note"></p>
-          <p class="link-row"><a href="digital.html" data-i18n="home.services.open">Open page →</a></p>
-        </article>
+        <div class="cards cards--two">
+          <a class="card card--link" href="digital.html" aria-label="Digital">
+            <div class="card__title" data-i18n="digital.title">Focus DIGITAL</div>
+            <p class="card__desc" data-i18n="digital.desc">
+              Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.
+            </p>
+            <p class="card__meta" data-i18n="digital.note">No ecommerce. No WordPress gestito.</p>
+            <div class="card__cta" data-i18n="services.open">Open page →</div>
+          </a>
 
-        <article class="card card-pad">
-          <h3 data-i18n="home.services.visual.title">Focus VISUAL</h3>
-          <p class="muted" data-i18n="home.services.visual.desc"></p>
-          <p class="note" data-i18n="home.services.visual.note"></p>
-          <p class="link-row"><a href="visual.html" data-i18n="home.services.open">Open page →</a></p>
-        </article>
+          <a class="card card--link" href="visual.html" aria-label="Visual">
+            <div class="card__title" data-i18n="visual.title">Focus VISUAL</div>
+            <p class="card__desc" data-i18n="visual.desc">
+              Logo, mini identity, materiali. Applicazioni su merch quando serve.
+            </p>
+            <p class="card__meta" data-i18n="visual.note">Niente pacchetti marketing.</p>
+            <div class="card__cta" data-i18n="services.open">Open page →</div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="work">
-      <h2 class="section-title" data-i18n="home.work.title">Selected work</h2>
-      <p class="lead" data-i18n="home.work.lead"></p>
+    <!-- COSA FACCIAMO (ampliata) -->
+    <section class="section" id="what">
+      <div class="container">
+        <div class="section__label" data-i18n="home.what.label">Cosa facciamo</div>
 
-      <div class="work-grid">
-        <img src="assets/work/tracksuit-01.png" alt="tracksuit 01">
-        <img src="assets/work/tracksuit-02.png" alt="tracksuit 02">
-        <img src="assets/work/tracksuit-03.png" alt="tracksuit 03">
-        <img src="assets/work/tracksuit-04.png" alt="tracksuit 04">
-        <img src="assets/work/tracksuit-05.png" alt="tracksuit 05">
-        <img src="assets/work/tracksuit-06.png" alt="tracksuit 06">
-        <img src="assets/work/tracksuit-07.png" alt="tracksuit 07">
-        <img src="assets/work/tracksuit-08.png" alt="tracksuit 08">
-      </div>
+        <div class="section__grid section__grid--two">
+          <div class="card">
+            <div class="card__title" data-i18n="home.what.doTitle">Output</div>
+            <ul class="bullets" data-i18n-list="home.what.doList"></ul>
+          </div>
 
-      <div class="card card-pad" style="margin-top:16px;">
-        <h3 data-i18n="home.work.case.title"></h3>
-        <p class="muted" data-i18n="home.work.case.teaser"></p>
-        <a class="btn" href="case-study.html" data-i18n="home.work.case.cta"></a>
+          <div class="card">
+            <div class="card__title" data-i18n="home.what.limitsTitle">Limiti</div>
+            <ul class="bullets" data-i18n-list="home.what.limitsList"></ul>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- PROOF MINIMALE -->
+    <section class="section" id="proof">
+      <div class="container">
+        <div class="section__label" data-i18n="work.title">Proof</div>
+        <div class="card">
+          <p class="lead" data-i18n="home.proof.teaser">
+            Un esempio reale: capsule KALTÉ (apparel) — sito + identità + file pronti per stampa/ricamo.
+          </p>
+          <ul class="bullets" data-i18n-list="home.proof.list"></ul>
+          <a class="link" href="case-study.html" data-i18n="home.proof.link">Vai al case study →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="section" id="contact">
-      <h2 class="section-title" data-i18n="home.contact.title">Contact</h2>
-      <div class="card card-pad">
-        <p style="margin:0;">
-          <strong>Email</strong> — <span data-i18n="contact.emailText"></span>
-          &nbsp;&nbsp; <strong>WhatsApp</strong> — <span data-i18n="contact.waText"></span>
-        </p>
+      <div class="container">
+        <div class="section__label" data-i18n="contact.title">Contact</div>
+        <div class="card">
+          <p class="lead" data-i18n="toStart.title">
+            Vuoi partire?
+          </p>
+
+          <div class="stack">
+            <p class="muted" data-i18n="toStart.text">
+              Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti:
+            </p>
+            <ol class="steps" data-i18n-list="toStart.list"></ol>
+          </div>
+
+          <a class="btn" href="mailto:tenzionifrancesco4@gmail.com" data-i18n="contact.button">
+            Contattaci →
+          </a>
+        </div>
       </div>
     </section>
 
+    <!-- SOCIAL (qui dentro anche mail + telefono) -->
     <section class="section" id="social">
-      <h2 class="section-title" data-i18n="home.social.title">Social</h2>
-      <div class="card card-pad">
-        <a href="#" data-i18n="home.social.ig">Instagram</a>
+      <div class="container">
+        <div class="section__label" data-i18n="social.title">Social</div>
+        <div class="card">
+          <ul class="bullets">
+            <li>
+              <span data-i18n="social.igLabel">Instagram:</span>
+              <a class="link" href="#" data-i18n="social.ig">@instagram</a>
+            </li>
+            <li>
+              <span data-i18n="social.mailLabel">Email:</span>
+              <a class="link" href="mailto:tenzionifrancesco4@gmail.com">tenzionifrancesco4@gmail.com</a>
+            </li>
+            <li>
+              <span data-i18n="social.waLabel">WhatsApp:</span>
+              <a class="link" href="#" data-i18n="social.wa">wa.me/393318310378</a>
+            </li>
+          </ul>
+
+          <div class="note" data-i18n="social.note">
+            Se scrivi, manda: obiettivo + cosa fai + contenuti disponibili + tempistiche.
+          </div>
+        </div>
       </div>
     </section>
-
-    <footer class="footer">
-      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
-    </footer>
   </main>
 
-  <script src="script.js?v=1"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__line">© KALTÉ — Digital &amp; Visual Solutions.</div>
+    </div>
+  </footer>
 </body>
 </html>
