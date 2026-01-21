@@ -1,120 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KALTÉ — Visual</title>
-  <link rel="stylesheet" href="style.css?v=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visual | KALTÉ</title>
+
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="style.css?v=12" />
+  <script defer src="script.js?v=12"></script>
 </head>
 
-<body class="page">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+<body>
+  <div class="bg">
+    <img src="assets/bg.gif" alt="" />
+  </div>
 
-  <header class="nav">
-    <div class="wrap nav-inner">
+  <header class="topbar">
+    <div class="container topbar__inner">
       <a class="brand" href="index.html" aria-label="KALTÉ Home">
-        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
+        <img class="brand__logo" src="assets/logo.png" alt="KALTÉ logo">
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html" data-i18n="nav.home">Home</a>
-        <a href="case-study.html" data-i18n="nav.howWeWork">Come lavoriamo</a>
-        <a href="digital.html">Digital</a>
+      <nav class="nav">
+        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+        <a href="case-study.html" class="nav__link" data-i18n="nav.howWeWork">Come lavoriamo</a>
+        <a href="digital.html" class="nav__link" data-i18n="nav.digital">Digital</a>
+        <a href="visual.html" class="nav__link is-active" data-i18n="nav.visual">Visual</a>
+        <a href="index.html#contact" class="nav__link" data-i18n="nav.contact">Contatti</a>
       </nav>
 
-      <div class="lang-switch" role="group" aria-label="Language switch">
-        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="true">IT</button>
-        <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang">
+        <button class="lang__btn" type="button" data-set-lang="it">IT</button>
+        <button class="lang__btn" type="button" data-set-lang="en">EN</button>
       </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="page-hero">
-      <p class="kicker">KALTÉ</p>
-      <h1 class="page-title" data-i18n="visual.title">VISUAL</h1>
-      <p class="lead" data-i18n="visual.subtitle"></p>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title" data-i18n="visual.whatWeDo.title"></h2>
-      <div class="card card-pad">
-        <ul class="list" data-i18n-list="visual.whatWeDoList"></ul>
+  <main class="page">
+    <section class="hero hero--small">
+      <div class="container">
+        <div class="hero__kicker">KALTÉ</div>
+        <h1 class="hero__title" data-i18n="visual.pageTitle">VISUAL</h1>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-title" data-i18n="visual.limits.title"></h2>
-      <div class="card card-pad">
-        <ul class="list" data-i18n-list="visual.limitsList"></ul>
+      <div class="container">
+        <div class="card">
+          <p class="lead" data-i18n="visual.pageLead">
+            Logo/restyling, identità essenziale (colori/font/regole base), materiali digitali e stampati, applicazioni su merch.
+          </p>
+          <div class="note" data-i18n="visual.pageNote">
+            Niente pacchetti marketing. Asset chiari, replicabili, pronti per produzione quando serve.
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="merch">
-      <h2 class="section-title" data-i18n="visual.merch.title"></h2>
-      <p class="lead" data-i18n="visual.merch.lead"></p>
-      <p class="note" data-i18n="visual.merch.hint"></p>
+    <!-- MERCH / APPAREL: carousel tiers -->
+    <section class="section">
+      <div class="container">
+        <div class="section__label" data-i18n="merch.title">MERCH / APPAREL</div>
 
-      <div class="card card-pad" data-tier-carousel>
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
-          <button class="btn" type="button" data-tier-prev aria-label="Prev">←</button>
-          <button class="btn" type="button" data-tier-next aria-label="Next">→</button>
+        <div class="tier-carousel" data-tier-carousel>
+          <button class="tier-carousel__btn" type="button" aria-label="Prev" data-tier-prev>←</button>
+
+          <div class="tier-carousel__viewport">
+            <!-- PANEL 1 -->
+            <div class="tier-panel" data-tier-panel>
+              <div class="tier-panel__head">
+                <div class="tier-panel__name" data-i18n="merch.tiers.standard.name">STANDARD</div>
+                <div class="tier-panel__tag" data-i18n="merch.tiers.standard.tagline">Design + Tech pack + Handoff</div>
+              </div>
+              <ul class="bullets" data-i18n-list="merch.tiers.standard.include"></ul>
+              <div class="note" data-i18n="merch.tiers.standard.notes">
+                Il cliente paga e gestisce il fornitore direttamente. KALTÉ non gestisce produzione.
+              </div>
+            </div>
+
+            <!-- PANEL 2 -->
+            <div class="tier-panel" data-tier-panel>
+              <div class="tier-panel__head">
+                <div class="tier-panel__name" data-i18n="merch.tiers.plus.name">PLUS</div>
+                <div class="tier-panel__tag" data-i18n="merch.tiers.plus.tagline">Più revisioni + supporto fornitori</div>
+              </div>
+              <ul class="bullets" data-i18n-list="merch.tiers.plus.include"></ul>
+              <div class="note" data-i18n="merch.tiers.plus.notes">
+                Il cliente resta referente unico verso il fornitore. Noi supportiamo, non coordiniamo.
+              </div>
+            </div>
+
+            <!-- PANEL 3 -->
+            <div class="tier-panel" data-tier-panel>
+              <div class="tier-panel__head">
+                <div class="tier-panel__name" data-i18n="merch.tiers.premium.name">PREMIUM</div>
+                <div class="tier-panel__tag" data-i18n="merch.tiers.premium.tagline">Full Production Coordination</div>
+              </div>
+              <ul class="bullets" data-i18n-list="merch.tiers.premium.include"></ul>
+              <div class="note" data-i18n="merch.tiers.premium.notes">
+                Fee variabile: base indicativa ~15% sul costo complessivo (produzione + mockup + tech pack + coordinamento). Solo progetti selezionati.
+              </div>
+            </div>
+          </div>
+
+          <button class="tier-carousel__btn" type="button" aria-label="Next" data-tier-next>→</button>
         </div>
 
-        <!-- STANDARD -->
-        <div data-tier-panel>
-          <h3 style="margin:0 0 6px;" data-i18n="visual.tiers.standard.name"></h3>
-          <p class="muted" style="margin:0 0 12px;" data-i18n="visual.tiers.standard.tagline"></p>
+        <div class="divider"></div>
 
-          <h4 style="margin:0 0 8px;" data-i18n="visual.tiers.standard.includeTitle"></h4>
-          <ul class="list" data-i18n-list="visual.tiers.standard.include"></ul>
-
-          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.standard.revisionsTitle"></h4>
-          <p class="muted" data-i18n="visual.tiers.standard.revisionsText"></p>
-
-          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.standard.notesTitle"></h4>
-          <p class="note" data-i18n="visual.tiers.standard.notesText"></p>
+        <div class="card">
+          <div class="card__title" data-i18n="visual.limitsTitle">Limiti</div>
+          <ul class="bullets" data-i18n-list="visual.limitsList"></ul>
+          <a class="btn" href="index.html#contact" data-i18n="visual.cta">Contattaci →</a>
         </div>
-
-        <!-- PLUS -->
-        <div data-tier-panel style="display:none;">
-          <h3 style="margin:0 0 6px;" data-i18n="visual.tiers.plus.name"></h3>
-          <p class="muted" style="margin:0 0 12px;" data-i18n="visual.tiers.plus.tagline"></p>
-
-          <h4 style="margin:0 0 8px;" data-i18n="visual.tiers.plus.includeTitle"></h4>
-          <ul class="list" data-i18n-list="visual.tiers.plus.include"></ul>
-
-          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.plus.revisionsTitle"></h4>
-          <p class="muted" data-i18n="visual.tiers.plus.revisionsText"></p>
-
-          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.plus.notesTitle"></h4>
-          <p class="note" data-i18n="visual.tiers.plus.notesText"></p>
-        </div>
-
-        <!-- PREMIUM -->
-        <div data-tier-panel style="display:none;">
-          <h3 style="margin:0 0 6px;" data-i18n="visual.tiers.premium.name"></h3>
-          <p class="muted" style="margin:0 0 12px;" data-i18n="visual.tiers.premium.tagline"></p>
-
-          <h4 style="margin:0 0 8px;" data-i18n="visual.tiers.premium.includeTitle"></h4>
-          <ul class="list" data-i18n-list="visual.tiers.premium.include"></ul>
-
-          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.premium.feeTitle"></h4>
-          <p class="muted" data-i18n="visual.tiers.premium.feeText"></p>
-
-          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.premium.limitsTitle"></h4>
-          <ul class="list" data-i18n-list="visual.tiers.premium.limits"></ul>
-        </div>
-
       </div>
     </section>
-
-    <footer class="footer">
-      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
-    </footer>
   </main>
 
-  <script src="script.js?v=1"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__line">© KALTÉ — Digital &amp; Visual Solutions.</div>
+    </div>
+  </footer>
 </body>
 </html>
