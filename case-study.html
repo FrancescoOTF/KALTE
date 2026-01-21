@@ -1,94 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KALTÉ — Case Study</title>
-  <link rel="stylesheet" href="style.css?v=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Come lavoriamo — Case Study | KALTÉ</title>
+
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="style.css?v=12" />
+  <script defer src="script.js?v=12"></script>
 </head>
 
-<body class="page">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
+<body>
+  <div class="bg">
+    <img src="assets/bg.gif" alt="" />
+  </div>
 
-  <header class="nav">
-    <div class="wrap nav-inner">
+  <header class="topbar">
+    <div class="container topbar__inner">
       <a class="brand" href="index.html" aria-label="KALTÉ Home">
-        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
+        <img class="brand__logo" src="assets/logo.png" alt="KALTÉ logo">
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html#about" data-i18n="nav.about">About</a>
-        <a href="index.html#services" data-i18n="nav.services">Servizi</a>
-        <a href="index.html#work" data-i18n="nav.work">Selected work</a>
-        <a href="case-study.html" aria-current="page" data-i18n="nav.howWeWork">Come lavoriamo</a>
-        <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
-        <a href="index.html#social" data-i18n="nav.social">Social</a>
+      <nav class="nav">
+        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+        <a href="digital.html" class="nav__link" data-i18n="nav.digital">Digital</a>
+        <a href="visual.html" class="nav__link" data-i18n="nav.visual">Visual</a>
+        <a href="case-study.html" class="nav__link is-active" data-i18n="nav.howWeWork">Come lavoriamo</a>
+        <a href="index.html#contact" class="nav__link" data-i18n="nav.contact">Contatti</a>
       </nav>
 
-      <div class="lang-switch" role="group" aria-label="Language switch">
-        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="true">IT</button>
-        <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">EN</button>
+      <div class="lang">
+        <button class="lang__btn" type="button" data-set-lang="it">IT</button>
+        <button class="lang__btn" type="button" data-set-lang="en">EN</button>
       </div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="page-hero">
-      <p class="kicker">KALTÉ</p>
-      <h1 class="page-title" data-i18n="case.title">CASE STUDY</h1>
-      <p class="lead" data-i18n="case.subtitle"></p>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title" data-i18n="case.kalte.title"></h2>
-
-      <div class="card card-pad">
-        <h3 data-i18n="case.kalte.requestTitle"></h3>
-        <p class="muted" data-i18n="case.kalte.requestText"></p>
-
-        <h3 style="margin-top:16px;" data-i18n="case.kalte.goalTitle"></h3>
-        <ul class="list" data-i18n-list="case.kalte.goals"></ul>
-
-        <h3 style="margin-top:16px;" data-i18n="case.kalte.workTitle"></h3>
-        <ul class="list" data-i18n-list="case.kalte.work"></ul>
-
-        <h3 style="margin-top:16px;" data-i18n="case.kalte.deliverTitle"></h3>
-        <ul class="list" data-i18n-list="case.kalte.deliver"></ul>
-
-        <p class="note" style="margin-top:14px;" data-i18n="case.kalte.note"></p>
+  <main class="page">
+    <section class="hero hero--small">
+      <div class="container">
+        <div class="hero__kicker" data-i18n="case.subtitle">CASE STUDY</div>
+        <h1 class="hero__title" data-i18n="case.title">KALTÉ Apparel Capsule</h1>
+        <p class="lead" data-i18n="case.teaser">
+          Un esempio reale: come impostiamo un progetto e cosa consegniamo.
+        </p>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-title" data-i18n="case.gallery.title"></h2>
-      <p class="lead" data-i18n="case.gallery.lead"></p>
+      <div class="container">
+        <div class="section__grid section__grid--two">
+          <div class="card">
+            <div class="card__title" data-i18n="case.requestTitle">Richiesta</div>
+            <p data-i18n="case.requestText">
+              KALTÉ voleva una capsule coerente e riproducibile: 3 t-shirt, 1 hoodie, 1 tracksuit.
+            </p>
 
-      <div class="work-grid">
-        <img src="assets/work/tracksuit-01.png" alt="tracksuit 01">
-        <img src="assets/work/tracksuit-02.png" alt="tracksuit 02">
-        <img src="assets/work/tracksuit-03.png" alt="tracksuit 03">
-        <img src="assets/work/tracksuit-04.png" alt="tracksuit 04">
-        <img src="assets/work/tracksuit-05.png" alt="tracksuit 05">
-        <img src="assets/work/tracksuit-06.png" alt="tracksuit 06">
-        <img src="assets/work/tracksuit-07.png" alt="tracksuit 07">
-        <img src="assets/work/tracksuit-08.png" alt="tracksuit 08">
+            <div class="card__title" data-i18n="case.goalTitle">Obiettivo</div>
+            <ul class="bullets" data-i18n-list="case.goals"></ul>
+          </div>
+
+          <div class="card">
+            <div class="card__title" data-i18n="case.workTitle">Cosa abbiamo fatto</div>
+            <ul class="bullets" data-i18n-list="case.workList"></ul>
+
+            <div class="card__title" data-i18n="case.deliverTitle">Consegna (handoff)</div>
+            <ul class="bullets" data-i18n-list="case.deliverList"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview gallery (8 immagini) -->
+    <section class="section">
+      <div class="container">
+        <div class="section__label" data-i18n="case.galleryTitle">Preview</div>
+
+        <div class="gallery">
+          <img src="assets/work/tracksuit-01.png" alt="Work 01" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-02.png" alt="Work 02" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-03.png" alt="Work 03" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-04.png" alt="Work 04" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-05.png" alt="Work 05" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-06.png" alt="Work 06" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-07.png" alt="Work 07" style="max-width:100%;height:auto;">
+          <img src="assets/work/tracksuit-08.png" alt="Work 08" style="max-width:100%;height:auto;">
+        </div>
+
+        <div class="note" data-i18n="case.galleryNote">
+          Foto campione fornitore (beta / proof of work). Produzione: solo progetti selezionati e con perimetro definito.
+        </div>
       </div>
     </section>
 
     <section class="section">
-      <h2 class="section-title" data-i18n="case.cta.title"></h2>
-      <div class="card card-pad">
-        <p class="muted" data-i18n="case.cta.text"></p>
-        <a class="btn" href="index.html#contact" data-i18n="case.cta.button"></a>
+      <div class="container">
+        <div class="card">
+          <p class="lead" data-i18n="case.nextTitle">Vuoi partire?</p>
+          <p class="muted" data-i18n="case.nextText">
+            Scrivici: obiettivo, cosa fai, contenuti disponibili e tempistiche. Rispondiamo con perimetro e next step.
+          </p>
+          <a class="btn" href="index.html#contact" data-i18n="case.nextBtn">Contattaci →</a>
+        </div>
       </div>
     </section>
-
-    <footer class="footer">
-      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
-    </footer>
   </main>
 
-  <script src="script.js?v=1"></script>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__line">© KALTÉ — Digital &amp; Visual Solutions.</div>
+    </div>
+  </footer>
 </body>
 </html>
