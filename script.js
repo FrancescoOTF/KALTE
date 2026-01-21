@@ -1,9 +1,3 @@
-/* KALTÉ — Vanilla JS i18n
-   - data-i18n for strings
-   - data-i18n-list for arrays (generates <li>)
-   - localStorage key: "kalte_lang"
-*/
-
 const LS_KEY = "kalte_lang";
 const DEFAULT_LANG = "it";
 
@@ -19,12 +13,8 @@ const I18N = {
       digital: "Digital",
       visual: "Visual"
     },
-
     home: {
-      hero: {
-        kicker: "DIGITAL & VISUAL SOLUTIONS",
-        title: "Siti statici + identità visiva essenziale."
-      },
+      hero: { kicker: "DIGITAL & VISUAL SOLUTIONS", title: "Siti statici + identità visiva essenziale." },
       what: {
         label: "Cosa facciamo",
         doTitle: "Output",
@@ -45,7 +35,7 @@ const I18N = {
           "No SEO avanzata / crescita organica continuativa",
           "No SMM / pacchetti marketing",
           "No manutenzione continua e supporto “infinito”",
-          "Timeline e budget realistici (se vuoi “ieri” costa di più)"
+          "Timeline e budget realistici"
         ]
       },
       proof: {
@@ -58,7 +48,6 @@ const I18N = {
         link: "Vai al case study →"
       }
     },
-
     scope: {
       title: "Perimetro",
       list: [
@@ -68,7 +57,6 @@ const I18N = {
         "Apparel/merch: solo progetti selezionati"
       ]
     },
-
     about: {
       title: "About",
       lead: "Costruiamo asset che devono funzionare: chiari, veloci, replicabili.",
@@ -78,47 +66,33 @@ const I18N = {
         "Handoff pulito: file ordinati + istruzioni minime"
       ],
       focusTitle: "Focus",
-      focusList: [
-        "Chiarezza: struttura e copy senza fronzoli",
-        "Velocità: pagine leggere, hosting semplice",
-        "Output: file pronti, replicabili, consegna ordinata"
-      ],
+      focusList: ["Chiarezza", "Velocità", "Output replicabile"],
       note: "Produzione / coordinamento: solo progetti selezionati e con perimetro definito."
     },
-
-    services: {
-      title: "Services",
-      open: "Open page →"
-    },
-
+    services: { title: "Services", open: "Open page →" },
     digital: {
       title: "Focus DIGITAL",
       desc: "Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.",
       note: "No ecommerce. No WordPress gestito.",
-
       pageTitle: "DIGITAL",
       pageLead: "Siti web statici 1–3 pagine. Veloci, chiari, senza gestione continua.",
       pageNote: "Deploy su GitHub Pages / Netlify / Cloudflare Pages. Toggle Lingua (Es. ITA/ENG) su richiesta.",
-
       whatWeDoTitle: "Cosa facciamo",
       whatWeDoList: [
-        "Struttura essenziale + copy (se hai contenuti, meglio)",
+        "Struttura essenziale + copy",
         "Responsive mobile-first",
-        "Performance base (pagine leggere, immagini ottimizzate)",
-        "Deploy + handoff (repo / file ordinati)",
+        "Performance base (pagine leggere)",
+        "Deploy + handoff pulito",
         "Toggle Lingua (Es. ITA/ENG)",
-        "Form contatto semplice (mailto / link WhatsApp)"
+        "Form contatto semplice (mailto / WhatsApp)"
       ],
-
       whatWeDontTitle: "Cosa non facciamo",
       whatWeDontList: [
         "Ecommerce",
         "WordPress gestito / CMS con gestione continua",
         "SEO avanzata / crescita organica continuativa",
-        "Manutenzione continua / supporto infinito",
-        "Automazioni complesse lato server (stack statico)"
+        "Manutenzione continua / supporto infinito"
       ],
-
       toStartTitle: "Per iniziare",
       toStartLead: "Per lavorare veloce e senza giri a vuoto, mandaci questi 4 punti:",
       toStartList: [
@@ -129,25 +103,21 @@ const I18N = {
       ],
       cta: "Contattaci →"
     },
-
     visual: {
       title: "Focus VISUAL",
       desc: "Logo, mini identity, materiali. Applicazioni su merch quando serve.",
       note: "Niente pacchetti marketing.",
-
       pageTitle: "VISUAL",
       pageLead: "Logo/restyling, identità essenziale (colori/font/regole base), materiali digitali e stampati, applicazioni su merch.",
       pageNote: "Niente pacchetti marketing. Asset chiari, replicabili, pronti per produzione quando serve.",
-
       limitsTitle: "Limiti",
       limitsList: [
-        "No “brand book” infinito: mini identity essenziale",
-        "No rebranding enorme senza perimetro e obiettivo",
-        "Produzione: coordinamento completo solo su PREMIUM e progetti selezionati"
+        "Mini identity essenziale (non brand book infinito)",
+        "No gestione marketing / SMM",
+        "Coordinamento produzione completo solo su PREMIUM e progetti selezionati"
       ],
       cta: "Contattaci →"
     },
-
     merch: {
       title: "MERCH / APPAREL",
       tiers: {
@@ -182,19 +152,16 @@ const I18N = {
             "Supervisione produzione (specifiche + controlli)",
             "Allineamento operativo fino a fine produzione"
           ],
-          notes: "Fee variabile: base indicativa ~15% sul costo complessivo (produzione + mockup + tech pack + coordinamento). Solo progetti selezionati."
+          notes: "Fee indicativa base ~15% variabile per complessità/tempo/costi. Solo progetti selezionati."
         }
       }
     },
-
     case: {
       subtitle: "CASE STUDY",
       title: "KALTÉ Apparel Capsule",
       teaser: "Un esempio reale: come impostiamo un progetto e cosa consegniamo.",
-
       requestTitle: "Richiesta",
       requestText: "KALTÉ voleva una capsule coerente e riproducibile: 3 t-shirt, 1 hoodie, 1 tracksuit.",
-
       goalTitle: "Obiettivo",
       goals: [
         "Definire una direzione coerente",
@@ -202,7 +169,6 @@ const I18N = {
         "File pronti per stampa/ricamo",
         "Handoff pulito al fornitore"
       ],
-
       workTitle: "Cosa abbiamo fatto",
       workList: [
         "Direzione creativa + regole base",
@@ -210,7 +176,6 @@ const I18N = {
         "Tech pack essenziale",
         "Specifiche stampa/ricamo e note di produzione"
       ],
-
       deliverTitle: "Consegna (handoff)",
       deliverList: [
         "Pack file ordinato (print/embroidery)",
@@ -218,22 +183,14 @@ const I18N = {
         "Note operative per fornitore",
         "Checklist finale pre-produzione"
       ],
-
       galleryTitle: "Preview",
       galleryNote: "Foto campione fornitore (beta / proof of work). Produzione: solo progetti selezionati e con perimetro definito.",
-
       nextTitle: "Vuoi partire?",
       nextText: "Scrivici: obiettivo, cosa fai, contenuti disponibili e tempistiche. Rispondiamo con perimetro e next step.",
       nextBtn: "Contattaci →"
     },
-
     work: { title: "Proof" },
-
-    contact: {
-      title: "Contatti",
-      button: "Contattaci →"
-    },
-
+    contact: { title: "Contatti", button: "Contattaci →" },
     toStart: {
       title: "Vuoi partire?",
       text: "Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti:",
@@ -244,7 +201,6 @@ const I18N = {
         "Contenuti disponibili + tempistiche"
       ]
     },
-
     social: {
       title: "Social",
       igLabel: "Instagram:",
@@ -267,18 +223,14 @@ const I18N = {
       digital: "Digital",
       visual: "Visual"
     },
-
     home: {
-      hero: {
-        kicker: "DIGITAL & VISUAL SOLUTIONS",
-        title: "Static sites + essential visual identity."
-      },
+      hero: { kicker: "DIGITAL & VISUAL SOLUTIONS", title: "Static sites + essential visual identity." },
       what: {
         label: "What we do",
         doTitle: "Output",
         doList: [
           "Static sites (HTML/CSS/JS vanilla) — 1–3 pages",
-          "Essential structure & copy (content helps a lot)",
+          "Essential structure & copy",
           "Mobile-first responsive",
           "Deploy on GitHub Pages / Netlify / Cloudflare Pages",
           "Language toggle (e.g., IT/EN) — on request",
@@ -293,7 +245,7 @@ const I18N = {
           "No advanced SEO / ongoing organic growth",
           "No SMM / marketing packages",
           "No ongoing maintenance / infinite support",
-          "Realistic timelines & budgets (rush costs more)"
+          "Realistic timelines & budgets"
         ]
       },
       proof: {
@@ -306,7 +258,6 @@ const I18N = {
         link: "Open the case study →"
       }
     },
-
     scope: {
       title: "Scope",
       list: [
@@ -316,7 +267,6 @@ const I18N = {
         "Apparel/merch: selected projects only"
       ]
     },
-
     about: {
       title: "About",
       lead: "We build assets that work: clear, fast, repeatable.",
@@ -326,47 +276,33 @@ const I18N = {
         "Clean handoff: organized files + minimal instructions"
       ],
       focusTitle: "Focus",
-      focusList: [
-        "Clarity: structure and copy without fluff",
-        "Speed: lightweight pages, simple hosting",
-        "Output: production-ready files, clean delivery"
-      ],
+      focusList: ["Clarity", "Speed", "Repeatable output"],
       note: "Production / coordination: selected projects only, with a defined scope."
     },
-
-    services: {
-      title: "Services",
-      open: "Open page →"
-    },
-
+    services: { title: "Services", open: "Open page →" },
     digital: {
       title: "DIGITAL Focus",
       desc: "Static websites 1–3 pages. Fast, clear, no ongoing management.",
       note: "No ecommerce. No managed WordPress.",
-
       pageTitle: "DIGITAL",
       pageLead: "Static websites 1–3 pages. Fast, clear, no ongoing management.",
       pageNote: "Deploy on GitHub Pages / Netlify / Cloudflare Pages. Language toggle (e.g., IT/EN) on request.",
-
       whatWeDoTitle: "What we do",
       whatWeDoList: [
-        "Essential structure + copy (content helps a lot)",
+        "Essential structure + copy",
         "Mobile-first responsive",
-        "Basic performance (light pages, optimized images)",
-        "Deploy + clean handoff (repo / organized files)",
+        "Basic performance (light pages)",
+        "Deploy + clean handoff",
         "Language toggle (e.g., IT/EN)",
         "Simple contact (mailto / WhatsApp link)"
       ],
-
       whatWeDontTitle: "What we don’t do",
       whatWeDontList: [
         "Ecommerce",
         "Managed WordPress / CMS with ongoing management",
         "Advanced SEO / ongoing organic growth",
-        "Ongoing maintenance / infinite support",
-        "Complex server-side automations (static stack)"
+        "Ongoing maintenance / infinite support"
       ],
-
       toStartTitle: "To start",
       toStartLead: "To work fast and avoid loops, send these 4 points:",
       toStartList: [
@@ -377,25 +313,21 @@ const I18N = {
       ],
       cta: "Contact →"
     },
-
     visual: {
       title: "VISUAL Focus",
       desc: "Logo, mini identity, materials. Merch applications when needed.",
       note: "No marketing packages.",
-
       pageTitle: "VISUAL",
       pageLead: "Logo/redesign, essential identity (colors/fonts/base rules), digital + print materials, merch applications.",
       pageNote: "No marketing packages. Clear, repeatable assets — production-ready when needed.",
-
       limitsTitle: "Limits",
       limitsList: [
-        "No endless brand books: essential mini identity",
-        "No huge rebrands without scope and goal",
-        "Production coordination only in PREMIUM and selected projects"
+        "Essential mini identity (not endless brand books)",
+        "No marketing management / SMM",
+        "Full production coordination only in PREMIUM and selected projects"
       ],
       cta: "Contact →"
     },
-
     merch: {
       title: "MERCH / APPAREL",
       tiers: {
@@ -430,19 +362,16 @@ const I18N = {
             "Production supervision (specs + checks)",
             "Operational alignment until production completion"
           ],
-          notes: "Variable fee: indicative base ~15% of total cost (production + mockup + tech pack + coordination). Selected projects only."
+          notes: "Indicative base fee ~15% variable by complexity/time/costs. Selected projects only."
         }
       }
     },
-
     case: {
       subtitle: "CASE STUDY",
       title: "KALTÉ Apparel Capsule",
       teaser: "A real example: how we set projects and what we deliver.",
-
       requestTitle: "Request",
       requestText: "KALTÉ needed a consistent, reproducible capsule: 3 t-shirts, 1 hoodie, 1 tracksuit.",
-
       goalTitle: "Goal",
       goals: [
         "Set a consistent direction",
@@ -450,7 +379,6 @@ const I18N = {
         "Print/embroidery-ready files",
         "Clean supplier handoff"
       ],
-
       workTitle: "What we did",
       workList: [
         "Creative direction + base rules",
@@ -458,7 +386,6 @@ const I18N = {
         "Essential tech pack",
         "Print/embroidery specs and production notes"
       ],
-
       deliverTitle: "Deliverables (handoff)",
       deliverList: [
         "Organized file pack (print/embroidery)",
@@ -466,22 +393,14 @@ const I18N = {
         "Supplier operational notes",
         "Final pre-production checklist"
       ],
-
       galleryTitle: "Preview",
       galleryNote: "Supplier sample photos (beta / proof of work). Production: selected projects only, with defined scope.",
-
       nextTitle: "Want to start?",
       nextText: "Send: goal, what you do, available content, and timeline. We’ll reply with scope and next steps.",
       nextBtn: "Contact →"
     },
-
     work: { title: "Proof" },
-
-    contact: {
-      title: "Contact",
-      button: "Contact →"
-    },
-
+    contact: { title: "Contact", button: "Contact →" },
     toStart: {
       title: "Want to start?",
       text: "To work fast and avoid loops, send these 4 points:",
@@ -492,7 +411,6 @@ const I18N = {
         "Available content + timeline"
       ]
     },
-
     social: {
       title: "Social",
       igLabel: "Instagram:",
@@ -505,27 +423,19 @@ const I18N = {
   }
 };
 
-/* ---------- utils ---------- */
 function deepGet(obj, path) {
   return path.split(".").reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
 }
 
 function getInitialLang() {
   const saved = localStorage.getItem(LS_KEY);
-  if (saved === "it" || saved === "en") return saved;
-  return DEFAULT_LANG;
-}
-
-function setLanguage(lang) {
-  localStorage.setItem(LS_KEY, lang);
-  applyI18n(lang);
-  setLangButtons(lang);
+  return (saved === "it" || saved === "en") ? saved : DEFAULT_LANG;
 }
 
 function setLangButtons(lang) {
   document.querySelectorAll("[data-set-lang]").forEach(btn => {
     const bLang = btn.getAttribute("data-set-lang");
-    btn.classList.toggle("is-active", bLang === lang);
+        btn.classList.toggle("is-active", bLang === lang);
     btn.setAttribute("aria-pressed", bLang === lang ? "true" : "false");
   });
 }
@@ -533,14 +443,14 @@ function setLangButtons(lang) {
 function applyI18n(lang) {
   const dict = I18N[lang] || I18N[DEFAULT_LANG];
 
-  // strings
+  // Strings
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     const value = deepGet(dict, key);
     if (typeof value === "string") el.textContent = value;
   });
 
-  // lists
+  // Lists
   document.querySelectorAll("[data-i18n-list]").forEach(el => {
     const key = el.getAttribute("data-i18n-list");
     const value = deepGet(dict, key);
@@ -554,22 +464,26 @@ function applyI18n(lang) {
     });
   });
 
-  // lang attr
   document.documentElement.setAttribute("lang", lang);
 }
 
-/* ---------- language switch ---------- */
+function setLanguage(lang) {
+  if (lang !== "it" && lang !== "en") lang = DEFAULT_LANG;
+  localStorage.setItem(LS_KEY, lang);
+  setLangButtons(lang);
+  applyI18n(lang);
+}
+
 function bindLangSwitch() {
   document.querySelectorAll("[data-set-lang]").forEach(btn => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-set-lang");
-      if (!lang) return;
       setLanguage(lang);
     });
   });
 }
 
-/* ---------- simple carousel for tiers (VISUAL) ---------- */
+/* Simple carousel for VISUAL tiers */
 function initTierCarousel() {
   const root = document.querySelector("[data-tier-carousel]");
   if (!root) return;
@@ -581,13 +495,13 @@ function initTierCarousel() {
 
   let idx = 0;
 
-  function render() {
+  const render = () => {
     panels.forEach((p, i) => {
-      p.style.display = i === idx ? "block" : "none";
+      p.style.display = (i === idx) ? "block" : "none";
     });
     if (prev) prev.disabled = idx === 0;
     if (next) next.disabled = idx === panels.length - 1;
-  }
+  };
 
   if (prev) prev.addEventListener("click", () => {
     idx = Math.max(0, idx - 1);
@@ -602,7 +516,6 @@ function initTierCarousel() {
   render();
 }
 
-/* ---------- boot ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   bindLangSwitch();
   const lang = getInitialLang();
@@ -610,3 +523,4 @@ document.addEventListener("DOMContentLoaded", () => {
   applyI18n(lang);
   initTierCarousel();
 });
+
