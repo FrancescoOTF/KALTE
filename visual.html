@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KALTÉ — Visual</title>
-  <link rel="stylesheet" href="style.css?v=20260120" />
+  <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body class="page">
-  <div class="page-bg" aria-hidden="true"></div>
-  <div class="page-overlay" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="wrap nav-inner">
@@ -17,17 +17,15 @@
         <img class="brand-logo" src="assets/logo.png" alt="KALTÉ logo" />
       </a>
 
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links">
         <a href="index.html" data-i18n="nav.home">Home</a>
-        <a href="digital.html" data-i18n="nav.digital">Digital</a>
-        <a href="visual.html" aria-current="page" data-i18n="nav.visual">Visual</a>
-        <a href="index.html#work" data-i18n="nav.work">Selected work</a>
-        <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
+        <a href="case-study.html" data-i18n="nav.howWeWork">Come lavoriamo</a>
+        <a href="digital.html">Digital</a>
       </nav>
 
       <div class="lang-switch" role="group" aria-label="Language switch">
-        <button type="button" class="lang-btn" data-set-lang="it" data-lang="it" aria-pressed="true">IT</button>
-        <button type="button" class="lang-btn" data-set-lang="en" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn" data-set-lang="it" aria-pressed="true">IT</button>
+        <button type="button" class="lang-btn" data-set-lang="en" aria-pressed="false">EN</button>
       </div>
     </div>
   </header>
@@ -35,75 +33,88 @@
   <main class="wrap">
     <section class="page-hero">
       <p class="kicker">KALTÉ</p>
-      <h1 class="page-title" data-i18n="visual.page.title">VISUAL</h1>
-      <p class="lead" data-i18n="visual.page.subtitle">
-        Identità essenziale: logo, regole base, applicazioni coerenti. Niente pacchetti “marketing”.
-      </p>
+      <h1 class="page-title" data-i18n="visual.title">VISUAL</h1>
+      <p class="lead" data-i18n="visual.subtitle"></p>
     </section>
 
     <section class="section">
-      <h2 class="section-title" data-i18n="visual.section.core.title">Cosa facciamo</h2>
-      <div class="card"><div class="card-pad">
-        <ul class="list" data-i18n-list="visual.section.core.list"></ul>
-      </div></div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title" data-i18n="visual.section.constraints.title">Limiti chiari</h2>
-      <div class="card"><div class="card-pad">
-        <ul class="list" data-i18n-list="visual.section.constraints.list"></ul>
-      </div></div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title" data-i18n="visual.merch.title">MERCH / APPAREL</h2>
-      <p class="lead" data-i18n="visual.merch.subtitle">
-        Applichiamo l’identità su vestiario: dal concept alle specifiche tecniche. Produzione gestita in due modalità.
-      </p>
-
-      <div class="grid-2">
-        <article class="card merch-card">
-          <div class="card-pad">
-            <h3 class="tier-title" data-i18n="visual.merch.standard.title">STANDARD</h3>
-            <p class="tier-sub" data-i18n="visual.merch.standard.tagline">Design + Tech pack + Handoff</p>
-
-            <h4 class="tier-head" data-i18n="visual.merch.standard.includes.title">Include</h4>
-            <ul class="list" data-i18n-list="visual.merch.standard.includes.list"></ul>
-
-            <h4 class="tier-head" data-i18n="visual.merch.standard.notes.title">Note</h4>
-            <ul class="list" data-i18n-list="visual.merch.standard.notes.list"></ul>
-          </div>
-        </article>
-
-        <article class="card merch-card">
-          <div class="card-pad">
-            <h3 class="tier-title" data-i18n="visual.merch.premium.title">PREMIUM</h3>
-            <p class="tier-sub" data-i18n="visual.merch.premium.tagline">Full Production Coordination</p>
-
-            <h4 class="tier-head" data-i18n="visual.merch.premium.includes.title">Include</h4>
-            <ul class="list" data-i18n-list="visual.merch.premium.includes.list"></ul>
-
-            <h4 class="tier-head" data-i18n="visual.merch.premium.fee.title">Fee</h4>
-            <p class="muted" data-i18n="visual.merch.premium.fee.text">
-              Fee +30–40% sul costo di produzione (in base a complessità e rischio).
-            </p>
-
-            <h4 class="tier-head" data-i18n="visual.merch.premium.limits.title">Limiti</h4>
-            <ul class="list" data-i18n-list="visual.merch.premium.limits.list"></ul>
-          </div>
-        </article>
+      <h2 class="section-title" data-i18n="visual.whatWeDo.title"></h2>
+      <div class="card card-pad">
+        <ul class="list" data-i18n-list="visual.whatWeDoList"></ul>
       </div>
+    </section>
 
-      <p class="note" data-i18n="visual.merch.note">
-        Produzione non è un servizio standard. Premium solo su progetti selezionati.
-      </p>
+    <section class="section">
+      <h2 class="section-title" data-i18n="visual.limits.title"></h2>
+      <div class="card card-pad">
+        <ul class="list" data-i18n-list="visual.limitsList"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="merch">
+      <h2 class="section-title" data-i18n="visual.merch.title"></h2>
+      <p class="lead" data-i18n="visual.merch.lead"></p>
+      <p class="note" data-i18n="visual.merch.hint"></p>
+
+      <div class="card card-pad" data-tier-carousel>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+          <button class="btn" type="button" data-tier-prev aria-label="Prev">←</button>
+          <button class="btn" type="button" data-tier-next aria-label="Next">→</button>
+        </div>
+
+        <!-- STANDARD -->
+        <div data-tier-panel>
+          <h3 style="margin:0 0 6px;" data-i18n="visual.tiers.standard.name"></h3>
+          <p class="muted" style="margin:0 0 12px;" data-i18n="visual.tiers.standard.tagline"></p>
+
+          <h4 style="margin:0 0 8px;" data-i18n="visual.tiers.standard.includeTitle"></h4>
+          <ul class="list" data-i18n-list="visual.tiers.standard.include"></ul>
+
+          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.standard.revisionsTitle"></h4>
+          <p class="muted" data-i18n="visual.tiers.standard.revisionsText"></p>
+
+          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.standard.notesTitle"></h4>
+          <p class="note" data-i18n="visual.tiers.standard.notesText"></p>
+        </div>
+
+        <!-- PLUS -->
+        <div data-tier-panel style="display:none;">
+          <h3 style="margin:0 0 6px;" data-i18n="visual.tiers.plus.name"></h3>
+          <p class="muted" style="margin:0 0 12px;" data-i18n="visual.tiers.plus.tagline"></p>
+
+          <h4 style="margin:0 0 8px;" data-i18n="visual.tiers.plus.includeTitle"></h4>
+          <ul class="list" data-i18n-list="visual.tiers.plus.include"></ul>
+
+          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.plus.revisionsTitle"></h4>
+          <p class="muted" data-i18n="visual.tiers.plus.revisionsText"></p>
+
+          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.plus.notesTitle"></h4>
+          <p class="note" data-i18n="visual.tiers.plus.notesText"></p>
+        </div>
+
+        <!-- PREMIUM -->
+        <div data-tier-panel style="display:none;">
+          <h3 style="margin:0 0 6px;" data-i18n="visual.tiers.premium.name"></h3>
+          <p class="muted" style="margin:0 0 12px;" data-i18n="visual.tiers.premium.tagline"></p>
+
+          <h4 style="margin:0 0 8px;" data-i18n="visual.tiers.premium.includeTitle"></h4>
+          <ul class="list" data-i18n-list="visual.tiers.premium.include"></ul>
+
+          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.premium.feeTitle"></h4>
+          <p class="muted" data-i18n="visual.tiers.premium.feeText"></p>
+
+          <h4 style="margin:14px 0 8px;" data-i18n="visual.tiers.premium.limitsTitle"></h4>
+          <ul class="list" data-i18n-list="visual.tiers.premium.limits"></ul>
+        </div>
+
+      </div>
     </section>
 
     <footer class="footer">
-      <p>© <span data-i18n="brand.name">KALTÉ</span> — <span data-i18n="brand.tagline">Digital & Visual Solutions.</span></p>
+      © <span data-i18n="brand.name">KALTÉ</span> — Digital & Visual Solutions.
     </footer>
   </main>
 
-  <script src="script.js?v=20260120"></script>
+  <script src="script.js?v=1"></script>
 </body>
 </html>
