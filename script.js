@@ -1,3 +1,4 @@
+/* script.js */
 const LS_KEY = "kalte_lang";
 const DEFAULT_LANG = "it";
 
@@ -5,522 +6,547 @@ const I18N = {
   it: {
     nav: {
       home: "Home",
-      about: "About",
-      services: "Servizi",
-      howWeWork: "Come lavoriamo",
-      contact: "Contatti",
-      social: "Social",
       digital: "Digital",
-      visual: "Visual"
+      visual: "Visual",
+      howWeWork: "Come lavoriamo",
+      contact: "Contatti"
     },
     home: {
-      hero: { kicker: "DIGITAL & VISUAL SOLUTIONS", title: "Siti statici + identità visiva essenziale." },
-      what: {
-        label: "Cosa facciamo",
-        doTitle: "Output",
-        doList: [
-          "Siti statici (HTML/CSS/JS vanilla) 1–3 pagine",
-          "Struttura copy essenziale e chiara (se hai contenuti, meglio)",
-          "Responsive mobile-first",
-          "Deploy su GitHub Pages / Netlify / Cloudflare Pages",
-          "Toggle Lingua (Es. ITA/ENG) — su richiesta",
-          "Mini identity: palette, font, regole base, applicazioni coerenti",
-          "Materiali digitali e stampati (essenziali)",
-          "Applicazioni su merch / vestiario quando serve"
-        ],
-        limitsTitle: "Limiti",
-        limitsList: [
-          "No ecommerce",
-          "No WordPress gestito / CMS con gestione continua",
-          "No SEO avanzata / crescita organica continuativa",
-          "No SMM / pacchetti marketing",
-          "No manutenzione continua e supporto “infinito”",
-          "Timeline e budget realistici"
+      hero: {
+        kicker: "Digital & Visual Solutions",
+        title: "Siti statici + identità visiva essenziale.",
+        sub: "Progetti puliti, veloci e coerenti. Nessuna gestione continua. Niente fumo.",
+        micro: "Se cerchi marketing, social o SEO “spinta”, non è questo il posto."
+      },
+      services: {
+        title: "Cosa facciamo",
+        link: "Vedi dettagli →",
+        digital: {
+          title: "Digital",
+          desc: "Siti statici (1–3 pagine) in HTML/CSS/JS: veloci, chiari, senza dipendenze."
+        },
+        visual: {
+          title: "Visual",
+          desc: "Logo/restyling e identità essenziale: regole chiare per far sembrare tutto “dello stesso brand”."
+        },
+        limitsTitle: "Limiti (chiari)",
+        limits: [
+          "NO SMM (social media management).",
+          "NO SEO avanzata / SEO “aggressiva”.",
+          "NO e-commerce / checkout / pagamenti.",
+          "NO WordPress gestito / manutenzione continua."
         ]
       },
-      proof: {
-        teaser: "Un esempio reale: capsule KALTÉ (apparel) — sito + identità + file pronti per stampa/ricamo.",
-        list: [
-          "3 t-shirt, 1 hoodie, 1 tracksuit: direzione coerente e replicabile",
-          "Tech pack essenziale + specifiche stampa/ricamo + note operative",
-          "Handoff pulito: file ordinati + istruzioni minime"
+      perimeter: {
+        title: "Perimetro",
+        forTitle: "Perfetto se",
+        forList: [
+          "Vuoi un sito essenziale che spieghi bene cosa fai.",
+          "Vuoi performance e chiarezza, senza piattaforme pesanti.",
+          "Vuoi un output finito e facile da hostare (Pages / Netlify / Cloudflare)."
         ],
-        link: "Vai al case study →"
+        notForTitle: "Non fa per te se",
+        notForList: [
+          "Stai cercando una “agenzia marketing” o un team SMM.",
+          "Vuoi SEO avanzata, campagne e ottimizzazioni continue.",
+          "Vuoi e-commerce o un CMS da aggiornare ogni settimana."
+        ],
+        ctaCase: "Vedi come lavoriamo",
+        ctaContact: "Contattaci"
+      },
+      proof: {
+        title: "Proof",
+        line1: "Un progetto reale, non “mock”.",
+        line2: "Capsule apparel KALTÉ: 3 t-shirt, 1 hoodie, 1 tracksuit.",
+        line3: "Output: identità, assets, specifiche e handoff pronto produzione.",
+        cta: "Apri case study"
+      },
+      contact: {
+        title: "Contatti",
+        lead: "Scrivici solo se hai un obiettivo chiaro e un perimetro realistico.",
+        mailLabel: "Mail",
+        phoneLabel: "Telefono",
+        igLabel: "IG",
+        note: "Niente “brief” infiniti: 10 righe chiare battono 3 call."
       }
     },
-    scope: {
-      title: "Perimetro",
-      list: [
-        "Siti statici (1–3 pagine)",
-        "Identità visiva essenziale",
-        "Materiali digitali e stampati",
-        "Apparel/merch: solo progetti selezionati"
-      ]
-    },
-    about: {
-      title: "About",
-      lead: "Costruiamo asset che devono funzionare: chiari, veloci, replicabili.",
-      list: [
-        "Siti statici 1–3 pagine (HTML/CSS/JS vanilla)",
-        "Identità visiva essenziale (regole base, applicazioni)",
-        "Handoff pulito: file ordinati + istruzioni minime"
-      ],
-      focusTitle: "Focus",
-      focusList: ["Chiarezza", "Velocità", "Output replicabile"],
-      note: "Produzione / coordinamento: solo progetti selezionati e con perimetro definito."
-    },
-    services: { title: "Services", open: "Open page →" },
     digital: {
-      title: "Focus DIGITAL",
-      desc: "Siti statici 1–3 pagine. Veloci, chiari, senza gestione continua.",
-      note: "No ecommerce. No WordPress gestito.",
-      pageTitle: "DIGITAL",
-      pageLead: "Siti web statici 1–3 pagine. Veloci, chiari, senza gestione continua.",
-      pageNote: "Deploy su GitHub Pages / Netlify / Cloudflare Pages. Toggle Lingua (Es. ITA/ENG) su richiesta.",
-      whatWeDoTitle: "Cosa facciamo",
-      whatWeDoList: [
-        "Struttura essenziale + copy",
-        "Responsive mobile-first",
-        "Performance base (pagine leggere)",
-        "Deploy + handoff pulito",
-        "Toggle Lingua (Es. ITA/ENG)",
-        "Form contatto semplice (mailto / WhatsApp)"
-      ],
-      whatWeDontTitle: "Cosa non facciamo",
-      whatWeDontList: [
-        "Ecommerce",
-        "WordPress gestito / CMS con gestione continua",
-        "SEO avanzata / crescita organica continuativa",
-        "Manutenzione continua / supporto infinito"
-      ],
-      toStartTitle: "Per iniziare",
-      toStartLead: "Per lavorare veloce e senza giri a vuoto, mandaci questi 4 punti:",
-      toStartList: [
-        "Obiettivo del sito (cosa deve far succedere)",
-        "Cosa fa l’azienda (in 2–3 righe chiare)",
-        "Numero pagine + esempi/ref (2–3 link)",
-        "Contenuti disponibili: testi, immagini, logo (anche grezzi)"
-      ],
-      cta: "Contattaci →"
+      kicker: "Digital",
+      title: "Siti statici 1–3 pagine. Fine.",
+      lead: "HTML/CSS/JS vanilla: caricamento rapido, struttura chiara, consegna semplice. Nessuna piattaforma da “gestire”.",
+      micro: "Se vuoi e-commerce, WordPress “gestito”, SEO avanzata o manutenzione continua: no.",
+      what: {
+        title: "Cosa facciamo",
+        list: [
+          "Sito statico 1–3 pagine (home + pagine servizi + contatti).",
+          "Struttura chiara (sezioni, CTA, perimetro e limiti).",
+          "UI pulita e leggibile, pensata per conversione “consapevole”.",
+          "Toggle lingua (es. ITA/ENG).",
+          "Consegna file pronta per GitHub Pages / Netlify / Cloudflare Pages."
+        ],
+        note: "Hosting consigliato: GitHub Pages / Netlify / Cloudflare Pages. Consegna pulita, senza lock-in."
+      },
+      not: {
+        title: "Cosa NON facciamo",
+        list: [
+          "E-commerce, pagamenti, checkout, cataloghi dinamici.",
+          "WordPress gestito o qualsiasi CMS “da mantenere”.",
+          "SEO avanzata, audit continui, link-building, campagne.",
+          "Manutenzione continua: preferiamo consegne finite e pulite."
+        ]
+      },
+      start: {
+        title: "Per iniziare",
+        lead: "Ci servono poche cose, ma scritte bene.",
+        list: [
+          "Che azienda sei e cosa fai (in 2–4 frasi).",
+          "Obiettivo del sito (es. contatti, presentazione, lead qualificati).",
+          "Servizi/prodotti principali (priorità e cosa escludere).",
+          "Asset disponibili (logo, palette se esiste, foto, testi anche grezzi).",
+          "Esempi di siti che ti piacciono (2–3 link) e perché."
+        ],
+        cta: "Contatti",
+        cta2: "Vedi case study"
+      }
     },
     visual: {
-      title: "Focus VISUAL",
-      desc: "Logo, mini identity, materiali. Applicazioni su merch quando serve.",
-      note: "Niente pacchetti marketing.",
-      pageTitle: "VISUAL",
-      pageLead: "Logo/restyling, identità essenziale (colori/font/regole base), materiali digitali e stampati, applicazioni su merch.",
-      pageNote: "Niente pacchetti marketing. Asset chiari, replicabili, pronti per produzione quando serve.",
-      limitsTitle: "Limiti",
-      limitsList: [
-        "Mini identity essenziale (non brand book infinito)",
-        "No gestione marketing / SMM",
-        "Coordinamento produzione completo solo su PREMIUM e progetti selezionati"
-      ],
-      cta: "Contattaci →"
-    },
-    merch: {
-      title: "MERCH / APPAREL",
-      tiers: {
-        standard: {
-          name: "STANDARD",
-          tagline: "Design + Tech pack + Handoff",
-          include: [
-            "Design (grafica + posizionamenti)",
-            "Tech pack essenziale",
-            "Specifiche stampa/ricamo + note di produzione",
-            "Handoff completo al fornitore"
-          ],
-          notes: "Il cliente paga e gestisce il fornitore direttamente. KALTÉ non gestisce produzione."
-        },
-        plus: {
-          name: "PLUS",
-          tagline: "Più revisioni + supporto fornitori",
-          include: [
-            "Tutto lo STANDARD",
-            "Revisioni estese (fino a 5)",
-            "Supporto scelta fornitore",
-            "Lista contatti fabbriche (Cina) usate per merch KALTÉ"
-          ],
-          notes: "Il cliente resta referente unico verso il fornitore. Noi supportiamo, non coordiniamo."
-        },
-        premium: {
-          name: "PREMIUM",
-          tagline: "Full Production Coordination",
-          include: [
-            "KALTÉ referente unico cliente ↔ fornitore",
-            "Gestione campioni e allineamento qualità",
-            "Supervisione produzione (specifiche + controlli)",
-            "Allineamento operativo fino a fine produzione"
-          ],
-          notes: "Fee indicativa base ~15% variabile per complessità/tempo/costi. Solo progetti selezionati."
-        }
+      kicker: "Visual",
+      title: "Identità essenziale, applicata bene.",
+      lead: "Logo/restyling, palette, font e regole base: il minimo indispensabile per avere coerenza ovunque.",
+      what: {
+        title: "Cosa facciamo",
+        list: [
+          "Logo / restyling (pulito, leggibile, replicabile).",
+          "Identità essenziale: colori, font, regole base d’uso.",
+          "Materiali digitali e stampati (template e applicazioni).",
+          "Applicazioni su merch (stampa/ricamo) con specifiche chiare."
+        ]
+      },
+      merch: {
+        title: "Merch / Apparel",
+        carouselTitle: "Livelli",
+        hint: "Scorri i livelli: Standard / Plus / Premium.",
+        selective: "Produzione/coordinamento completo solo su progetti selezionati.",
+        cta: "Contatti",
+        cta2: "Vedi case study",
+        tiers: [
+          {
+            kicker: "STANDARD",
+            title: "Design + tech pack + handoff",
+            list: [
+              "Design (grafica/posizionamenti).",
+              "Tech pack + specifiche (stampa/ricamo/materiali).",
+              "Handoff al fornitore: il cliente paga il fornitore.",
+              "Output pronto per produrre senza interpretazioni."
+            ],
+            note: "Il cliente resta referente unico con la fabbrica."
+          },
+          {
+            kicker: "PLUS",
+            title: "Standard + revisioni + supporto fornitore",
+            list: [
+              "Tutto lo Standard.",
+              "Revisioni fino a 5.",
+              "Supporto nella scelta fornitore.",
+              "Lista contatti fabbriche (Cina) usate per merch KALTÉ.",
+              "Il cliente resta referente con la fabbrica."
+            ],
+            note: "Più controllo sul risultato, senza delega totale."
+          },
+          {
+            kicker: "PREMIUM",
+            title: "Full production coordination (progetti selezionati)",
+            list: [
+              "KALTÉ referente unico: gestione comunicazioni e check.",
+              "Coordinamento produzione end-to-end.",
+              "Fee indicativa base ~15% (variabile per complessità/tempo/costi).",
+              "Disponibilità limitata: solo progetti selezionati."
+            ],
+            note: "Qui paghi tempo e responsabilità: non è per tutti."
+          }
+        ]
       }
     },
     case: {
-      subtitle: "CASE STUDY",
-      title: "KALTÉ Apparel Capsule",
-      teaser: "Un esempio reale: come impostiamo un progetto e cosa consegniamo.",
-      requestTitle: "Richiesta",
-      requestText: "KALTÉ voleva una capsule coerente e riproducibile: 3 t-shirt, 1 hoodie, 1 tracksuit.",
-      goalTitle: "Obiettivo",
-      goals: [
-        "Definire una direzione coerente",
-        "Ridurre ambiguità su taglie/placement",
-        "File pronti per stampa/ricamo",
-        "Handoff pulito al fornitore"
-      ],
-      workTitle: "Cosa abbiamo fatto",
-      workList: [
-        "Direzione creativa + regole base",
-        "Placement e grafiche (front/back)",
-        "Tech pack essenziale",
-        "Specifiche stampa/ricamo e note di produzione"
-      ],
-      deliverTitle: "Consegna (handoff)",
-      deliverList: [
-        "Pack file ordinato (print/embroidery)",
-        "Tech pack + misure e placement",
-        "Note operative per fornitore",
-        "Checklist finale pre-produzione"
-      ],
-      galleryTitle: "Preview",
-      galleryNote: "Foto campione fornitore (beta / proof of work). Produzione: solo progetti selezionati e con perimetro definito.",
-      nextTitle: "Vuoi partire?",
-      nextText: "Scrivici: obiettivo, cosa fai, contenuti disponibili e tempistiche. Rispondiamo con perimetro e next step.",
-      nextBtn: "Contattaci →"
-    },
-    work: { title: "Proof" },
-    contact: { title: "Contatti", button: "Contattaci →" },
-    toStart: {
-      title: "Vuoi partire?",
-      text: "Per lavorare veloce e senza giri a vuoto, mandami questi 4 punti:",
-      list: [
-        "Obiettivo del sito (cosa deve far succedere)",
-        "Cosa fai (2–3 righe chiare)",
-        "Numero pagine + esempi/ref (2–3 link)",
-        "Contenuti disponibili + tempistiche"
-      ]
-    },
-    social: {
-      title: "Social",
-      igLabel: "Instagram:",
-      ig: "@instagram",
-      mailLabel: "Email:",
-      waLabel: "WhatsApp:",
-      wa: "wa.me/393318310378",
-      note: "Se scrivi, manda: obiettivo + cosa fai + contenuti disponibili + tempistiche."
+      kicker: "Come lavoriamo",
+      title: "Case study: KALTÉ apparel capsule",
+      lead: "Progetto reale: 3 t-shirt, 1 hoodie, 1 tracksuit. Obiettivo: identità coerente + handoff pronto produzione.",
+      request: {
+        title: "Richiesta",
+        list: [
+          "Capsule apparel con identità riconoscibile.",
+          "Asset riusabili per comunicazione e produzione.",
+          "Specifiche chiare per stampa/ricamo e resa finale."
+        ]
+      },
+      objective: {
+        title: "Obiettivo",
+        list: [
+          "Coerenza visiva su capi diversi.",
+          "Ridurre ambiguità in produzione (tech + specs).",
+          "Output “handoff”: consegna pronta per fabbrica."
+        ]
+      },
+      work: {
+        title: "Cosa abbiamo fatto",
+        list: [
+          "Definizione concept e coerenza grafica.",
+          "Impostazione regole visive (base identità).",
+          "Mockup e scelte applicative (posizionamenti, dimensioni).",
+          "Specifiche tecniche per stampa/ricamo e file finali."
+        ],
+        note: "Coordinamento produzione completo solo su progetti selezionati."
+      },
+      handoff: {
+        title: "Cosa consegniamo (handoff)",
+        list: [
+          "File finali (stampa/ricamo) e varianti necessarie.",
+          "Tech pack con misure, posizionamenti e note.",
+          "Specifiche materiali/resa e checklist produzione.",
+          "Struttura chiara per passaggio a fornitore."
+        ]
+      },
+      gallery: {
+        title: "Gallery tracksuit"
+      }
     }
   },
 
   en: {
     nav: {
       home: "Home",
-      about: "About",
-      services: "Services",
-      howWeWork: "How we work",
-      contact: "Contact",
-      social: "Social",
       digital: "Digital",
-      visual: "Visual"
+      visual: "Visual",
+      howWeWork: "How we work",
+      contact: "Contact"
     },
     home: {
-      hero: { kicker: "DIGITAL & VISUAL SOLUTIONS", title: "Static sites + essential visual identity." },
-      what: {
-        label: "What we do",
-        doTitle: "Output",
-        doList: [
-          "Static sites (HTML/CSS/JS vanilla) — 1–3 pages",
-          "Essential structure & copy",
-          "Mobile-first responsive",
-          "Deploy on GitHub Pages / Netlify / Cloudflare Pages",
-          "Language toggle (e.g., IT/EN) — on request",
-          "Mini identity: palette, fonts, base rules, consistent applications",
-          "Digital + print materials (essential)",
-          "Merch/apparel applications when needed"
-        ],
-        limitsTitle: "Limits",
-        limitsList: [
-          "No ecommerce",
-          "No managed WordPress / CMS with ongoing management",
-          "No advanced SEO / ongoing organic growth",
-          "No SMM / marketing packages",
-          "No ongoing maintenance / infinite support",
-          "Realistic timelines & budgets"
+      hero: {
+        kicker: "Digital & Visual Solutions",
+        title: "Static sites + essential visual identity.",
+        sub: "Clean, fast, coherent work. No ongoing management. No fluff.",
+        micro: "If you want marketing, social management or “aggressive” SEO, this isn’t it."
+      },
+      services: {
+        title: "What we do",
+        link: "See details →",
+        digital: {
+          title: "Digital",
+          desc: "Static sites (1–3 pages) in vanilla HTML/CSS/JS: fast, clear, dependency-free."
+        },
+        visual: {
+          title: "Visual",
+          desc: "Logo/restyling and essential identity: simple rules to keep everything consistent."
+        },
+        limitsTitle: "Clear limits",
+        limits: [
+          "NO social media management.",
+          "NO advanced / aggressive SEO.",
+          "NO e-commerce / checkout / payments.",
+          "NO managed WordPress / continuous maintenance."
         ]
       },
-      proof: {
-        teaser: "Real example: KALTÉ capsule (apparel) — site + identity + production-ready files.",
-        list: [
-          "3 t-shirts, 1 hoodie, 1 tracksuit: consistent direction, repeatable output",
-          "Essential tech pack + print/embroidery specs + production notes",
-          "Clean handoff: organized files + minimal instructions"
+      perimeter: {
+        title: "Scope",
+        forTitle: "Perfect if",
+        forList: [
+          "You want a minimal site that explains your business clearly.",
+          "You care about performance and clarity, not heavy platforms.",
+          "You want a finished deliverable you can host easily (Pages / Netlify / Cloudflare)."
         ],
-        link: "Open the case study →"
+        notForTitle: "Not for you if",
+        notForList: [
+          "You’re looking for a marketing agency or SMM team.",
+          "You want advanced SEO, ads and ongoing optimizations.",
+          "You want e-commerce or a CMS you update every week."
+        ],
+        ctaCase: "See how we work",
+        ctaContact: "Contact us"
+      },
+      proof: {
+        title: "Proof",
+        line1: "A real project, not a mock.",
+        line2: "KALTÉ apparel capsule: 3 tees, 1 hoodie, 1 tracksuit.",
+        line3: "Output: identity, assets, specs and production-ready handoff.",
+        cta: "Open case study"
+      },
+      contact: {
+        title: "Contact",
+        lead: "Write only if you have a clear goal and a realistic scope.",
+        mailLabel: "Email",
+        phoneLabel: "Phone",
+        igLabel: "IG",
+        note: "No endless briefs: 10 clear lines beat 3 calls."
       }
     },
-    scope: {
-      title: "Scope",
-      list: [
-        "Static sites (1–3 pages)",
-        "Essential visual identity",
-        "Digital + print materials",
-        "Apparel/merch: selected projects only"
-      ]
-    },
-    about: {
-      title: "About",
-      lead: "We build assets that work: clear, fast, repeatable.",
-      list: [
-        "Static websites 1–3 pages (HTML/CSS/JS vanilla)",
-        "Essential visual identity (base rules, applications)",
-        "Clean handoff: organized files + minimal instructions"
-      ],
-      focusTitle: "Focus",
-      focusList: ["Clarity", "Speed", "Repeatable output"],
-      note: "Production / coordination: selected projects only, with a defined scope."
-    },
-    services: { title: "Services", open: "Open page →" },
     digital: {
-      title: "DIGITAL Focus",
-      desc: "Static websites 1–3 pages. Fast, clear, no ongoing management.",
-      note: "No ecommerce. No managed WordPress.",
-      pageTitle: "DIGITAL",
-      pageLead: "Static websites 1–3 pages. Fast, clear, no ongoing management.",
-      pageNote: "Deploy on GitHub Pages / Netlify / Cloudflare Pages. Language toggle (e.g., IT/EN) on request.",
-      whatWeDoTitle: "What we do",
-      whatWeDoList: [
-        "Essential structure + copy",
-        "Mobile-first responsive",
-        "Basic performance (light pages)",
-        "Deploy + clean handoff",
-        "Language toggle (e.g., IT/EN)",
-        "Simple contact (mailto / WhatsApp link)"
-      ],
-      whatWeDontTitle: "What we don’t do",
-      whatWeDontList: [
-        "Ecommerce",
-        "Managed WordPress / CMS with ongoing management",
-        "Advanced SEO / ongoing organic growth",
-        "Ongoing maintenance / infinite support"
-      ],
-      toStartTitle: "To start",
-      toStartLead: "To work fast and avoid loops, send these 4 points:",
-      toStartList: [
-        "Site goal (what must happen)",
-        "What your business does (2–3 clear lines)",
-        "Pages count + refs (2–3 links)",
-        "Available content: text, images, logo (even rough)"
-      ],
-      cta: "Contact →"
+      kicker: "Digital",
+      title: "Static sites, 1–3 pages. Done.",
+      lead: "Vanilla HTML/CSS/JS: fast load, clear structure, simple delivery. No platform to “manage”.",
+      micro: "If you want e-commerce, managed WordPress, advanced SEO or ongoing maintenance: no.",
+      what: {
+        title: "What we do",
+        list: [
+          "1–3 page static site (home + service pages + contact).",
+          "Clear structure (sections, CTAs, scope and limits).",
+          "Clean UI focused on conscious conversion.",
+          "Language toggle (e.g., IT/EN).",
+          "Delivery ready for GitHub Pages / Netlify / Cloudflare Pages."
+        ],
+        note: "Recommended hosting: GitHub Pages / Netlify / Cloudflare Pages. Clean delivery, no lock-in."
+      },
+      not: {
+        title: "What we don’t do",
+        list: [
+          "E-commerce, payments, checkout, dynamic catalogs.",
+          "Managed WordPress or any CMS you must keep maintaining.",
+          "Advanced SEO, ongoing audits, link-building, campaigns.",
+          "Continuous maintenance: we deliver finished, clean builds."
+        ]
+      },
+      start: {
+        title: "To start",
+        lead: "We need a few things — written well.",
+        list: [
+          "Who you are and what you do (2–4 sentences).",
+          "Site goal (e.g., contacts, presentation, qualified leads).",
+          "Main services/products (priorities + what to exclude).",
+          "Available assets (logo, palette if any, photos, even rough copy).",
+          "2–3 reference sites you like and why."
+        ],
+        cta: "Contact",
+        cta2: "See case study"
+      }
     },
     visual: {
-      title: "VISUAL Focus",
-      desc: "Logo, mini identity, materials. Merch applications when needed.",
-      note: "No marketing packages.",
-      pageTitle: "VISUAL",
-      pageLead: "Logo/redesign, essential identity (colors/fonts/base rules), digital + print materials, merch applications.",
-      pageNote: "No marketing packages. Clear, repeatable assets — production-ready when needed.",
-      limitsTitle: "Limits",
-      limitsList: [
-        "Essential mini identity (not endless brand books)",
-        "No marketing management / SMM",
-        "Full production coordination only in PREMIUM and selected projects"
-      ],
-      cta: "Contact →"
-    },
-    merch: {
-      title: "MERCH / APPAREL",
-      tiers: {
-        standard: {
-          name: "STANDARD",
-          tagline: "Design + Tech pack + Handoff",
-          include: [
-            "Design (graphics + placements)",
-            "Essential tech pack",
-            "Print/embroidery specs + production notes",
-            "Full handoff to supplier"
-          ],
-          notes: "Client pays and manages supplier directly. KALTÉ does not manage production."
-        },
-        plus: {
-          name: "PLUS",
-          tagline: "More revisions + supplier support",
-          include: [
-            "Everything in STANDARD",
-            "Extended revisions (up to 5)",
-            "Supplier selection support",
-            "Supplier contacts (China) used for KALTÉ merch"
-          ],
-          notes: "Client remains the main contact with supplier. We support — we don’t coordinate."
-        },
-        premium: {
-          name: "PREMIUM",
-          tagline: "Full Production Coordination",
-          include: [
-            "KALTÉ as single point of contact client ↔ supplier",
-            "Sampling & quality alignment",
-            "Production supervision (specs + checks)",
-            "Operational alignment until production completion"
-          ],
-          notes: "Indicative base fee ~15% variable by complexity/time/costs. Selected projects only."
-        }
+      kicker: "Visual",
+      title: "Essential identity, applied properly.",
+      lead: "Logo/restyling, palette, fonts and basic rules: the minimum needed to stay consistent everywhere.",
+      what: {
+        title: "What we do",
+        list: [
+          "Logo / restyling (clean, readable, reproducible).",
+          "Essential identity: colors, fonts, basic usage rules.",
+          "Digital + print materials (templates and applications).",
+          "Merch applications (print/embroidery) with clear specs."
+        ]
+      },
+      merch: {
+        title: "Merch / Apparel",
+        carouselTitle: "Tiers",
+        hint: "Scroll tiers: Standard / Plus / Premium.",
+        selective: "Full production coordination only for selected projects.",
+        cta: "Contact",
+        cta2: "See case study",
+        tiers: [
+          {
+            kicker: "STANDARD",
+            title: "Design + tech pack + handoff",
+            list: [
+              "Design (graphics/placements).",
+              "Tech pack + specs (print/embroidery/materials).",
+              "Handoff to supplier: client pays supplier.",
+              "Production-ready output, no interpretation needed."
+            ],
+            note: "Client remains the direct supplier contact."
+          },
+          {
+            kicker: "PLUS",
+            title: "Standard + revisions + supplier support",
+            list: [
+              "Everything in Standard.",
+              "Up to 5 revision rounds.",
+              "Support choosing the supplier.",
+              "Factory contact list (China) used for KALTÉ merch.",
+              "Client remains the supplier contact."
+            ],
+            note: "More control without full delegation."
+          },
+          {
+            kicker: "PREMIUM",
+            title: "Full production coordination (selected projects)",
+            list: [
+              "KALTÉ as single point of contact: comms + checks.",
+              "End-to-end production coordination.",
+              "Indicative base fee ~15% (varies by complexity/time/cost).",
+              "Limited availability: selected projects only."
+            ],
+            note: "You pay for time + accountability."
+          }
+        ]
       }
     },
     case: {
-      subtitle: "CASE STUDY",
-      title: "KALTÉ Apparel Capsule",
-      teaser: "A real example: how we set projects and what we deliver.",
-      requestTitle: "Request",
-      requestText: "KALTÉ needed a consistent, reproducible capsule: 3 t-shirts, 1 hoodie, 1 tracksuit.",
-      goalTitle: "Goal",
-      goals: [
-        "Set a consistent direction",
-        "Remove ambiguity on sizing/placements",
-        "Print/embroidery-ready files",
-        "Clean supplier handoff"
-      ],
-      workTitle: "What we did",
-      workList: [
-        "Creative direction + base rules",
-        "Placements and graphics (front/back)",
-        "Essential tech pack",
-        "Print/embroidery specs and production notes"
-      ],
-      deliverTitle: "Deliverables (handoff)",
-      deliverList: [
-        "Organized file pack (print/embroidery)",
-        "Tech pack + measurements & placements",
-        "Supplier operational notes",
-        "Final pre-production checklist"
-      ],
-      galleryTitle: "Preview",
-      galleryNote: "Supplier sample photos (beta / proof of work). Production: selected projects only, with defined scope.",
-      nextTitle: "Want to start?",
-      nextText: "Send: goal, what you do, available content, and timeline. We’ll reply with scope and next steps.",
-      nextBtn: "Contact →"
-    },
-    work: { title: "Proof" },
-    contact: { title: "Contact", button: "Contact →" },
-    toStart: {
-      title: "Want to start?",
-      text: "To work fast and avoid loops, send these 4 points:",
-      list: [
-        "Site goal (what must happen)",
-        "What you do (2–3 clear lines)",
-        "Pages count + refs (2–3 links)",
-        "Available content + timeline"
-      ]
-    },
-    social: {
-      title: "Social",
-      igLabel: "Instagram:",
-      ig: "@instagram",
-      mailLabel: "Email:",
-      waLabel: "WhatsApp:",
-      wa: "wa.me/393318310378",
-      note: "When you message, send: goal + what you do + available content + timeline."
+      kicker: "How we work",
+      title: "Case study: KALTÉ apparel capsule",
+      lead: "Real project: 3 tees, 1 hoodie, 1 tracksuit. Goal: coherent identity + production-ready handoff.",
+      request: {
+        title: "Request",
+        list: [
+          "An apparel capsule with a recognizable identity.",
+          "Reusable assets for communication and production.",
+          "Clear print/embroidery specs for predictable results."
+        ]
+      },
+      objective: {
+        title: "Goal",
+        list: [
+          "Visual coherence across different garments.",
+          "Reduce production ambiguity (tech + specs).",
+          "Handoff delivery: ready for factory."
+        ]
+      },
+      work: {
+        title: "What we did",
+        list: [
+          "Concept definition and graphic coherence.",
+          "Basic identity rules (essential system).",
+          "Mockups and application choices (placements, sizes).",
+          "Technical specs for print/embroidery and final files."
+        ],
+        note: "Full production coordination only for selected projects."
+      },
+      handoff: {
+        title: "What we deliver (handoff)",
+        list: [
+          "Final files (print/embroidery) and required variants.",
+          "Tech pack with measurements, placements and notes.",
+          "Materials/result specs and production checklist.",
+          "Clear structure for supplier handoff."
+        ]
+      },
+      gallery: {
+        title: "Tracksuit gallery"
+      }
     }
   }
 };
 
-function deepGet(obj, path) {
+function getByPath(obj, path) {
   return path.split(".").reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
-}
-
-function getInitialLang() {
-  const saved = localStorage.getItem(LS_KEY);
-  return (saved === "it" || saved === "en") ? saved : DEFAULT_LANG;
-}
-
-function setLangButtons(lang) {
-  document.querySelectorAll("[data-set-lang]").forEach(btn => {
-    const bLang = btn.getAttribute("data-set-lang");
-        btn.classList.toggle("is-active", bLang === lang);
-    btn.setAttribute("aria-pressed", bLang === lang ? "true" : "false");
-  });
 }
 
 function applyI18n(lang) {
   const dict = I18N[lang] || I18N[DEFAULT_LANG];
 
-  // Strings
-  document.querySelectorAll("[data-i18n]").forEach(el => {
+  // Simple strings
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    const value = deepGet(dict, key);
-    if (typeof value === "string") el.textContent = value;
+    const val = getByPath(dict, key);
+    if (typeof val === "string") el.textContent = val;
   });
 
   // Lists
-  document.querySelectorAll("[data-i18n-list]").forEach(el => {
+  document.querySelectorAll("[data-i18n-list]").forEach((el) => {
     const key = el.getAttribute("data-i18n-list");
-    const value = deepGet(dict, key);
-    if (!Array.isArray(value)) return;
+    const arr = getByPath(dict, key);
+    if (!Array.isArray(arr)) return;
 
     el.innerHTML = "";
-    value.forEach(item => {
+    arr.forEach((item) => {
       const li = document.createElement("li");
-      li.textContent = String(item);
+      li.textContent = item;
       el.appendChild(li);
     });
   });
 
+  // html lang attribute
   document.documentElement.setAttribute("lang", lang);
+
+  // Update lang buttons UI
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    const isActive = btn.getAttribute("data-lang") === lang;
+    btn.classList.toggle("is-active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+
+  // Update carousel content (if present)
+  initOrUpdateTierCarousel(lang);
 }
 
-function setLanguage(lang) {
-  if (lang !== "it" && lang !== "en") lang = DEFAULT_LANG;
-  localStorage.setItem(LS_KEY, lang);
-  setLangButtons(lang);
-  applyI18n(lang);
+function setLang(lang) {
+  const safe = (lang === "it" || lang === "en") ? lang : DEFAULT_LANG;
+  localStorage.setItem(LS_KEY, safe);
+  applyI18n(safe);
 }
 
-function bindLangSwitch() {
-  document.querySelectorAll("[data-set-lang]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-set-lang");
-      setLanguage(lang);
+function getLang() {
+  const saved = localStorage.getItem(LS_KEY);
+  if (saved === "it" || saved === "en") return saved;
+  return DEFAULT_LANG;
+}
+
+// ----- Tier carousel (Visual page) -----
+let tierIndex = 0;
+
+function renderTier(container, tier) {
+  const kicker = container.querySelector("[data-carousel-kicker]");
+  const title = container.querySelector("[data-carousel-title]");
+  const list = container.querySelector("[data-carousel-list]");
+  const note = container.querySelector("[data-carousel-note]");
+
+  if (kicker) kicker.textContent = tier.kicker;
+  if (title) title.textContent = tier.title;
+
+  if (list) {
+    list.innerHTML = "";
+    (tier.list || []).forEach((t) => {
+      const li = document.createElement("li");
+      li.textContent = t;
+      list.appendChild(li);
     });
-  });
+  }
+
+  if (note) note.textContent = tier.note || "";
 }
 
-/* Simple carousel for VISUAL tiers */
-function initTierCarousel() {
-  const root = document.querySelector("[data-tier-carousel]");
-  if (!root) return;
+function initOrUpdateTierCarousel(lang) {
+  const container = document.querySelector('[data-carousel="tiers"]');
+  if (!container) return;
 
-  const panels = Array.from(root.querySelectorAll("[data-tier-panel]"));
-  const prev = root.querySelector("[data-tier-prev]");
-  const next = root.querySelector("[data-tier-next]");
-  if (!panels.length) return;
+  const dict = I18N[lang] || I18N[DEFAULT_LANG];
+  const tiers = (dict.visual && dict.visual.merch && Array.isArray(dict.visual.merch.tiers))
+    ? dict.visual.merch.tiers
+    : [];
 
-  let idx = 0;
+  if (!tiers.length) return;
 
-  const render = () => {
-    panels.forEach((p, i) => {
-      p.style.display = (i === idx) ? "block" : "none";
+  // clamp index
+  if (tierIndex < 0) tierIndex = 0;
+  if (tierIndex > tiers.length - 1) tierIndex = tiers.length - 1;
+
+  renderTier(container, tiers[tierIndex]);
+
+  const prev = container.querySelector("[data-carousel-prev]");
+  const next = container.querySelector("[data-carousel-next]");
+
+  // bind once
+  if (prev && !prev._bound) {
+    prev._bound = true;
+    prev.addEventListener("click", () => {
+      tierIndex = (tierIndex - 1 + tiers.length) % tiers.length;
+      renderTier(container, tiers[tierIndex]);
     });
-    if (prev) prev.disabled = idx === 0;
-    if (next) next.disabled = idx === panels.length - 1;
-  };
-
-  if (prev) prev.addEventListener("click", () => {
-    idx = Math.max(0, idx - 1);
-    render();
-  });
-
-  if (next) next.addEventListener("click", () => {
-    idx = Math.min(panels.length - 1, idx + 1);
-    render();
-  });
-
-  render();
+  }
+  if (next && !next._bound) {
+    next._bound = true;
+    next.addEventListener("click", () => {
+      tierIndex = (tierIndex + 1) % tiers.length;
+      renderTier(container, tiers[tierIndex]);
+    });
+  }
 }
 
+// ----- Boot -----
 document.addEventListener("DOMContentLoaded", () => {
-  bindLangSwitch();
-  const lang = getInitialLang();
-  setLangButtons(lang);
-  applyI18n(lang);
-  initTierCarousel();
-});
+  // Bind lang buttons
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang");
+      setLang(lang);
+    });
+  });
 
+  // Initial lang
+  applyI18n(getLang());
+});
