@@ -1,109 +1,117 @@
-
-<!DOCTYPE html>
+<!-- case-study.html -->
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Come lavoriamo — Case Study | KALTÉ</title>
-
-  <!-- BUILD: 2026-01-21_01 -->
-  <link rel="icon" href="assets/logo.png" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KALTÉ — Case Study</title>
   <link rel="stylesheet" href="style.css?v=13" />
-  <script defer src="script.js?v=13"></script>
 </head>
-
 <body>
-  <div class="bg">
-    <img src="assets/bg.gif" alt="" />
-  </div>
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
 
-  <header class="topbar">
-    <div class="container topbar__inner">
+  <header class="nav">
+    <div class="wrap nav-inner">
       <a class="brand" href="index.html" aria-label="KALTÉ Home">
-        <img class="brand__logo" src="assets/logo.png" alt="KALTÉ logo">
+        <img class="brand-logo" src="assets/logo.png" alt="KALTÉ" />
       </a>
 
-      <nav class="nav">
-        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
-        <a href="digital.html" class="nav__link" data-i18n="nav.digital">Digital</a>
-        <a href="visual.html" class="nav__link" data-i18n="nav.visual">Visual</a>
-        <a href="case-study.html" class="nav__link is-active" data-i18n="nav.howWeWork">Come lavoriamo</a>
-        <a href="index.html#contact" class="nav__link" data-i18n="nav.contact">Contatti</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="digital.html" data-i18n="nav.digital">Digital</a>
+        <a href="visual.html" data-i18n="nav.visual">Visual</a>
+        <a href="case-study.html" aria-current="page" data-i18n="nav.howWeWork">Come lavoriamo</a>
+        <a href="index.html#contact" data-i18n="nav.contact">Contatti</a>
       </nav>
 
-      <div class="lang">
-        <button class="lang__btn" type="button" data-set-lang="it">IT</button>
-        <button class="lang__btn" type="button" data-set-lang="en">EN</button>
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn" type="button" data-lang="it">IT</button>
+        <button class="lang-btn" type="button" data-lang="en">EN</button>
       </div>
     </div>
   </header>
 
-  <main class="page">
-    <section class="hero hero--small">
-      <div class="container">
-        <div class="hero__kicker" data-i18n="case.subtitle">CASE STUDY</div>
-        <h1 class="hero__title" data-i18n="case.title">KALTÉ Apparel Capsule</h1>
-        <p class="lead" data-i18n="case.teaser">Un esempio reale: come impostiamo un progetto e cosa consegniamo.</p>
-      </div>
+  <main class="wrap">
+    <section class="page-hero">
+      <p class="kicker" data-i18n="case.kicker">Come lavoriamo</p>
+      <h1 class="page-title" data-i18n="case.title">Case study: KALTÉ apparel capsule</h1>
+      <p class="lead" data-i18n="case.lead">
+        Progetto reale: 3 t-shirt, 1 hoodie, 1 tracksuit. Obiettivo: identità coerente + handoff pronto produzione.
+      </p>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="section__grid section__grid--two">
-          <div class="card">
-            <div class="card__title" data-i18n="case.requestTitle">Richiesta</div>
-            <p data-i18n="case.requestText"></p>
-
-            <div class="card__title" data-i18n="case.goalTitle">Obiettivo</div>
-            <ul class="bullets" data-i18n-list="case.goals"></ul>
-          </div>
-
-          <div class="card">
-            <div class="card__title" data-i18n="case.workTitle">Cosa abbiamo fatto</div>
-            <ul class="bullets" data-i18n-list="case.workList"></ul>
-
-            <div class="card__title" data-i18n="case.deliverTitle">Consegna (handoff)</div>
-            <ul class="bullets" data-i18n-list="case.deliverList"></ul>
-          </div>
+      <h2 class="section-title" data-i18n="case.request.title">Richiesta</h2>
+      <div class="card">
+        <div class="card-pad">
+          <ul class="list" data-i18n-list="case.request.list"></ul>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="section__label" data-i18n="case.galleryTitle">Preview</div>
-
-        <div class="gallery">
-          <img src="assets/work/tracksuit-01.png" alt="Work 01" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-02.png" alt="Work 02" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-03.png" alt="Work 03" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-04.png" alt="Work 04" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-05.png" alt="Work 05" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-06.png" alt="Work 06" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-07.png" alt="Work 07" style="max-width:100%;height:auto;">
-          <img src="assets/work/tracksuit-08.png" alt="Work 08" style="max-width:100%;height:auto;">
+      <h2 class="section-title" data-i18n="case.objective.title">Obiettivo</h2>
+      <div class="card">
+        <div class="card-pad">
+          <ul class="list" data-i18n-list="case.objective.list"></ul>
         </div>
-
-        <div class="note" data-i18n="case.galleryNote"></div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <div class="card">
-          <p class="lead" data-i18n="case.nextTitle"></p>
-          <p class="muted" data-i18n="case.nextText"></p>
-          <a class="btn" href="index.html#contact" data-i18n="case.nextBtn">Contattaci →</a>
+      <h2 class="section-title" data-i18n="case.work.title">Cosa abbiamo fatto</h2>
+      <div class="card">
+        <div class="card-pad">
+          <ul class="list" data-i18n-list="case.work.list"></ul>
+          <p class="note" data-i18n="case.work.note">
+            Coordinamento produzione completo solo su progetti selezionati.
+          </p>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-i18n="case.handoff.title">Cosa consegniamo (handoff)</h2>
+      <div class="card">
+        <div class="card-pad">
+          <ul class="list" data-i18n-list="case.handoff.list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title" data-i18n="case.gallery.title">Gallery tracksuit</h2>
+
+      <div class="work-grid" aria-label="Tracksuit gallery">
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-01.png" alt="Tracksuit 01" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-02.png" alt="Tracksuit 02" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-03.png" alt="Tracksuit 03" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-04.png" alt="Tracksuit 04" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-05.png" alt="Tracksuit 05" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-06.png" alt="Tracksuit 06" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-07.png" alt="Tracksuit 07" loading="lazy" />
+        </figure>
+        <figure class="work-item">
+          <img src="assets/work/tracksuit-08.png" alt="Tracksuit 08" loading="lazy" />
+        </figure>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__line">© KALTÉ — Digital &amp; Visual Solutions.</div>
-    </div>
-  </footer>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
-
