@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>KALTÉ — Visual</title>
-  <link rel="stylesheet" href="style.css?v=13" />
+  <link rel="stylesheet" href="style.css?v=14" />
 </head>
 <body>
   <div class="page-bg" aria-hidden="true"></div>
@@ -39,11 +39,13 @@
       <p class="lead" data-i18n="visual.lead">
         Logo/restyling, palette, font e regole base: il minimo indispensabile per avere coerenza ovunque.
       </p>
+      <p class="micro" data-i18n="visual.micro">
+        Se ti serve “un logo e basta” senza regole, poi ti esplode tutto in mano.
+      </p>
     </section>
 
     <section class="section">
       <h2 class="section-title" data-i18n="visual.what.title">Cosa facciamo</h2>
-
       <div class="card">
         <div class="card-pad">
           <ul class="list" data-i18n-list="visual.what.list"></ul>
@@ -54,10 +56,9 @@
     <section class="section">
       <h2 class="section-title" data-i18n="visual.merch.title">Merch / Apparel</h2>
 
-      <!-- Carousel "semplice" senza CSS nuovo: stesso layout, cambia testo via JS -->
       <div class="card filter-card" data-carousel="tiers">
         <div class="card-pad">
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
             <h3 class="card-title" style="margin:0;" data-i18n="visual.merch.carouselTitle">Livelli</h3>
             <div class="cta-row" style="margin:0;">
               <button class="btn btn-ghost" type="button" data-carousel-prev aria-label="Previous">←</button>
@@ -66,13 +67,15 @@
           </div>
 
           <p class="micro" style="margin-top:10px;" data-i18n="visual.merch.hint">
-            Scorri i livelli: Standard / Plus / Premium.
+            Scorri: Standard / Plus / Premium.
           </p>
 
           <div class="card" style="margin-top:12px;">
             <div class="card-pad">
               <p class="kicker" style="margin-bottom:6px;" data-carousel-kicker>STANDARD</p>
-              <h3 class="hero-title" style="font-size:18px; margin:0 0 10px;" data-carousel-title>Design + tech pack + handoff</h3>
+              <h3 class="service-title" style="margin:0 0 10px;" data-carousel-title>
+                Design + tech pack + handoff
+              </h3>
               <ul class="list" data-carousel-list></ul>
               <p class="note" data-carousel-note></p>
             </div>
@@ -91,6 +94,6 @@
     </section>
   </main>
 
-  <script src="script.js?v=13"></script>
+  <script src="script.js?v=14"></script>
 </body>
 </html>
